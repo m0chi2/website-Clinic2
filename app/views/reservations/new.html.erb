@@ -1,2 +1,21 @@
-<h1>Reservations#new</h1>
-<p>Find me in app/views/reservations/new.html.erb</p>
+<div class="row">
+	<%= render "homes/navbar" %>
+</div>
+
+<div class="row">
+	<h2 class="col text-center">初診予約ページ</h2>
+</div>
+
+<div class="row">
+	<div class="layer col-8 text-center">（プログレスバーの予定）</div>
+</div>
+
+<div class="row">
+	<div class="col-8 reserve-text text-center">
+<h4>情報入力</h4>
+<p>診察日時： <%= session[:pickadate]["date"] %><%= session[:pickadate]["time"] %></p>
+<h4>患者様情報</h4>
+<h4>ご連絡先</h4>
+</div>
+</div>
+

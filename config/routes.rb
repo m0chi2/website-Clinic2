@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+
   resources :reservations, only: [:index, :new, :create]
+  post 'reservations/new' => 'reservations#new'
   get 'reservations/confirm' => 'reservations#confirm'
   get 'reservations/thanks' => 'reservations#thanks'
+
+  resource :pickadates, only: [:new, :create]
 
   devise_for :admins
   devise_for :patients

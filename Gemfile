@@ -65,3 +65,4 @@ gem 'jquery-rails'
 gem "bootstrap-sass", ">= 3.4.1"
 gem 'kaminari'
 gem 'dotenv-rails'
+gem 'pry-byebug'

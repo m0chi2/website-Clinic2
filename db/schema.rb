@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_07_023129) do
+ActiveRecord::Schema.define(version: 2020_07_07_040758) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -47,9 +47,17 @@ ActiveRecord::Schema.define(version: 2020_07_07_023129) do
     t.index ["reset_password_token"], name: "index_patients_on_reset_password_token", unique: true
   end
 
+  create_table "pickadates", force: :cascade do |t|
+    t.string "date", null: false
+    t.string "time", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reservations", force: :cascade do |t|
-    t.integer "membership_number_id_id"
-    t.integer "exam_content_id_id"
+    t.integer "membership_number_id"
+    t.integer "exam_content_id"
+    t.integer "pickadate_id"
     t.string "name", null: false
     t.string "name_kana", null: false
     t.integer "birthday", null: false
@@ -61,10 +69,9 @@ ActiveRecord::Schema.define(version: 2020_07_07_023129) do
     t.string "question_memo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "date"
-    t.string "time"
-    t.index ["exam_content_id_id"], name: "index_reservations_on_exam_content_id_id"
-    t.index ["membership_number_id_id"], name: "index_reservations_on_membership_number_id_id"
+    t.index ["exam_content_id"], name: "index_reservations_on_exam_content_id"
+    t.index ["membership_number_id"], name: "index_reservations_on_membership_number_id"
+    t.index ["pickadate_id"], name: "index_reservations_on_pickadate_id"
   end
 
 end
