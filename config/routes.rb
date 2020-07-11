@@ -1,5 +1,37 @@
 Rails.application.routes.draw do
 
+  namespace :admins do
+    get 'reservations/all'
+  end
+  devise_for :admins, controllers: {
+    sessions:      'admins/sessions',
+    passwords:     'admins/passwords',
+    registrations: 'admins/registrations'
+  }
+
+ # 使用するコントローラをapp/contorolers/admins内のものにする
+
+  devise_for :patients, controllers: {
+    sessions:      'patients/sessions',
+    passwords:     'patients/passwords',
+    registrations: 'patients/registrations'
+  }
+
+  namespace :admins do
+    resources :reservations, only: [:index, :new, :create, :destroy]
+      get 'reservations/all' => 'reservations#all'
+      get 'reservations/today' => 'reservations#today'
+      get 'reservations/confirm' => 'reservations#confirm'
+      get 'reservations/search' => 'reservations#search'
+      get '/' => 'homes#top'
+      get '/about' => 'homes#about'
+  end
+
+  get '/' => 'homes#top'
+  get '/about' => 'homes#about'
+  get '/exams' => 'homes#exams'
+  get '/access' => 'homes#access'
+
   resources :reservations, only: [:index, :new, :create]
   post 'reservations/new' => 'reservations#new'
   get 'reservations/confirm' => 'reservations#confirm'
@@ -8,14 +40,5 @@ Rails.application.routes.draw do
 
   resource :pickadates, only: [:new, :create]
 
-  devise_for :admins, module: "admins"
- # 使用するコントローラをapp/contorolers/admins内のものにする
-  devise_for :patients, module: "patients"
 
-  get '/' => 'homes#top'
-  get '/about' => 'homes#about'
-  get '/exams' => 'homes#exams'
-  get '/access' => 'homes#access'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -38,6 +38,20 @@ class ReservationsController < ApplicationController
 
   end
 
+  def show
+  end
+
+  def today
+    @reservations = Reservation.joins(:pickadate).where(picadates: {date: Date.current})
+  end
+
+  def all
+    @reservations = Reservation.all
+  end
+
+  def search
+  end
+
   private
   def pickadate_params
     params.require(:pickadate).permit(:date, :time)
