@@ -22,13 +22,15 @@
   <header style="background-color:gray">
     <div class="container">
       <div class="row row-center">
+
       <%= link_to "/" do %>
-        <h1 class="col-md-2">LOGO</h1>
+          <h1 class="col-md-2">LOGO</h1>
       <% end %>
-      <button type="button" class="btn btn-default col-md-2">
-        初めてのご予約は<br>
-        こちら
-      </button>
+      <%= link_to reservations_path, class: "btn btn-default col-md-2" do %>
+          <span>初めてのご予約は<br>
+                こちら</span>
+      <% end %>
+
       <div class="information col-md-3 pull-right">
         <p>お気軽にお問い合いわせください<br>
           <%= link_to "お問い合わせフォーム", "/" %><br>

@@ -1,13 +1,26 @@
-<h2>Log in</h2>
+<div class="row">
+  <%= render "homes/navbar" %>
+</div>
+
+<div class="row">
+  <h2 class="col text-center">会員ページ</h2>
+  <div class="col-8 reserve-text text-center">
+    <p>当院を受診いただいた方に、会員ページをご用意しています。<br>
+      【会員ページでできること】<br>
+      ・ 次回診察予約の確認<br>
+      ・ 気になった症状の記録を残す<br>
+       </p>
+    <%= link_to "会員ページについての詳細はこちら", "/" %>
+  </div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :メールアドレス %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :パスワード %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
@@ -19,7 +32,7 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "会員ページへ進む", class: "btn btn-default" %>
   </div>
 <% end %>
 

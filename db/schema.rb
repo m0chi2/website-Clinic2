@@ -55,22 +55,20 @@ ActiveRecord::Schema.define(version: 2020_07_07_040758) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.integer "membership_number_id"
-    t.integer "exam_content_id"
     t.integer "pickadate_id"
+    t.integer "membership_number"
     t.string "name", null: false
     t.string "name_kana", null: false
-    t.integer "birthday", null: false
+    t.date "birthday", null: false
     t.integer "sex", default: 0, null: false
     t.integer "phonenumber", null: false
     t.string "email"
+    t.string "exam_content"
     t.string "question_when"
-    t.string "question_medical_histroy"
+    t.string "question_medical_history"
     t.string "question_memo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["exam_content_id"], name: "index_reservations_on_exam_content_id"
-    t.index ["membership_number_id"], name: "index_reservations_on_membership_number_id"
     t.index ["pickadate_id"], name: "index_reservations_on_pickadate_id"
   end
 
