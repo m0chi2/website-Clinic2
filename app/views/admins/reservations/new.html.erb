@@ -1,0 +1,37 @@
+<div class="row">
+	<%= render "homes/navbar" %>
+</div>
+<div class="row">
+	<table>
+		<tr>
+		<%= form_tag({ action: :search_for }, remote: true) do %>
+			<td>患者検索</td>
+			<td><%= text_field_tag 'search[content]' %></td>
+			<td><%= select_tag 'search[model]', options_for_select({ "診察券番号" => "membership_number", "患者氏名" => "name" }) %></td>
+			<td><%= submit_tag "検索" %></td>
+		<% end %>
+		</tr>
+	</table>
+
+
+
+  <table>
+	<%= form_for @pickadate, url: new_reservation_path(@pickadate) do |f| %>
+	<tr>
+		<td>診察予約日</td>
+		<td><%= f.text_field :date, placeholder: "こちらを押してください", id: "datepicker" %></td>
+	</tr>
+	<tr>
+		<td>診察予約時間</td>
+		<td><%= f.text_field :time, placeholder: "こちらを押してください", id: "timepicker" %></td>
+	</tr>
+	<tr>
+		<td><%= f.submit "予約内容確認へ進む", class:"btn btn-success" %></td>
+	</tr>
+	<tr>
+		<td>診察内容</td>
+		<td></td>
+	</tr>
+	<% end %>
+  </table>
+</div>
