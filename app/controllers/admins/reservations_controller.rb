@@ -1,17 +1,21 @@
 class Admins::ReservationsController < ApplicationController
  def index
  end
+
  def new
 	@pickadate = Pickadate.new
  	@reservation = Reservation.new
 
- 	# @model = params["search"]["model"]
- 	# @content = params["search"]["content"]
- 	# @patients = search_for(@model,@content)
+ 	@q = Patient.ransack(params[:q])
+ 	@patients = @q.result(distinct: true)
  end
 
  def confirm
- 	@patient = Patient.find(params[:id])
+ 	@patient = Patient.find_by(membership_number_id: params[:membership_number])
+ 	@pickadate = Pickadate.new(
+ 		date: params[:date],
+ 		time: params[:time])
+
  	session[:reservation] = params[:reservation]
  	session[:pickadate] = params[:pickadate]
  end

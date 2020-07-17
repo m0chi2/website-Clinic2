@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   get '/exams' => 'homes#exams'
   get '/access' => 'homes#access'
 
+
   resources :reservations, only: [:index, :new, :create]
   post 'reservations/new' => 'reservations#new'
   get 'reservations/confirm' => 'reservations#confirm'

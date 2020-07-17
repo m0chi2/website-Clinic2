@@ -1,22 +1,85 @@
+<link rel= "stylesheet", href= "/css/default.css">
+<link rel= "stylesheet", href= "/css/default.date.css">
+<link rel= "stylesheet", href= "/css/default.time.css">
+
+<script src= "pickadate/picker.js"></script>
+<script src= "pickadate/picker.date.js"></script>
+<script src= "pickadate/picker.time.js"></script>
+<script src= "pickadate/legacy.js"></script>
+<script src= "pickadate/lang-ja.js"></script>
+
 <div class="row">
 	<%= render "homes/navbar" %>
 </div>
 <div class="row">
-	<table>
-		<tr>
-		<%= form_tag({ action: :search_for }, remote: true) do %>
-			<td>患者検索</td>
-			<td><%= text_field_tag 'search[content]' %></td>
-			<td><%= select_tag 'search[model]', options_for_select({ "診察券番号" => "membership_number", "患者氏名" => "name" }) %></td>
-			<td><%= submit_tag "検索" %></td>
+		<%= search_form_for(@q, url: new_admins_reservation_path, enforce_utf8: false, remote: true) do |f| %>
+			<h4>患者検索</h4><br>
+			<%= f.label :name_or_membership_number_id, "氏名または診察券番号" %>
+			<%= f.search_field :name_or_membership_number_id_cont %>
+			<%= submit_tag "検索", name: nil, onclick: "showResults()" %>
 		<% end %>
+
+
+<!-- FIX 以下部分テンプレートに直す-->
+<div id="results">
+	<% @patients.each do |patient| %>
+	<table class="table">
+		<tr>
+			<th>選択</th>
+			<th>診察券番号</th>
+			<th>患者氏名</th>
+			<th>生年月日</th>
+		</tr>
+		<tr>
+			<th><%= radio_button_tag :membership_number_id, "test", type= "submit" %></th>
+
+			<th><%= patient.membership_number_id %></th>
+			<th><%= patient.name %></th>
+			<th><%= patient.birthday %></th> <!-- Fix 表示の仕方 -->
+			<% end %>
 		</tr>
 	</table>
+</div>
 
+<script>
+// var elements = document.getElementsByName( "membership_number_id" ) ;
+// for ( var membership_number_id ="", i=elements.length; i--; ) {
+// 	if ( elements[i].checked ) {
+// 		var membership_number_id = elements[i].value ;
+// 		break ;
+// 	}
+// }
+// if ( membership_number_id === "" ) {
+// 	// 未選択状態
+// } else {
+// 	// aには選択状態の値が代入されている
+// 	console.log( test ) ;
+// }
+
+// $(function(){
+// 	$('#select_patient').on('click',function(){
+// 		$('#patient_form').submit();
+// 	});
+// });
+
+document.getElementById("results").style.display ="none";
+
+function showResults(){
+	const results = document.getElementById("results");
+
+	if(results.style.display=="block"){
+		results.style.display ="none";
+	}else{
+		results.style.display ="block";
+	}
+}
+
+</script>
+<!-- ここまで -->
 
 
   <table>
-	<%= form_for @pickadate, url: new_reservation_path(@pickadate) do |f| %>
+	<%= form_for @pickadate, url: admins_reservations_confirm_path(@pickadate), method: :get do |f| %>
 	<tr>
 		<td>診察予約日</td>
 		<td><%= f.text_field :date, placeholder: "こちらを押してください", id: "datepicker" %></td>
@@ -26,11 +89,11 @@
 		<td><%= f.text_field :time, placeholder: "こちらを押してください", id: "timepicker" %></td>
 	</tr>
 	<tr>
-		<td><%= f.submit "予約内容確認へ進む", class:"btn btn-success" %></td>
-	</tr>
-	<tr>
 		<td>診察内容</td>
 		<td></td>
+	</tr>
+	<tr>
+		<td><%= f.submit "予約内容確認へ進む", class:"btn btn-success" %></td>
 	</tr>
 	<% end %>
   </table>
