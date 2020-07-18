@@ -8,16 +8,6 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <link rel= "stylesheet", href= "css/default.css">
-    <link rel= "stylesheet", href= "css/default.date.css">
-    <link rel= "stylesheet", href= "css/default.time.css">
-
-    <script src= "pickadate/picker.js"></script>
-    <script src= "pickadate/picker.date.js"></script>
-    <script src= "pickadate/picker.time.js"></script>
-    <script src= "pickadate/legacy.js"></script>
-    <script src= "pickadate/lang-ja.js"></script>
-
   </head>
   <header style="background-color:gray">
     <div class="container">
@@ -33,7 +23,7 @@
 
       <div class="information col-md-3 pull-right">
         <p>お気軽にお問い合いわせください<br>
-          <%= link_to "お問い合わせフォーム", "/" %><br>
+          <%= link_to "お問い合わせフォーム", inquiry_path %><br>
           <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
           電話： XXXX - XX - XXXX</p>
       </div>

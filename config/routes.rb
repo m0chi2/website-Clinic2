@@ -17,8 +17,9 @@ Rails.application.routes.draw do
   get '/exams' => 'homes#exams'
   get '/access' => 'homes#access'
 
-  get 'inquiry/index' => 'inquiry#index'
+  get 'inquiry' => 'inquiry#index'
   get 'inquiry/confirm' => 'inquiry#confirm'
+  post 'inquiry/thanks' => 'inquiry#thanks'
   get 'inquiry/thanks' => 'inquiry#thanks'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
