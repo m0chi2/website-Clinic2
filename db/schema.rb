@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2020_07_18_252525) do
     t.string "membership_number", null: false
     t.string "name", null: false
     t.string "name_kana", null: false
-    t.string "birthday", null: false
+    t.date "birthday", null: false
     t.integer "sex", default: 0, null: false
     t.integer "phonenumber", null: false
     t.datetime "created_at", null: false
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2020_07_18_252525) do
 
   create_table "reservations", force: :cascade do |t|
     t.integer "pickadate_id"
+    t.integer "bothering_start_id"
     t.integer "membership_number"
     t.string "name", null: false
     t.string "name_kana", null: false
@@ -87,11 +88,11 @@ ActiveRecord::Schema.define(version: 2020_07_18_252525) do
     t.integer "phonenumber", null: false
     t.string "email"
     t.string "exam_content"
-    t.string "question_when"
     t.string "question_medical_history"
     t.string "question_memo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["bothering_start_id"], name: "index_reservations_on_bothering_start_id"
     t.index ["pickadate_id"], name: "index_reservations_on_pickadate_id"
   end
 

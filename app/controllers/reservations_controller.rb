@@ -43,7 +43,7 @@ class ReservationsController < ApplicationController
     params.require(:pickadate).permit(:date, :time)
   end
   def reservation_params
-    params.require(:reservation).permit(:name, :name_kana, :birthday, :sex ,:phonenumber, :email, :exam_content, :question_when, :question_medical_history, :question_memo)
+    params.require(:reservation).permit(:name, :name_kana, :birthday, :sex ,:phonenumber, :email, :exam_content, :bothering_start_id, :question_medical_history, :question_memo)
   end
 
 end
