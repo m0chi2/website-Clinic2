@@ -1,0 +1,9 @@
+<h4>気になる投稿</h4>
+<%= link_to "気になる症状を記録する", new_post_path %>
+
+<% @posts.each do |post| %>
+	<%= post.bothering_start_id %>
+	<%= post.bothering_genre_id %>
+	<%= post.content %>
+	<%= post.created_at %>
+<% end %>
