@@ -1,9 +1,21 @@
-<h4>気になる投稿</h4>
-<%= link_to "気になる症状を記録する", new_post_path %>
+<div class="row">
+	<%= render "homes/navbar" %>
+</div>
+<h4>気になる記録</h4>
+<%= link_to "気になる症状を記録する", new_post_path %><br>
 
-<% @posts.each do |post| %>
-	<%= post.bothering_start_id %>
-	<%= post.bothering_genre_id %>
-	<%= post.content %>
-	<%= post.created_at %>
-<% end %>
+<div class="col-md-8">
+<table class="table">
+	<% @posts.each do |post| %>
+	<tr>
+		<td><%= post.bothering_start_id %> <%= post.bothering_genre_id %></td>
+	</tr>
+	<tr>
+		<td><%= post.content %></td>
+	</tr>
+	<tr>
+		<td><span class="pull-right">記録日：<%= post.created_at %></span></td>
+	</tr>
+	<% end %>
+</table>
+</div>

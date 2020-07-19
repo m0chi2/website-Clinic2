@@ -16,6 +16,7 @@
       <%= link_to "/" do %>
           <h1 class="col-md-2">LOGO</h1>
       <% end %>
+      <% unless patient_signed_in? %>
       <%= link_to reservations_path, class: "btn btn-default col-md-2" do %>
           <span>初めてのご予約は<br>
                 こちら</span>
@@ -27,6 +28,7 @@
           <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
           電話： XXXX - XX - XXXX</p>
       </div>
+      <% end %>
     </div>
     </div>
   </header>

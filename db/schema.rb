@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2020_07_18_252525) do
     t.string "membership_number", null: false
     t.string "name", null: false
     t.string "name_kana", null: false
-    t.string "birthday", null: false
+    t.date "birthday", null: false
     t.integer "sex", default: 0, null: false
     t.integer "phonenumber", null: false
     t.datetime "created_at", null: false

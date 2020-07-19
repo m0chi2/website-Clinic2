@@ -35,7 +35,7 @@ class DeviseCreatePatients < ActiveRecord::Migration[5.2]
       t.string :membership_number, null: false
       t.string :name, null: false
       t.string :name_kana, null: false
-      t.string :birthday, null: false
+      t.date :birthday, null: false
       t.integer :sex, null: false, default: 0
       t.integer :phonenumber, null: false
       t.timestamps null: false
