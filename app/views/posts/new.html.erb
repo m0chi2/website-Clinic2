@@ -1,9 +1,9 @@
 <h4>気になる記録</h4>
 <%= form_for(@post, url: posts_path) do |f| %>
-	<%= f.label :bothering_start, "日時" %>
-	<%= f.select :bothering_start, options_from_collection_for_select(BotheringStart.all, :id, :name), prompt: "選択してください" %><br>
-	<%= f.label :bothering_genre, "分類" %>
-	<%= f.select :bothering_genre, options_from_collection_for_select(BotheringGenre.all, :id, :name), prompt: "選択してください" %><br>
+	<%= f.label :bothering_start_id, "日時" %>
+	<%= f.select :bothering_start_id, options_from_collection_for_select(BotheringStart.all, :id, :name), prompt: "選択してください" %><br>
+	<%= f.label :bothering_genre_id, "分類" %>
+	<%= f.select :bothering_genre_id, options_from_collection_for_select(BotheringGenre.all, :id, :name), prompt: "選択してください" %><br>
 	<%= f.label :content, "詳細内容" %><br>
 	<%= f.text_area :content %><br>
 

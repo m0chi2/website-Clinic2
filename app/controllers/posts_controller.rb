@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.where(patient_id: current_patient)
+    @posts = Post.where(patient_id: current_patient.id)
   end
 
   def new
@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     @post = Post.new(params_post)
     @post.patient_id = current_patient.id
     @post.save
-    redirect_to posts_index_path
+    redirect_to posts_path
   end
 
   def show

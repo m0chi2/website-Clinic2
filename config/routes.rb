@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  devise_for :admins, module: "admins"
+
+  devise_for :patients, controllers: {
+    sessions:      'patients/sessions',
+    passwords:     'patients/passwords',
+    registrations: 'patients/registrations'
+  }
+  namespace :patients do
+    get 'homes/reservation' => 'homes#reservation'
+    resources :homes, only: [:index, :show]
+  end
+
   resources :posts
   resource :pickadates, only: [:new, :create]
   resources :reservations, only: [:index, :new, :create]
@@ -17,8 +29,5 @@ Rails.application.routes.draw do
   get 'inquiry/confirm' => 'inquiry#confirm'
   post 'inquiry/thanks' => 'inquiry#thanks'
   get 'inquiry/thanks' => 'inquiry#thanks'
-
-  devise_for :admins, module: "admins"
-  devise_for :patients, module: "patients"
 
 end
