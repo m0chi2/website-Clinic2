@@ -1,11 +1,17 @@
-<div class="row">
-	<%= render "homes/navbar" %>
-	<h4>ようこそ！ <%= current_patient.name %> さん</h4>
-	<% if @pickadate %>
-	<p>次回の診察予定日は<br>
-	   <%= @pickadate %>です。<br>
-	   お時間に余裕を持ってお越しください。<br>
-	   <%= link_to "キャンセルご希望の場合" %>
-	</p>
-	<% end %>
+<div class="specialBackground">
+	<div class="container">
+		<div class="row">
+			<%= render "homes/navbar" %>
+		</div>
+		<div class="row main">
+			<h4>ようこそ！ <%= current_patient.name %> さん</h4>
+			<% if @pickadate %>
+			<p>次回の診察予定日は<br>
+			   <%= @pickadate %>です。<br>
+			   お時間に余裕を持ってお越しください。<br>
+			   <%= link_to "キャンセルご希望の場合" %>
+			</p>
+			<% end %>
+		</div>
+	</div>
 </div>

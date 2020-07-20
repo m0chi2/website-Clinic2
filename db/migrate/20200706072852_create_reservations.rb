@@ -3,7 +3,7 @@ class CreateReservations < ActiveRecord::Migration[5.2]
     create_table :reservations do |t|
       t.references :pickadate, foreign_key: true
       t.references :bothering_start, foreign_key: true
-      t.integer :membership_number
+      t.string :membership_number
       t.string :name, null: false
       t.string :name_kana, null: false
       t.date :birthday, null: false

@@ -12,9 +12,9 @@
 			<th>症状の内容</th>
 			<th>申込日</th>
 		<tr>
-			<td><%= reservation.pickadate %></td>
+			<td><%= reservation.reservation_date %></td>
 			<td><%= reservation.exam_content %></td>
-			<td><%= reservation.created_at %></td>
+			<td><%= reservation.created_at.strftime('%Y/%m/%d') %></td>
 		</tr>
 		<% end %>
 	</table>

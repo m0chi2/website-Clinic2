@@ -22,27 +22,7 @@
 		</tr>
 	</table>
 	<h4>患者様情報</h4>
-	<% if patient_signed_in? %>
-		<table>
-		<tr>
-			<td>診察券番号：</td>
-			<td><%= patient.membership_number_id %></td>
-		</tr>
-		<tr>
-			<td>氏名：</td>
-			<td><%= patient.name %></td>
-		</tr>
-		<tr>
-			<td>氏名（カナ）：</td>
-			<td><%= patient.name_kana %></td>
-		</tr>
-		<tr>
-			<td>生年月日：</td>
-			<td><%= patient.birthday %></td>
-		</tr>
-	</table>
-
-	<% else %>
+	<% unless patient_signed_in? || admin_signed_in? %>
 	<table>
 		<tr>
 			<td>氏名：</td>
@@ -66,8 +46,8 @@
 		</tr>
 		<tr>
 			<td>性別：</td>
-			<td><%= f.radio_button :sex, 1, checked: true %>男
-				<%= f.radio_button :sex, 2 %>女</td>
+			<td><%= f.radio_button :sex, 1, checked: true %>男性
+				<%= f.radio_button :sex, 2 %>女性</td>
 		</tr>
 	</table>
 
@@ -93,11 +73,11 @@
 	<h4>どのような症状がありますか？</h4>
 		<%= f.text_field :exam_content, class: "form-control" %>
 	<h4>いつ頃から症状がありますか？</h4>
-		<%= f.radio_button :bothering_start, 1, checked: true%>今日
-		<%= f.radio_button :bothering_start, 2 %>昨日
-		<%= f.radio_button :bothering_start, 3 %>２、３日前
-		<%= f.radio_button :bothering_start, 4 %>１週間前<br>
-		<%= f.radio_button :bothering_start, 5 %>それより前（１週間より前）
+		<%= f.radio_button :bothering_start_id, 1, checked: true%>今日
+		<%= f.radio_button :bothering_start_id, 2 %>昨日
+		<%= f.radio_button :bothering_start_id, 3 %>２、３日前
+		<%= f.radio_button :bothering_start_id, 4 %>１週間前<br>
+		<%= f.radio_button :bothering_start_id, 5 %>それより前（１週間より前）
 	<h4>今までにかかった・または治療中の病気があればご記入ください。</h4>
 		<%= f.text_field :question_medical_history, class: "form-control" %>
 	<h4>その他、事前にお伝えしたい内容がございましたらご記入ください。</h4>

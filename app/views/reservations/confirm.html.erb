@@ -16,6 +16,39 @@
 		</tr>
 	</table>
 	<h4>患者様情報</h4>
+	<% if patient_signed_in? %>
+		<table>
+		<tr>
+			<td>診察券番号：</td>
+			<td><%= current_patient.membership_number %></td>
+		</tr>
+		<tr>
+			<td>氏名（カナ）：</td>
+			<td><%= current_patient.name %>（<%= current_patient.name_kana %>）</td>
+		</tr>
+		<tr>
+			<td>生年月日：</td>
+			<td><%= current_patient.birthday %></td>
+		</tr>
+		<tr>
+			<td>性別：</td>
+			<td><% if current_patient.sex = 1 %>
+				  <span>男性</span>
+				<% elsif current_patient.sex = 2 %>
+				  <span>女性</span>
+				<% end %>
+			</td>
+		</tr>
+		<tr>
+			<td>お電話番号：</td>
+			<td><%= current_patient.phonenumber %></td>
+		</tr>
+		<tr>
+			<td>メールアドレス：</td>
+			<td><%= current_patient.email %></td>
+		</tr>
+	</table>
+	<% else %>
 	<table>
 		<tr>
 			<td>氏名：</td>
@@ -53,6 +86,7 @@
 			<td><%= session[:reservation]["email"] %></td>
 		</tr>
 	</table>
+	<% end %>
 
 	<h4>質問のご回答</h4>
 	<h4>どのような症状がありますか？</h4>

@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 2020_07_18_252525) do
   create_table "reservations", force: :cascade do |t|
     t.integer "pickadate_id"
     t.integer "bothering_start_id"
-    t.integer "membership_number"
+    t.string "membership_number"
     t.string "name", null: false
     t.string "name_kana", null: false
     t.date "birthday", null: false

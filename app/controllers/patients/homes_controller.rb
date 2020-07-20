@@ -5,7 +5,7 @@ class Patients::HomesController < ApplicationController
 	def show
 	end
 
-	def reservation_index
+	def reservation
 		@reservations = Reservation.where(membership_number: current_patient.membership_number)
 	end
 end

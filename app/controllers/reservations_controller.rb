@@ -19,15 +19,25 @@ class ReservationsController < ApplicationController
     @pickadate = Pickadate.new(session[:pickadate])
     @pickadate.save
     @reservation = Reservation.new(session[:reservation])
+    binding.pry
     @reservation.pickadate_id = @pickadate.id
-    if current_patient == nil
-      @reservation.membership_number = 0
-      # 非会員も予約するなら診察券番号を入力する欄が必要
-      @reservation.save
+
+    if current_patient
+        @reservation.membership_number = current_patient.membership_number
+        @reservation.name = current_patient.name
+        @reservation.name_kana = current_patient.name_kana
+        @reservation.birthday = current_patient.birthday
+        @reservation.sex = current_patient.sex
+        @reservation.email = current_patient.email
+        @reservation.phonenumber = current_patient.phonenumber
+        @reservation.save
+
+    elsif current_patient == nil
+        @reservation.membership_number = "B000000" # 非会員予約の場合、診察券番号は「B000000」とする
+        @reservation.save
     end
 
     redirect_to reservations_thanks_path
-
   end
 
   def thanks
@@ -35,10 +45,11 @@ class ReservationsController < ApplicationController
     @reservations = Reservation.all
     session[:pickadate].clear
     session[:reservation].clear
-
   end
 
-  private
+end
+
+private
   def pickadate_params
     params.require(:pickadate).permit(:date, :time)
   end
@@ -46,4 +57,3 @@ class ReservationsController < ApplicationController
     params.require(:reservation).permit(:name, :name_kana, :birthday, :sex ,:phonenumber, :email, :exam_content, :bothering_start_id, :question_medical_history, :question_memo)
   end
 
-end

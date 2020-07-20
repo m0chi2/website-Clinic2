@@ -8,10 +8,13 @@
 		<span class="glyphicon glyphicon-home" aria-hidden="true"></span><br>
 		<span>気になる記録を残す</span>
 	<% end %>
-
 	<%= link_to patients_homes_reservation_path, class: "btn btn-success" do %>
 		<span class="glyphicon glyphicon-comment" aria-hidden="true"></span><br>
 		<span>予約を確認する</span>
+	<% end %>
+	<%= link_to reservations_path, class: "btn btn-success" do %>
+		<span class="glyphicon glyphicon-comment" aria-hidden="true"></span><br>
+		<span>新規予約作成</span>
 	<% end %>
 	<%= link_to destroy_patient_session_path, method: :delete, class: "btn btn-success" do %>
 		<span class="glyphicon glyphicon-comment" aria-hidden="true"></span><br>
