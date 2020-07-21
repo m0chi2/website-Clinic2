@@ -19,7 +19,6 @@ class ReservationsController < ApplicationController
     @pickadate = Pickadate.new(session[:pickadate])
     @pickadate.save
     @reservation = Reservation.new(session[:reservation])
-    binding.pry
     @reservation.pickadate_id = @pickadate.id
 
     if current_patient

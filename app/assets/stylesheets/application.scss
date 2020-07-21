@@ -249,21 +249,56 @@ li .title:hover:before {
 }
 .pickadate__box {
 	width: 70%;
-	height: 200px;
+	height: 260px;
 	margin: auto;
 	margin-bottom: 5%;
-	padding-bottom: 5%;
+	padding-bottom: 15%;
 	border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 .next__button {
-	background-color: pink;
-	margin: 20px;
+	display: inline-block;
+  	padding: 10px 23px;
+  	margin: 20px;
+  	color: #FFF;
+  	font-size: 3rem;
+  	text-decoration: none;
+  	border: none;
+  	border-radius: 25px;
+  	background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  	transition: .4s;
+  	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  	border-bottom: solid 3px #bd6565;
+  	overflow: hidden;
+	outline: none;
+}
+.next__button:hover {
+	background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+	text-decoration: none;
+}
+.next__button:active {
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  border-bottom: none;
 }
 
 .next__button__wrapper {
 	text-align: center;
 }
-.reserve__textbox {
+
+.back__button {
+	display: inline-block;
+  	padding: 10px 23px;
+  	margin: 20px;
+  	color: #333;
+  	font-size: 3rem;
+  	text-decoration: none;
+  	border: none;
+  	border-radius: 25px;
+  	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  	border-bottom: solid 3px #bd6565;
+}
+.reservation__textbox {
 	text-align: center;
 	margin-bottom: 15px;
 	span {
@@ -279,7 +314,48 @@ li .title:hover:before {
 	align-items: center;
 	 -webkit-justify-content: center;
  	justify-content: center;
+ 	border-collapse: collapse;
+ 	border-collor: #fff
 	td {
 		padding: 10px;
 	}
+	h2 {
+		margin-top: 70px;
+	}
+}
+.reservation__title {
+	margin-top: 70px;
+}
+.reservation__item {
+	background-color: rgb(242, 242, 242);
+}
+.reservation__question {
+	margin-top: 100px;
+	h3 {
+		margin-top: 50px;
+	}
+	.form {
+		width: 500px;
+		height: 100px;
+		margin: auto;
+	}
+}
+.reservation__table td {
+  border: 10px solid #fff;
+}
+.radio__button {
+	float: left;
+	padding-right: 15px;
+}
+.radio__button__box {
+	display: flex;
+	-webkit-justify-content: center;
+ 	justify-content: center;
+}
+.buttons {
+	display: flex;
+}
+
+.thanks__text {
+	font-size: 22px;
 }

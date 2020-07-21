@@ -3,91 +3,101 @@
 </div>
 <div class="row">
 	<% if patient_signed_in? %>
-		<h2 class="col text-center">予約ページ</h2>
+		<h2 class="page__title text-center col">予約ページ</h2>
 	<% else %>
-		<h2 class="col text-center">初診予約ページ</h2>
+		<h2 class="page__title text-center col">初診予約ページ</h2>
 	<% end %>
 
-	<div class="layer col text-center">（プログレスバーの予定）</div>
+	<div class="text-center col">（プログレスバーの予定）</div>
 </div>
 
 <div class="row">
-	<div class="col-md-6 reserve-text text-center form-group">
+	<div class="col-md-2"></div>
+	<div class="reservation__textbox text-center col-md-8  form-group">
 	<%= form_with model: @reservation, url: reservations_confirm_path(@reservation), local: true do |f|  %>
-	<h4>情報入力</h4>
-	<table>
-		<tr>
-			<td>診察日時：</td>
-			<td><%= session[:pickadate]["date"] %>　<%= session[:pickadate]["time"] %></td>
-		</tr>
-	</table>
-	<h4>患者様情報</h4>
-	<% unless patient_signed_in? || admin_signed_in? %>
-	<table>
-		<tr>
-			<td>氏名：</td>
-			<td><%= f.text_field :name, placeholder: "例）熊猫太郎", class: "form-control" %></td>
-		</tr>
-		<tr>
-			<td>氏名（カナ）：</td>
-			<td><%= f.text_field :name_kana, placeholder: "例）パンダタロウ", class: "form-control" %></td>
-		</tr>
-		<tr>
-			<td>生年月日：</td>
-			<td><%= raw sprintf(
-					f.date_select(
-						:birthday,
-						 use_month_numbers: true,
-						 start_year: 1930,
-						 end_year: (Time.now.year - 1 ),
-						 default: Date.new(1990, 1, 1),
-						 date_separator: '%s'),
-						'年 ', '月 ') + '日' %></td> <!-- FIX 生年月日もform-controlにしたい -->
-		</tr>
-		<tr>
-			<td>性別：</td>
-			<td><%= f.radio_button :sex, 1, checked: true %>男性
-				<%= f.radio_button :sex, 2 %>女性</td>
-		</tr>
-	</table>
+		<table class="reservation__table">
+			<tr>
+				<td colspan="2"><h2>情報入力</h2></td>
+			</tr>
+			<tr>
+				<td class="reservation__item">診察日時</td>
+				<td><%= session[:pickadate]["date"] %>　<%= session[:pickadate]["time"] %></td>
+			</tr>
 
-	<h4>ご連絡先</h4>
-	<table>
-		<tr>
-			<td>お電話番号：</td>
-			<td><%= f.text_field :phonenumber, placeholder: "-（ハイフン）無しでご記入ください", class: "form-control" %></td>
-		</tr>
-		<tr>
-			<td>メールアドレス：</td>
-			<td><%= f.text_field :email, placeholder: "abc@panda.com", class: "form-control" %></td>
-		</tr>
-		<tr>
-			<td>メールアドレス（確認用）：</td>
-			<td><%= f.text_field :email, placeholder: "abc@panda.com", class: "form-control" %></td>
-		</tr>
-	</table>
+			<% unless patient_signed_in? || admin_signed_in? %>
+			<tr>
+				<td colspan="2"><h2>患者様情報</h2></td>
+			</tr>
+			<tr>
+				<td class="reservation__item">氏名</td>
+				<td><%= f.text_field :name, placeholder: "例）熊猫太郎", class: "form-control" %></td>
+			</tr>
+			<tr>
+				<td class="reservation__item">氏名（カナ）</td>
+				<td><%= f.text_field :name_kana, placeholder: "例）パンダタロウ", class: "form-control" %></td>
+			</tr>
+			<tr>
+				<td class="reservation__item">生年月日</td>
+				<td><%= raw sprintf(
+						f.date_select(
+							:birthday,
+							 use_month_numbers: true,
+							 start_year: 1930,
+							 end_year: (Time.now.year - 1 ),
+							 default: Date.new(1990, 1, 1),
+							 date_separator: '%s'),
+							'年 ', '月 ') + '日' %></td> <!-- FIX 生年月日もform-controlにしたい -->
+			</tr>
+			<tr>
+				<td class="reservation__item">性別</td>
+				<td><%= f.radio_button :sex, 1, checked: true %>男性
+					<%= f.radio_button :sex, 2 %>女性</td>
+			</tr>
+			<tr>
+				<td colspan="2"><h2>ご連絡先</h2></td>
+			</tr>
+			<tr>
+				<td class="reservation__item">お電話番号</td>
+				<td><%= f.text_field :phonenumber, placeholder: "-（ハイフン）無しでご記入ください", class: "form-control" %></td>
+			</tr>
+			<tr>
+				<td class="reservation__item">メールアドレス</td>
+				<td><%= f.text_field :email, placeholder: "abc@panda.com", class: "form-control" %></td>
+			</tr>
+			<tr>
+				<td class="reservation__item">メールアドレス（確認用）</td>
+				<td><%= f.text_field :email, placeholder: "abc@panda.com", class: "form-control" %></td>
+			</tr>
+		</table>
 	<% end %>
 
-
-	<h4>診察の参考になりますので、以下の質問にお答えください。</h4>
-	<h4>どのような症状がありますか？</h4>
-		<%= f.text_field :exam_content, class: "form-control" %>
-	<h4>いつ頃から症状がありますか？</h4>
-		<%= f.radio_button :bothering_start_id, 1, checked: true%>今日
-		<%= f.radio_button :bothering_start_id, 2 %>昨日
-		<%= f.radio_button :bothering_start_id, 3 %>２、３日前
-		<%= f.radio_button :bothering_start_id, 4 %>１週間前<br>
-		<%= f.radio_button :bothering_start_id, 5 %>それより前（１週間より前）
-	<h4>今までにかかった・または治療中の病気があればご記入ください。</h4>
-		<%= f.text_field :question_medical_history, class: "form-control" %>
-	<h4>その他、事前にお伝えしたい内容がございましたらご記入ください。</h4>
-		<%= f.text_field :question_memo, class: "form-control" %>
-	<h4>以下の利用規約をご確認の上、ご同意いただきましたら、<br>
-		同意して次へ」をクリックしくしてお進みください</h4>
-		<span>texttext</span><br>
-		<%= link_to "戻る", :back, class: "btn btn-default" %>
-		<%= f.submit "同意して次へ", class: "btn btn-success" %>
-<% end %>
-</div>
-</div>
+	<div class="reservation__question">
+		<h2>診察の参考になりますので、以下の質問にお答えください。</h2>
+		<h3>どのような症状がありますか？</h3>
+			<%= f.text_area :exam_content, class: "form-control form" %>
+		<h3>いつ頃から症状がありますか？</h3>
+			<div class="radio__button__box">
+			<div class="radio__button" >
+				<%= f.radio_button :bothering_start_id, 1, checked: true %>今日</div>
+			<div class="radio__button" >
+				<%= f.radio_button :bothering_start_id, 2 %>昨日</div>
+			<div class="radio__button" >
+				<%= f.radio_button :bothering_start_id, 3 %>２、３日前</div>
+			<div class="radio__button" >
+				<%= f.radio_button :bothering_start_id, 4 %>１週間前</div>
+				<%= f.radio_button :bothering_start_id, 5 %>それより前（１週間より前）
+			</div>
+		<h3>今までにかかった・または治療中の病気があればご記入ください。</h3>
+			<%= f.text_area :question_medical_history, class: "form-control form" %>
+		<h3>その他、事前にお伝えしたい内容がございましたらご記入ください。</h3>
+			<%= f.text_area :question_memo, class: "form-control form" %>
+		<h3>以下の利用規約をご確認の上、ご同意いただきましたら、<br>
+			同意して次へ」をクリックしくしてお進みください</h3>
+			<span>texttext</span><br>
+			<%= link_to "戻る", :back, class: "back__button" %>
+			<%= f.submit "同意して次へ", class: "next__button" %>
+	</div>
+	<% end %>
+	</div>
+	</div>
 

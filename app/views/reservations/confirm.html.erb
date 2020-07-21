@@ -2,36 +2,40 @@
 	<%= render "homes/navbar" %>
 </div>
 <div class="row">
-	<h2 class="col text-center">初診予約ページ</h2>
-	<div class="layer col text-center">（プログレスバーの予定）</div>
+	<h2 class="page__title text-center col">初診予約ページ</h2>
+	<div class="text-center col">（プログレスバーの予定）</div>
 </div>
 
 <div class="row">
-	<div class="col-md-8 reserve-text text-center form-group">
-	<h2>ご予約の確認</h2>
-	<table>
+	<div class="col-md-2"></div>
+	<div class="reservation_textbox text-center col-md-8 form-group">
+	<table class="reservation__table">
 		<tr>
-			<td>診察日時：</td>
+			<td colspan="2"><h2>ご予約の確認</h2></td>
+		</tr>
+		<tr>
+			<td class="reservation__item">診察日時</td>
 			<td><%= session[:pickadate]["date"] %>　<%= session[:pickadate]["time"] %></td>
 		</tr>
-	</table>
-	<h4>患者様情報</h4>
-	<% if patient_signed_in? %>
-		<table>
 		<tr>
-			<td>診察券番号：</td>
+			<td colspan="2"><h2>患者様情報</h2></td>
+		</tr>
+
+		<% if patient_signed_in? %>
+		<tr>
+			<td class="reservation__item">診察券番号</td>
 			<td><%= current_patient.membership_number %></td>
 		</tr>
 		<tr>
-			<td>氏名（カナ）：</td>
+			<td class="reservation__item">氏名（カナ）</td>
 			<td><%= current_patient.name %>（<%= current_patient.name_kana %>）</td>
 		</tr>
 		<tr>
-			<td>生年月日：</td>
+			<td class="reservation__item">生年月日</td>
 			<td><%= current_patient.birthday %></td>
 		</tr>
 		<tr>
-			<td>性別：</td>
+			<td class="reservation__item">性別</td>
 			<td><% if current_patient.sex = 1 %>
 				  <span>男性</span>
 				<% elsif current_patient.sex = 2 %>
@@ -40,32 +44,31 @@
 			</td>
 		</tr>
 		<tr>
-			<td>お電話番号：</td>
+			<td class="reservation__item">お電話番号</td>
 			<td><%= current_patient.phonenumber %></td>
 		</tr>
 		<tr>
-			<td>メールアドレス：</td>
+			<td class="reservation__item">メールアドレス</td>
 			<td><%= current_patient.email %></td>
 		</tr>
-	</table>
+
 	<% else %>
-	<table>
 		<tr>
-			<td>氏名：</td>
+			<td class="reservation__item">氏名</td>
 			<td><%= session[:reservation]["name"] %></td>
 		</tr>
 		<tr>
-			<td>氏名（かな）：</td>
+			<td class="reservation__item">氏名（かな）</td>
 			<td><%= session[:reservation]["name_kana"] %></td>
 		</tr>
 		<tr>
-			<td>生年月日：</td>
+			<td class="reservation__item">生年月日</td>
 			<td><%= session[:reservation]["birthday(1i)"] %>年
 				<%= session[:reservation]["birthday(2i)"] %>月
 				<%= session[:reservation]["birthday(3i)"] %>日</td>
 		</tr>
 		<tr>
-			<td>性別：</td>
+			<td class="reservation__item">性別</td>
 			<td><% if session[:reservation]["sex"] = 1 %>
 				<span>男</span>
 				<% elsif session[:reservation]["sex"] = 2 %>
@@ -73,25 +76,26 @@
 				<% end %>
 			</td>
 		</tr>
-	</table>
 
-	<h4>ご連絡先</h4>
-	<table>
 		<tr>
-			<td>お電話番号：</td>
+			<td colspan="2"><h2>ご連絡先</h2></td>
+		</tr>
+		<tr>
+			<td class="reservation__item">お電話番号</td>
 			<td><%= session[:reservation]["phonenumber"] %></td>
 		</tr>
 		<tr>
-			<td>メールアドレス：</td>
+			<td class="reservation__item">メールアドレス</td>
 			<td><%= session[:reservation]["email"] %></td>
 		</tr>
-	</table>
 	<% end %>
+	</table>
 
-	<h4>質問のご回答</h4>
-	<h4>どのような症状がありますか？</h4>
+
+	<h2 class="reservation__title">質問のご回答</h2>
+	<h3>どのような症状がありますか？</h3>
 		<%= session[:reservation]["exam_content"] %>
-	<h4>いつ頃から症状がありますか？</h4>
+	<h3>いつ頃から症状がありますか？</h3>
 		<% if session[:reservation]["question_when"] == "1" %>
 			<p>今日</p>
 		<% elsif session[:reservation]["question_when"] == "2" %>
@@ -104,12 +108,15 @@
 			<p>それより前（１週間より前）</p>
 		<% end %>
 
-	<h4>今までにかかった・または治療中の病気があればご記入ください。</h4>
+	<h3>今までにかかった・または治療中の病気があればご記入ください。</h3>
 		<%= session[:reservation]["question_medical_history"] %>
-	<h4>その他、事前にお伝えしたい内容がございましたらご記入ください。</h4>
+	<h3>その他、事前にお伝えしたい内容がございましたらご記入ください。</h3>
 		<%= session[:reservation]["question_memo"] %><br>
+	</div>
+</div>
 
-	<%= link_to "戻る", :back, class: "btn btn-default" %>
-	<%= link_to "予約を確定する", reservations_path, method: :post, class: "btn btn-success" %>
+<div class="row">
+	<%= link_to "戻る", :back, class: "back__button" %>
+	<%= link_to "予約を確定する", reservations_path, method: :post, class: "next__button" %>
 </div>
 </div>
