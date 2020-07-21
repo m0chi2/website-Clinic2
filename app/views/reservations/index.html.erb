@@ -11,24 +11,34 @@
 <div class="row">
 	<%= render "homes/navbar" %>
 </div>
+<h1 class="page__title text-center">初診予約ページ</h1>
+<div class="text-center">（プログレスバーの予定）</div>
+<div class="reserve__textbox text-center row">
+	<p>インターネットから<span>診察のお申し込み</span>ができるサービスです。<br>
+	   ご希望日を選択してください。</p>
+	</div>
 
 <div class="row">
-	<h2 class="col text-center">初診予約ページ</h2>
-	<div class="layer col-8 text-center">（プログレスバーの予定）</div>
-	<div class="col-8 reserve-text text-center">
-		<p>インターネットから初診受診のお申し込みができるサービスです。<br>
-		   ご希望日を選択してください。</p>
+	<div class="pickadate__box">
+		<div class="col-md-1"></div>
+	<div class="col-md-10">
+		<table class="reservation__table">
+			<tr>
+			<%= form_for @pickadate, url: new_reservation_path(@pickadate) do |f| %>
+			<td class="pull-right">予約希望日：</td>
+			<td><%= f.text_field :date, placeholder: "こちらを押してください", id: "datepicker" %></td>
+			</tr>
+			<tr>
+			<td>予約希望時間：</td>
+			<td><%= f.text_field :time, placeholder: "こちらを押してください", id: "timepicker" %></td>
+			</tr>
+			<tr>
+			<th colspan="2"><div class="next__button__wrapper"><%= f.submit "次へ進む", class: "next__button" %></div></th>
+			<% end %>
+			</tr>
+		</table>
+	</div>
 	</div>
 </div>
 
-<div class="row">
-	<div class="col-2"></div>
-	<div class="col-8">
-		<%= form_for @pickadate, url: new_reservation_path(@pickadate) do |f| %>
-		<p>予約希望日：<%= f.text_field :date, placeholder: "こちらを押してください", id: "datepicker" %></p>
-		<p>予約希望時間：<%= f.text_field :time, placeholder: "こちらを押してください", id: "timepicker" %></p>
-		<%= f.submit "次へ進む", class: "btn btn-success" %>
-		<% end %>
-	</div>
-</div>
 

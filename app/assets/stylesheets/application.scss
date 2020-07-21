@@ -64,10 +64,6 @@ header .navbar {
 .topbox:hover {
 	background: rgba(255,2255,255, .5);
 }
-.reserve-text {
-	text-align: center;
-}
-
 
 #navwrap {
 	width: 100%;
@@ -118,8 +114,8 @@ li .title:before {
 }
 
 li .title:hover:before {
-  top: -webkit-calc(100% - 3px);
-  top: calc(100% - 3px);
+	top: -webkit-calc(100% - 3px);
+	top: calc(100% - 3px);
 }
 .main-nav li:hover {
 	height: 100%;
@@ -149,10 +145,11 @@ li .title:hover:before {
 	border-collapse: collapse;
 	background-color: rgba(255,255,255,0.3);
 	height: 40%;
-}
-
-.openinghours-table th {
-	border-top: 1px solid #A28C63;
+	th {
+		border-top: 1px solid #A28C63;
+		font-weight: normal;
+	    background-color: #C7BAA2;
+	}
 }
 
 .openinghours-table th, .openinghours-table td {
@@ -161,23 +158,73 @@ li .title:hover:before {
 	border-bottom: 1px solid #A28C63;
 }
 
-.openinghours-table th {
-  font-weight: normal;
-}
 
 .openinghours-table th.sat {
-  color: #3db2da;
+  	color: #3db2da;
 }
 
 .openinghours-table th.sun {
-  color: #e66a6a;
+  	color: #e66a6a;
 }
 
 .page__title {
-	margin: 40px;
+	margin: 60px auto;
+	padding-bottom: 30px;
+	width: 70%;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 .about__box {
 	display: flex;
+	width: 70%;
+	margin: auto;
+	margin-bottom: 5%;
+	padding-bottom: 5%;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.about__button {
+	margin: 20px;
+	padding: 5px;
+}
+.sample__images{
+	display: flex;
+	padding: 3% 0;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+.sample__image__box {
+	width: 250px;
+	height: 150px;
+	background-size: contain;
+	box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+}
+.img-about1 {
+	background-image: url("about1.jpg");
+}
+.img-about2 {
+	background-image: url("about2.jpg");
+}
+.img-about3 {
+	background-image: url("about3.jpg");
+}
+.img-exam1 {
+	background-image: url("about3.jpg");
+}
+.img-exam2 {
+	background-image: url("about3.jpg");
+}
+.img-exam3 {
+	background-image: url("about3.jpg");
+}
+.img-exam4 {
+	background-image: url("exam4.jpg");
+	width: 300px;
+	height: 200px;
+}
+.img-exam5 {
+	background-image: url("exam5.jpg");
+	background-repeat: no-repeat;
+	width: 300px;
+	height: 200px;
 }
 
 .profile__image {
@@ -187,4 +234,52 @@ li .title:hover:before {
 	background-size: cover;
 	background-position: bottom center;
 	box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+}
+.profile__text {
+	margin-left: 3%;
+	h2 {
+	color: #67c5ff;
+	font-weight: bold;
+	}
+}
+.access__text h3 {
+	color: #67c5ff;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.pickadate__box {
+	width: 70%;
+	height: 200px;
+	margin: auto;
+	margin-bottom: 5%;
+	padding-bottom: 5%;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.next__button {
+	background-color: pink;
+	margin: 20px;
+}
+
+.next__button__wrapper {
+	text-align: center;
+}
+.reserve__textbox {
+	text-align: center;
+	margin-bottom: 15px;
+	span {
+		text-decoration: underline;
+		text-decoration-color: #67c5ff;
+		font-weight: bold;
+	}
+}
+.reservation__table {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	 -webkit-justify-content: center;
+ 	justify-content: center;
+	td {
+		padding: 10px;
+	}
 }
