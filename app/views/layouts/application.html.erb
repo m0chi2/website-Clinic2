@@ -7,29 +7,29 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
   </head>
-  <div class="wrap">
+
   <header>
     <div class="container">
-      <div class="row row-center">
+      <div class="row navbar">
       <% if patient_signed_in? %>
-          <%= link_to "LOGO", patients_homes_path %>
+          <%= link_to image_tag("toplogo-white.png", class: "toplogo"), patients_homes_path %>
       <% else %>
-          <%= link_to "/" do %>
-              <h1 class="col-md-2">LOGO</h1>
-          <% end %>
-          <%= link_to reservations_path, class: "btn btn-default col-md-2" do %>
-            <span>初めてのご予約は<br>
+          <%= link_to image_tag("toplogo-white.png", class: "toplogo pull-left"), "/" %>
+          <div class="topbutton">
+              <%= link_to reservations_path, class:"topbox reserve-text" do %>
+                  <span>初めてのご予約は<br>
                   こちら</span>
-          <% end %>
+              <% end %>
 
-          <div class="information col-md-3 pull-right">
-            <p>お気軽にお問い合いわせください<br>
-              <%= link_to "お問い合わせフォーム", inquiry_path %><br>
-              <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
-              電話： XXXX - XX - XXXX</p>
-         </div>
+              <div class="topbox">
+              <p>お気軽にお問い合いわせください<br>
+                  <%= link_to "お問い合わせフォーム", inquiry_path %><br>
+                  <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+                  電話： XXXX - XX - XXXX</p>
+              </div>
+        </div>
       <% end %>
     </div>
     </div>
@@ -40,7 +40,8 @@
   </body>
 
   <footer>
-    <p class="text-center", style= "color: #ffffff" >©︎ Panda Orthopedics Clinic</p>
+    <p class="text-center", style= "color: #ffffff" >
+      ©︎ Panda Orthopedics Clinic</p>
   </footer>
-</div>
+
 </html>
