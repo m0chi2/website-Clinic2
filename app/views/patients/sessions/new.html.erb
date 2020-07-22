@@ -1,39 +1,42 @@
 <div class="row">
-  <%= render "homes/navbar" %>
-</div>
-
-<div class="row">
-  <h2 class="col text-center">会員ページ</h2>
-  <div class="col-8 reserve-text text-center">
-    <p>当院を受診いただいた方に、会員ページをご用意しています。<br>
-      【会員ページでできること】<br>
-      ・ 次回診察予約の確認<br>
-      ・ 気になった症状の記録を残す<br>
-       </p>
+  <div class="text-center">
+    <h2 class="page__title">会員ページ</h2>
+    <p>当院を受診いただいた方に、会員ページをご用意しています。</p>
+  </div>
+  <div class="col-md-2"></div>
+  <div class="col-md-4">
+    <div class="patient__session__box">
+    <p class="text-center">【会員ページでできること】</p><br>
+      <ul>
+        <li>次回診察予約の確認</li>
+        <li>気になった症状の記録を残す</li>
+      </ul>
+    </div>
     <%= link_to "会員ページについての詳細はこちら", "/" %>
   </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-group col-md-4">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :メールアドレス %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
   </div>
 
   <div class="field">
     <%= f.label :パスワード %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
     <div class="field">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :ログイン情報を保持する %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "会員ページへ進む", class: "btn btn-default" %>
-  </div>
+    <%= f.submit "会員ページへ進む" %><br><br>
+    <%= render "patients/shared/links" %>
 <% end %>
-
-<%= render "patients/shared/links" %>
+</div>
+<div class="about__box"></div>
+</div>

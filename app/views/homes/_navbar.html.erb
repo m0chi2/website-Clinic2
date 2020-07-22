@@ -1,31 +1,37 @@
 <% if patient_signed_in? %>
-<nav class="navbar">
-	<div class="navtext col-md-2">
-		<p class="text-center">大きな文字で<br>
-		   メニューを見る</p>
-	</div>
-	<%= link_to posts_path, class: "btn btn-success" do %>
-		<span class="glyphicon glyphicon-home" aria-hidden="true"></span><br>
-		<span>気になる記録を残す</span>
-	<% end %>
-	<%= link_to patients_homes_reservation_path, class: "btn btn-success" do %>
-		<span class="glyphicon glyphicon-comment" aria-hidden="true"></span><br>
-		<span>予約を確認する</span>
-	<% end %>
-	<%= link_to reservations_path, class: "btn btn-success" do %>
-		<span class="glyphicon glyphicon-comment" aria-hidden="true"></span><br>
-		<span>新規予約作成</span>
-	<% end %>
-	<%= link_to destroy_patient_session_path, method: :delete, class: "btn btn-success" do %>
-		<span class="glyphicon glyphicon-comment" aria-hidden="true"></span><br>
-		<span>退出する</span>
-	<% end %>
+<nav id="main__patient__navbar__wrap">
+	<ul class="main__nav main__patient__nav">
+	<li class="leftside__li">
+		<span class="text-center">大きな文字で<br>
+	   	メニューを見る</span>
+	</li>
+	<li><%= link_to posts_path do %>
+			<span class="glyphicon glyphicon-home" aria-hidden="true"></span><br>
+			<span class="title">気になる記録を残す</span>
+		<% end %>
+	</li>
+	<li><%= link_to patients_homes_reservation_path do %>
+			<span class="glyphicon glyphicon-comment" aria-hidden="true"></span><br>
+			<span class="title">予約を確認する</span>
+		<% end %>
+	</li>
+	<li><%= link_to reservations_path do %>
+			<span class="glyphicon glyphicon-comment" aria-hidden="true"></span><br>
+			<span class="title">新規予約作成</span>
+		<% end %>
+	</li>
+	<li><%= link_to destroy_patient_session_path, method: :delete do %>
+			<span class="glyphicon glyphicon-comment" aria-hidden="true"></span><br>
+			<span class="title">退出する</span>
+		<% end %>
+	</li>
+	</ul>
 </nav>
 
 <% else %>
-<nav id="navwrap">
-	<ul class="main-nav">
-		<li>
+<nav id="main__navbar__wrap">
+	<ul class="main__nav">
+		<li class="leftside__li">
 			大きな文字で<br>
 		    メニューを見る
 		</li>

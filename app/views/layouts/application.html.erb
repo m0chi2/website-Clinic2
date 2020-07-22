@@ -8,31 +8,37 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/<%= ENV['FONTAWESOME_KIT'] %>.js" crossorigin="anonymous"></script>
   </head>
 
+<div class="navbar__top__border"></div>
   <header>
     <div class="container">
       <div class="row navbar">
       <% if patient_signed_in? %>
-          <%= link_to image_tag("toplogo-white.png", class: "toplogo"), patients_homes_path %>
+          <%= link_to image_tag("toplogo-white.png", class: "toplogo pull-left"), patients_homes_path %>
+          <h3 id= "patient__topvar__mark">会員ページ</h3>
+
       <% else %>
           <%= link_to image_tag("toplogo-white.png", class: "toplogo pull-left"), "/" %>
-          <div class="topbutton">
-              <%= link_to reservations_path, class:"topbox reserve-text" do %>
+          <div class=" btn__topbar__wrap">
+              <%= link_to reservations_path, class:"btn__topbar__radius__l topbox" do %>
                   <span>初めてのご予約は<br>
                   こちら</span>
               <% end %>
 
-              <div class="topbox">
-              <p>お気軽にお問い合いわせください<br>
+              <div class="topbox btn__topbar__radius__r">
+                  <span class="text__top__inquiry">お気軽にお問い合いわせください</span><br>
                   <%= link_to "お問い合わせフォーム", inquiry_path %><br>
-                  <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+                  <p  class="btn__top__inquiry">
+                  <span class="glyphicon glyphicon-earphone" aria-hidden="true" ></span>
                   電話： XXXX - XX - XXXX</p>
               </div>
         </div>
       <% end %>
     </div>
     </div>
+    <%= render "homes/navbar" %>
   </header>
 
   <body>

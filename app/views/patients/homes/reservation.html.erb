@@ -1,6 +1,5 @@
+<div class="container">
 <div class="row">
-	<%= render "homes/navbar" %>
-</div>
 <h4>予約一覧</h4>
 
 <div class="col-md-8">
@@ -11,6 +10,7 @@
 			<th>予約予定日</th>
 			<th>症状の内容</th>
 			<th>申込日</th>
+		</tr>
 		<tr>
 			<td><%= reservation.reservation_date %></td>
 			<td><%= reservation.exam_content %></td>
@@ -19,4 +19,6 @@
 		<% end %>
 	</table>
 <% end %>
+</div>
+</div>
 </div>
