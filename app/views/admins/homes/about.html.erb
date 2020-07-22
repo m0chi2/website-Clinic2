@@ -1,0 +1,27 @@
+<div class="row">
+	<%= render "admins/navbar" %>
+</div>
+<div class="row">
+	<%= render "homes/navbar" %>
+</div>
+
+<div class="row">
+	<h2 class="col text-center">管理者情報</h2>
+		<div class="col-md-1"></div>
+		<div class="col-md-4">
+			<table class="table">
+				<tr>
+					<td>管理者ID</td>
+					<td>XXXXXX</td>
+				</tr>
+				<tr>
+					<td>管理者氏名</td>
+					<td><%= current_admin.name %></td>
+				</tr>
+				<tr>
+					<td>管理者氏名（かな）</td>
+					<td><%= current_admin.name_kana %></td>
+				</tr>
+			</table>
+		</div>
+</div>

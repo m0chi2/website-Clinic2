@@ -1,0 +1,36 @@
+<div class="row">
+	<%= render "homes/navbar" %>
+</div>
+<div class="row">
+<div class="col-1"></div>
+<div class="col-8">
+	<h2>予約の新規作成</h2>
+	<table>
+	<%= form_for @pickadate, url: new_reservation_path(@pickadate) do |f| %>
+				<tr>
+					<td>診察券番号検索</td>
+					<td><%= @patient.membership_number_id %></td>
+				</tr>
+				<tr>
+					<td>患者氏名</td>
+					<td><%= @patient.name %></td>
+				</tr>
+				<tr>
+					<td>生年月日</td>
+					<td><%= @patient.name_kana %></td>
+				</tr>
+				<tr>
+					<td>診察予約日</td>
+					<td><%= session[:date] %></td>
+				</tr>
+				<tr>
+					<td>診察予約時間</td>
+					<td><%= session[:time] %></td>
+				</tr>
+				<tr>
+					<td><%= f.submit "予約確定", class:"btn btn-success" %></td>
+				</tr>
+			<% end %>
+	</table>
+</div>
+</div>

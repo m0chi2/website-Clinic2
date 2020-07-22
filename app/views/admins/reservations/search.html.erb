@@ -1,0 +1,26 @@
+<div class="row">
+	<%= render "homes/navbar" %>
+</div>
+
+<div class="row">
+	<h2 class="col text-center">予約検索</h2>
+		<div class="col-md-1"></div>
+		<div class="col-md-8">
+			<% @reservations.each do |reservation|  %>
+			<table class="table">
+				<tr>
+					<th>診察券番号</th>
+					<th>患者氏氏名</th>
+					<th>患者氏名（かな）</th>
+				</tr>
+				<tr>
+					<td>search bar</td>
+					<td></td>
+					<td></td>
+					<td><%= reservation.birthday.strftime("%Y/%m/%d") %></td>
+					<td><%= reservation.exam_content %></td>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+</div>
