@@ -1,11 +1,31 @@
-<h4>気になる記録</h4>
-<%= form_for(@post, url: posts_path) do |f| %>
-	<%= f.label :bothering_start_id, "日時" %>
-	<%= f.select :bothering_start_id, options_from_collection_for_select(BotheringStart.all, :id, :name), prompt: "選択してください" %><br>
-	<%= f.label :bothering_genre_id, "分類" %>
-	<%= f.select :bothering_genre_id, options_from_collection_for_select(BotheringGenre.all, :id, :name), prompt: "選択してください" %><br>
-	<%= f.label :content, "詳細内容" %><br>
-	<%= f.text_area :content %><br>
-
-	<%= f.submit "気になる記録を記録する" %>
-<% end %>
+<div class="container">
+<div class="row">
+<h1 class="page__title text-center">気になる記録</h1>
+</div>
+<div class="row">
+	<div class="col-md-3"></div>
+	<div class="col-md-7">
+		<table class="table__kininaru__position form-group">
+		<%= form_for(@post, url: posts_path) do |f| %>
+			<tr>
+				<td><%= f.label :bothering_start_id, "日時", class: "form__label__kininaru" %>
+				<%= f.select :bothering_start_id, options_from_collection_for_select(BotheringStart.all, :id, :name), prompt: "選択してください", class: "form-control" %></td>
+			</tr>
+			<tr>
+				<td><%= f.label :bothering_genre_id, "分類", class: "form__label__kininaru" %>
+				<%= f.select :bothering_genre_id, options_from_collection_for_select(BotheringGenre.all, :id, :name), prompt: "選択してください", class: "form-control" %></td>
+			</tr>
+			<tr>
+				<td colspan="2"><%= f.label :content, "詳細内容", class: "form__label__kininaru" %></td>
+			</tr>
+			<tr>
+				<td colspan="2"><%= f.text_area :content, class: "form-control content__area" %></td>
+			</tr>
+			<tr>
+				<td colspan="2"><%= f.submit "気になる記録を記録する", class: "btn__kininaru btn__kininaru__position" %></td>
+			</tr>
+			<% end %>
+		</table>
+	</div>
+</div>
+</div>

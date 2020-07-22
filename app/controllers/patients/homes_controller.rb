@@ -7,5 +7,6 @@ class Patients::HomesController < ApplicationController
 
 	def reservation
 		@reservations = Reservation.where(membership_number: current_patient.membership_number)
+		@reservations = @reservations.page(params[:page]).reverse_order
 	end
 end

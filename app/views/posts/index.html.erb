@@ -17,6 +17,7 @@
 				<div class="Bothering__wrap">
 					<span class= "BotheringStartId__<%= post.bothering_start_id.to_s %>" >
 					<i class="far fa-calendar-alt"></i>
+					<span>いつ：</span>
 					<%= BotheringStart.find(post.bothering_start_id).name %></span><br>
 					<span class="icon__BotheringGenre BotheringGenreId__<%= post.bothering_genre_id %>" >
 					<%= BotheringGenre.find(post.bothering_genre_id).name %></span>
@@ -31,6 +32,7 @@
 		</tr>
 	</table>
 	<% end %>
+	<%= paginate @posts %>
 	</div>
 </div>
 </div>

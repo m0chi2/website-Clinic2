@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.where(patient_id: current_patient.id)
+    @posts = Post.where(patient_id: current_patient.id).page(params[:page]).reverse_order
   end
 
   def new
@@ -12,15 +12,6 @@ class PostsController < ApplicationController
     @post.patient_id = current_patient.id
     @post.save
     redirect_to posts_path
-  end
-
-  def show
-  end
-
-  def edit
-  end
-
-  def destroy
   end
 
   def params_post
