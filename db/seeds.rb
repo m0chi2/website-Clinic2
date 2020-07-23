@@ -19,14 +19,10 @@ BotheringGenre.create(name: "改善した")
 BotheringGenre.create(name: "次回聞きたい")
 BotheringGenre.create(name: "伝えておきたい")
 
-Admin.create(email: "test@example.com")
-Admin.create(encrypted_password: "abc000000")
-Admin.create(reset_password_token: nil)
-Admin.create(reset_password_sent_at: nil)
-Admin.create(remember_created_at: nil)
-Admin.create(login_id: "adminuser")
-Admin.create(name: "熊猫たんたん")
-Admin.create(name_kana: "パンダタンタン")
-Admin.create(created_at: "2020-07-19 05:24:37")
-Admin.create(updated_at: "2020-07-19 05:24:37")
-
+Admin.create(email: "test@example.com",
+			 password: "abc000000",
+			 login_id: "adminuser",
+			 name: "熊猫たんたん",
+			 name_kana: "パンダタンタン",
+			 created_at: "2020-07-19 05:24:37",
+			 updated_at: "2020-07-19 05:24:37")

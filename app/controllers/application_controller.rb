@@ -5,8 +5,8 @@ protected
 	def after_sign_in_path_for(resource_or_scope)
 		if resource_or_scope.is_a?(Patient)
 			patients_homes_path
-		elsif resource_or_scope.is_a?(AdminUser)
-			root_path
+		elsif resource_or_scope.is_a?(Admin)
+			admins_path
 		end
 	end
 

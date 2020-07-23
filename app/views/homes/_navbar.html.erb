@@ -28,6 +28,41 @@
 	</ul>
 </nav>
 
+<% elsif admin_signed_in? %>
+<nav id="main__admin__navbar__wrap"> 
+	<ul class="main__nav main__patient__nav">
+	<li class="leftside__li">
+		<span class="text-center">大きな文字で<br>
+	   	メニューを見る</span>
+	</li>
+	<li><%= link_to posts_path do %>
+			<span class="glyphicon glyphicon-home" aria-hidden="true"></span><br>
+			<span class="title">会員一覧</span>
+		<% end %>
+	</li>
+	<li><%= link_to patients_homes_reservation_path do %>
+			<span class="glyphicon glyphicon-comment" aria-hidden="true"></span><br>
+			<span class="title">本日の予約一覧</span>
+		<% end %>
+	</li>
+	<li><%= link_to reservations_path do %>
+			<span class="glyphicon glyphicon-comment" aria-hidden="true"></span><br>
+			<span class="title">予約一覧</span>
+		<% end %>
+	</li>
+	<li><%= link_to destroy_patient_session_path, method: :delete do %>
+			<span class="glyphicon glyphicon-comment" aria-hidden="true"></span><br>
+			<span class="title">予約検索</span>
+		<% end %>
+	</li>
+	<li><%= link_to destroy_patient_session_path, method: :delete do %>
+			<span class="glyphicon glyphicon-comment" aria-hidden="true"></span><br>
+			<span class="title">予約の新規作成</span>
+		<% end %>
+	</li>
+	</ul>
+</nav>
+
 <% else %>
 <nav id="main__navbar__wrap">
 	<ul class="main__nav">

@@ -144,11 +144,7 @@ p {
 	height: 100%;
 	width: 20%;
 	text-align :center;
-  	border-right: solid 2px #f1f1f1;
 	transition: .4s;
-}
-.main__nav .leftside__li {
-	border-left: solid 2px #f1f1f1;
 }
 li .title {
   position: relative;
@@ -524,4 +520,17 @@ li .title:hover:before {
 	background-size: center;
 	background-position: center;
 	font-size: 2.3rem;
+}
+#main__admin__navbar__wrap {
+	width: 100%;
+	height: 120px;
+	background-color: rgba(0,0,0,0.3);
+	backdrop-filter: blur(10px);
+	.main__nav li {
+		width: 16.66666666666%;
+		border-left: solid 2px #000;
+		.leftside__li {
+			border-left: solid 2px #000;
+		}
+	}
 }
