@@ -2,8 +2,13 @@
 <nav id="main__patient__navbar__wrap">
 	<ul class="main__nav main__patient__nav">
 	<li class="leftside__li">
-		<span class="text-center">大きな文字で<br>
-	   	メニューを見る</span>
+		<%= link_to "#", class: "menu-trigger" do %>
+	        <span></span>
+	        <span>大きな文字で<br>
+	            　メニューを見る
+	        </span>
+	        <span></span>
+		<% end %>
 	</li>
 	<li><%= link_to posts_path do %>
 			<i class="icon__size fas fa-pen-fancy"></i><br>
@@ -32,8 +37,13 @@
 <nav id="main__admin__navbar__wrap">
 	<ul class="main__nav main__admin__nav">
 	<li class="leftside__li">
-		<span class="text-center">大きな文字で<br>
-	   	メニューを見る</span>
+	    <%= link_to "#", class: "menu-trigger" do %>
+	        <span></span>
+	        <span class="admin__mainnav__text">大きな文字で<br>
+	            　メニューを見る
+	        </span>
+	        <span></span>
+	    <% end %>
 	</li>
 	<li><%= link_to admins_reservations_all_path do %>
 			<span class="glyphicon glyphicon-comment" aria-hidden="true"></span><br>
@@ -66,9 +76,14 @@
 <% else %>
 <nav id="main__navbar__wrap">
 	<ul class="main__nav">
-		<li class="leftside__li">
-			大きな文字で<br>
-		    メニューを見る
+		<li class="leftside__li" id="hm-icon">
+		    <%= link_to "#", class: "menu-trigger" do %>
+		        <span></span>
+		        <span>大きな文字で<br>
+		            　メニューを見る
+		        </span>
+		        <span></span>
+		    <% end %>
 		</li>
 		<li><%= link_to "/about" do %>
 				<i class="icon__size fas fa-clinic-medical"></i><br>
@@ -93,3 +108,31 @@
 	</ul>
 </nav>
 <% end %>
+<!-- フルスクリーンメニュー -->
+<div id="sp-menu">
+	<% if patient_signed_in? %>
+		<ul>
+	        <li><a href="/about">医院のご案内</a></li>
+	        <li><a href="/exams">診察のご案内</a></li>
+	        <li><a href="/access">交通案内</a></li>
+	        <li><a href="/patients/sign_in">会員ページ</a></li>
+	        <li><a href="/patients/homes">もとに戻る</a></li>
+    	</ul>
+	<% elsif admin_signed_in? %>
+	    <ul>
+	        <li><a href="/about">気になる記録を残す</a></li>
+	        <li><a href="/exams">予約を確認する</a></li>
+	        <li><a href="/access">新規予約作成</a></li>
+	        <li><a href="/patients/sign_in">退出する</a></li>
+        	<li><a href="/admins">もとに戻る</a></li>
+    	</ul>
+	<% else %>
+	    <ul>
+	        <li><a href="/about">管理者情報</a></li>
+	        <li><a href="/exams">会員一覧</a></li>
+	        <li><a href="/access">本日の予約一覧</a></li>
+	        <li><a href="/patients/sign_in">予約の新規作成</a></li>
+	        <li><a href="/">もとに戻る</a></li>
+	    </ul>
+    <% end %>
+</div>

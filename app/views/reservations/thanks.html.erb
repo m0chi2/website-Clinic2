@@ -9,17 +9,13 @@
 			気をつけてお越しくださいませ。</p>
 
 	<% if patient_signed_in? %>
-		<%= link_to patients_homes_path, class: "next__button" do %>
+		<%= link_to patients_homes_path, class: "btn__next" do %>
 			<h2>最初のページへ戻る</h2>
 		<% end %>
 	<% else %>
-		<%= link_to "/", class: "next__button" do %>
+		<%= link_to "/", class: "btn__next" do %>
 			<h2>最初のページへ戻る</h2>
 		<% end %>
 	<% end %>
 	</div>
 </div>
-
-以下、createできてるか確認
-pickadate <%= @pickadates.count %>
-reservation <%= @reservations.count %>

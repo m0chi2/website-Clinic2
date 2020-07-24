@@ -52,6 +52,11 @@ p {
 .navbar__top__border {
 	border-top: solid 10px #f49ca4;
 }
+
+.footer__text {
+	color: #fff;
+	font-size: bold;
+}
 .toplogo {
 	margin-top: 15px;
 }
@@ -59,9 +64,9 @@ p {
 	display: flex;
 	justify-content: flex-end;
 	.reservation__mark {
-	text-align: center;
-	font-size: 3.0rem;
-	padding: 20px 30px 0 30px;
+		text-align: center;
+		font-size: 3.0rem;
+		padding: 28px 30px 0 30px;
 	}
 }
 
@@ -71,17 +76,19 @@ p {
   font-weight: bold;
   text-align: center;
   padding: 8px 10px 5px 10px;
+  text-shadow: 3px 1px 3px #404040;
   text-decoration: none;
   color: #FCE8EA;
-  background: #f49ca4;
-  border-bottom: solid 4px #f49ca4;
+  background-image: linear-gradient(45deg, #FFC107 0%, #fed6e3 0%, #f49ca4 100%);
+  border-bottom: solid 4px #bd6565;
   border-radius: 0 0 15px 15px;
   transition: .4s;
 }
 
 .btn__topbar__radius__l:hover {
-  background: #FCE8EA;
-  color: #f49ca4;
+  background-image: linear-gradient(#fed6e3 0%, #ffaaaa 100%);
+  text-shadow: 3px 1px 3px #fff;
+  color: #404040;
 }
 
 .btn__topbar__radius__r {
@@ -91,15 +98,14 @@ p {
   text-align: center;
   padding: 8px 10px 5px 10px;
   text-decoration: none;
-  color: #f49ca4;
-  background: #FCE8EA;
+  color: #404040;
+  background-image: linear-gradient(45deg, #FFC107 0%, #fed6e3 0%, #f49ca4 100%);
   border-bottom: solid 4px #f49ca4;
   border-radius: 0 0 15px 15px;
   transition: .4s;
 }
 .btn__topbar__radius__r:hover {
-  background: #f49ca4;
-  color: #FCE8EA;
+  background-image: linear-gradient(#fed6e3 0%, #ffaaaa 100%);
 }
 .text__top__inquiry {
 	font-size: 1.6rem;
@@ -314,7 +320,7 @@ li .title:hover:before {
 	padding-bottom: 15%;
 	border-bottom: 1px solid rgba(0,0,0,0.2);
 }
-.next__button {
+.btn__next {
 	display: inline-block;
   	padding: 10px 23px;
   	margin: 20px;
@@ -323,25 +329,25 @@ li .title:hover:before {
   	text-decoration: none;
   	border: none;
   	border-radius: 25px;
-  	background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  	background-image: linear-gradient(#fed6e3 0%, #ffaaaa 100%);
   	transition: .4s;
   	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
   	border-bottom: solid 3px #bd6565;
   	overflow: hidden;
 	outline: none;
 }
-.next__button:hover {
-	background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+.btn__next:hover {
+	background-image: linear-gradient(45deg, #FFC107 0%, #fed6e3 0%, #ffbcbc 100%);
 	text-decoration: none;
 }
-.next__button:active {
+.btn__next:active {
   -webkit-transform: translateY(2px);
   transform: translateY(2px);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
   border-bottom: none;
 }
 
-.next__button__wrapper {
+.btn__next__wrapper {
 	text-align: center;
 }
 
@@ -577,7 +583,7 @@ li .title:hover:before {
 	display: flex;
   	justify-content: center;
 }
-.admin__reservation__next__button {
+.admin__reservation__btn__next {
 	text-align: center;
 }
 
@@ -615,14 +621,108 @@ li .title:hover:before {
 	border-radius: 25px;
 	padding: 5px 0;
 }
-.patient__session__wrap {
+.session__wrap {
 	background-color: #F5F5EE;
 	border-radius: 25px;
 	padding: 0 0 30px;
 }
-.patient__session__form {
-	padding: 25px;
+.session__form {
+	padding: 0 25px 25px;
 	.field {
 		margin: 18px 0;
 	}
+}
+
+
+
+
+#hm-icon{
+  top: 20px;
+  z-index: 10;
+}
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+.menu-trigger {
+  position: relative;
+  width: 100%;
+  height: 80px;
+}
+.menu-trigger {
+	span {
+	  position: absolute;
+	  left: 5%;
+	  width: 80%;
+	  height: 4px;
+	  background-color: transparent;
+	  border-radius: 4px;
+	  font-weight: bold;
+	  font-size: 2.4rem;
+	}
+	.admin__mainnav__text {
+	  font-size: 2.0rem;
+	}
+}
+.menu-trigger .menu__text {
+	background-color: #000;
+	font-weight: bold;
+}
+.menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+.menu-trigger span:nth-of-type(2) {
+  top: 8px;
+  background-color: transparent;
+  text-align: center;
+}
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+.menu-trigger.active span:nth-of-type(1) {
+  -webkit-transform: translateY(20px) rotate(-45deg);
+  transform: translateY(55px) rotate(-45deg);
+  background-color: #fff;
+  width: 50px;
+
+}
+.menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.menu-trigger.active span:nth-of-type(3) {
+  -webkit-transform: translateY(-20px) rotate(45deg);
+  transform: translateY(-20px) rotate(45deg);
+  background-color: #fff;
+  width: 50px;
+}
+
+#sp-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #84ccd4;
+  color: #fff;
+  width: 100%;
+  min-height: 100%;
+  display: none;
+  z-index: 9;
+  padding: 50px;
+}
+#sp-menu li {
+  text-align: center;
+  margin-bottom: 30px;
+  list-style: none;
+}
+#sp-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 6.0rem;
+}
+#sp-menu a:hover {
+  background-color: #404040;
+  border-radius: 50px;
+  padding: 10px;
 }

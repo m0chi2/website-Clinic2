@@ -5,7 +5,7 @@
   </div>
   <div class="col-md-2"></div>
   <div class="col-md-4">
-    <div class="patient__session__wrap">
+    <div class="session__wrap">
     <h2 class="text-center icon__patient__session">会員ページでできること</h2><br>
       <ul class="text__patient__session">
         <li>次回診察予約の確認</li>
@@ -15,9 +15,9 @@
   </div>
 
   <div class="form-group col-md-4">
-    <div class="patient__session__wrap">
+    <div class="session__wrap">
     <h2 class="text-center icon__patient__session">ログイン</h2>
-    <div class="patient__session__form">
+    <div class="session__form">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :メールアドレス %><br />
