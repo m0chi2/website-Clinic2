@@ -110,11 +110,7 @@
 		<%= session[:reservation]["question_medical_history"] %>
 	<h3>その他、事前にお伝えしたい内容がございましたらご記入ください。</h3>
 		<%= session[:reservation]["question_memo"] %><br>
-	</div>
-</div>
-
-<div class="row">
-	<%= link_to "戻る", :back, class: "back__button" %>
 	<%= link_to "予約を確定する", reservations_path, method: :post, class: "btn__next" %>
+	</div>
 </div>
 </div>

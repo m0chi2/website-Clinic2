@@ -323,7 +323,7 @@ li .title:hover:before {
 .btn__next {
 	display: inline-block;
   	padding: 10px 23px;
-  	margin: 20px;
+  	margin: 20px auto;
   	color: #FFF;
   	font-size: 3rem;
   	text-decoration: none;
@@ -408,6 +408,13 @@ li .title:hover:before {
 }
 .reservation__table td, .patient__table td {
   border: 10px solid #fff;
+}
+.terms {
+	  width: 450px;
+	  height: 200px;
+	  overflow: scroll;
+	  background-color: #F5F5EE;
+	  margin: auto;
 }
 .radio__button {
 	float: left;
