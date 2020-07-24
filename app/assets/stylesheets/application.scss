@@ -372,7 +372,9 @@ li .title:hover:before {
 		font-weight: bold;
 	}
 }
-.reservation__table, .patient__table {
+.reservation__table,
+.patient__table,
+.admin__about__table {
 	display: -webkit-flex;
 	display: flex;
 	-webkit-align-items: center;
@@ -406,7 +408,9 @@ li .title:hover:before {
 		margin: auto;
 	}
 }
-.reservation__table td, .patient__table td {
+.reservation__table td,
+.patient__table td,
+.admin__about__table td {
   border: 10px solid #fff;
 }
 .terms {

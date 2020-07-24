@@ -45,7 +45,7 @@
 	        <span></span>
 	    <% end %>
 	</li>
-	<li><%= link_to admins_reservations_all_path do %>
+	<li><%= link_to admins_about_path do %>
 			<span class="glyphicon glyphicon-comment" aria-hidden="true"></span><br>
 			<span class="title">管理者情報</span>
 		<% end %>
@@ -85,7 +85,7 @@
 		        <span></span>
 		    <% end %>
 		</li>
-		<li><%= link_to "/about" do %>
+		<li><%= link_to about_path do %>
 				<i class="icon__size fas fa-clinic-medical"></i><br>
 				<span class="title">医院のご案内</span><br>
 			<% end %>
@@ -110,29 +110,30 @@
 <% end %>
 <!-- フルスクリーンメニュー -->
 <div id="sp-menu">
-	<% if patient_signed_in? %>
+	<% if admin_signed_in? %>
 		<ul>
-	        <li><a href="/about">医院のご案内</a></li>
-	        <li><a href="/exams">診察のご案内</a></li>
-	        <li><a href="/access">交通案内</a></li>
-	        <li><a href="/patients/sign_in">会員ページ</a></li>
-	        <li><a href="/patients/homes">もとに戻る</a></li>
-    	</ul>
-	<% elsif admin_signed_in? %>
+	        <li><%= link_to "管理者情報", admins_about_path %></li>
+	        <li><%= link_to "会員一覧", admins_homes_patients_path %></li>
+	        <li><%= link_to "本日の予約一覧", admins_reservations_today_path %></li>
+	        <li><%= link_to "予約一覧", admins_reservations_all_path %></li>
+	        <li><%= link_to "予約の新規作成", new_admins_reservation_path %></li>
+	        <li><%= link_to "もとに戻る", admins_path %></li>
+	    </ul>
+	<% elsif patient_signed_in? %>
 	    <ul>
-	        <li><a href="/about">気になる記録を残す</a></li>
-	        <li><a href="/exams">予約を確認する</a></li>
-	        <li><a href="/access">新規予約作成</a></li>
-	        <li><a href="/patients/sign_in">退出する</a></li>
-        	<li><a href="/admins">もとに戻る</a></li>
+	        <li><%= link_to "気になる記録を残す", posts_path %></li>
+	        <li><%= link_to "予約を確認する", patients_homes_reservation_path %></li>
+	        <li><%= link_to "新規作成", new_admins_reservation_path %>
+	        <li><%= link_to "退出する", destroy_patient_session_path, method: :delete %></li>
+        	<li><%= link_to "もとに戻る", patients_homes_path %></li>
     	</ul>
 	<% else %>
-	    <ul>
-	        <li><a href="/about">管理者情報</a></li>
-	        <li><a href="/exams">会員一覧</a></li>
-	        <li><a href="/access">本日の予約一覧</a></li>
-	        <li><a href="/patients/sign_in">予約の新規作成</a></li>
-	        <li><a href="/">もとに戻る</a></li>
-	    </ul>
+		<ul>
+	        <li><%= link_to "医院のご案内", about_path %></li>
+	        <li><%= link_to "診察のご案内", exams_path %></li>
+	        <li><%= link_to "交通案内", access_path %></li>
+	        <li><%= link_to "会員ページ", new_patient_session_path %></li>
+	        <li><%= link_to "もとに戻る", "/" %></li>
+    	</ul>
     <% end %>
 </div>
