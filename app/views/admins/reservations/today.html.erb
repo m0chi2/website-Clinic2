@@ -1,25 +1,20 @@
-<div class="row">
-	<%= render "homes/navbar" %>
-</div>
-
-<div class="row">
-	<h2 class="col text-center">本日の予約一覧</h2>
-		<div class="col-md-1"></div>
+<div class="container">
+<h1 class="page__title text-center">本日の予約一覧</h1>
+	<div class="row">
+		<div class="col-md-2"></div>
 		<div class="col-md-8">
-			<% @reservations.each do |reservation|  %>
-			<table class="table">
-				<tr>
-					<th>予約希望日</th>
-					<th>予約ステータス</th>
+			<table class="table admin__reservation__table">
+				<tr class="table__background">
+					<th>確認ステータス</th>
 					<th>診察券番号</th>
 					<th>名前</th>
 					<th>生年月日</th>
-					<th>予約内容</th>
+					<th colspan="2">予約内容</th>
 				</tr>
 				<tr>
-					<td><%= reservation.preferred_datentime %></td>
-					<td>予約ステータス</td>
-					<td><% if reservation.membership_number == 0 %>
+					<% @reservations.each do |reservation|  %>
+					<td>✔️</td>
+					<td><% if reservation.membership_number == 0 || nil %>
 							<span>登録無し</span>
 						<% else %>
 							<%= reservation.membership_number %>
@@ -27,9 +22,11 @@
 					</td>
 					<td><%= reservation.name %></td>
 					<td><%= reservation.birthday.strftime("%Y/%m/%d") %></td>
-					<td><%= reservation.exam_content %></td>
+					<td colspan="2"><%= reservation.exam_content %></td>
 				</tr>
 			<% end %>
 		</table>
 	</div>
+	</div>
+	<div class="about__box"></div>
 </div>

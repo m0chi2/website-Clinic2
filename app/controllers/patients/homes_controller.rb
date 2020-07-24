@@ -1,4 +1,5 @@
 class Patients::HomesController < ApplicationController
+	before_action :authenticate_patient!
 	def index
 	end
 

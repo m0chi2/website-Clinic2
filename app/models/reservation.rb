@@ -12,4 +12,5 @@ class Reservation < ApplicationRecord
   def preferred_datentime
  	  return Pickadate.find_by(id: self.pickadate_id).date
   end
+
 end

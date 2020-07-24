@@ -1,4 +1,6 @@
 class Admins::ReservationsController < ApplicationController
+	before_action :authenticate_admin!
+
  def index
  end
 
@@ -7,11 +9,15 @@ class Admins::ReservationsController < ApplicationController
  	@reservation = Reservation.new
 
  	@q = Patient.ransack(params[:q])
- 	@patients = @q.result(distinct: true)
+ 	if params[:q]
+ 		@patients = @q.result(distinct: true)
+ 	else
+ 		@patients = []
+ 	end
  end
 
  def confirm
- 	@patient = Patient.find_by(membership_number_id: params[:membership_number])
+ 	@patient = Patient.find_by(membership_number: params[:membership_number])
  	@pickadate = Pickadate.new(
  		date: params[:date],
  		time: params[:time])
@@ -27,16 +33,13 @@ class Admins::ReservationsController < ApplicationController
  end
 
  def all
-  	@reservations = Reservation.all
+ 	@q = Reservation.ransack(params[:q])
+ 	@reservations = @q.result(distinct: true)
  end
 
  def today
- 	@reservations = Reservation.joins(:pickadate).where(pickadates: {date: Date.current})
+ 	@reservations = Reservation.joins(:pickadate).where(pickadates: {date: Time.current.to_s(:date_jp)})
  end
-
- def search
- end
-
 
  private
  def search_for(model, content)

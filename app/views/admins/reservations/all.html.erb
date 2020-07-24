@@ -1,35 +1,36 @@
-<div class="row">
-	<%= render "homes/navbar" %>
-</div>
-
-<div class="row">
-	<h2 class="col text-center">予約者一覧</h2>
-		<div class="col-md-1"></div>
+<div class="container">
+<div class="search__form__wrap row">
+	<h1 class="page__title text-center col">予約一覧</h1>
+		<div class="col-md-3"></div>
 		<div class="col-md-8">
-			<% @reservations.each do |reservation|  %>
-			<table class="table">
-				<tr>
-					<th>予約希望日</th>
-					<th>予約ステータス</th>
-					<th>診察券番号</th>
-					<th>名前</th>
+			<%= search_form_for(@q, url: admins_reservations_all_path, enforce_utf8: false) do |f| %>
+			 <%= f.label :name_or_name_kana, "氏名（カナも可）から探す" %>
+  			 <%= f.search_field :name_or_name_kana_cont %>
+  			 <%= submit_tag "検索", name: nil %>
+  			 <% end %>
+		</div>
+</div>
+<div class="row">
+		<div class="col">
+			<table class="table admin__reservation__table">
+				<tr class="table__background">
+					<th>予約日</th>
+					<th>患者氏氏名</th>
+					<th>患者氏名（かな）</th>
 					<th>生年月日</th>
 					<th>予約内容</th>
 				</tr>
 				<tr>
-					<td><%= reservation.preferred_datentime %></td>
-					<td>予約ステータス</td>
-					<td><% if reservation.membership_number == 0 %>
-							<span>登録無し</span>
-						<% else %>
-							<%= reservation.membership_number %>
-						<% end %>
-					</td>
-					<td><%= reservation.patients.name %></td>
-					<td><%= reservation.patients.birthday %></td>
+					<% @reservations.each do |reservation|  %>
+					<td><%= reservation.pickadate.date + reservation.pickadate.time %></td>
+					<td><%= reservation.name %></td>
+					<td><%= reservation.name_kana %></td>
+					<td><%= l reservation.birthday, format: :medium %></td>
 					<td><%= reservation.exam_content %></td>
 				</tr>
 			<% end %>
 		</table>
 	</div>
+</div>
+<div class="about__box"></div>
 </div>

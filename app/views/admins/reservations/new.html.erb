@@ -8,21 +8,17 @@
 <script src= "pickadate/legacy.js"></script>
 <script src= "pickadate/lang-ja.js"></script>
 
+<div class="container">
 <div class="row">
-	<%= render "homes/navbar" %>
-</div>
-<div class="row">
-		<%= search_form_for(@q, url: new_admins_reservation_path, enforce_utf8: false, remote: true) do |f| %>
-			<h4>患者検索</h4><br>
-			<%= f.label :name_or_membership_number_id, "氏名または診察券番号" %>
-			<%= f.search_field :name_or_membership_number_id_cont %>
-			<%= submit_tag "検索", name: nil, onclick: "showResults()" %>
+	<h1 class="page__title text-center">新規予約作成</h1>
+	<div class="col-md-2"></div>
+	<div class="col-md-8 text-center">
+		<%= search_form_for(@q, url: new_admins_reservation_path, enforce_utf8: false) do |f| %>
+			<%= f.label :name_or_membership_number, "氏名または診察券番号" %>
+			<%= f.search_field :name_or_membership_number_cont, required: true %>
+			<%= submit_tag "検索", name: nil %>
 		<% end %>
 
-
-<!-- FIX 以下部分テンプレートに直す-->
-<div id="results">
-	<% @patients.each do |patient| %>
 	<table class="table">
 		<tr>
 			<th>選択</th>
@@ -31,70 +27,44 @@
 			<th>生年月日</th>
 		</tr>
 		<tr>
-			<th><%= radio_button_tag :membership_number_id, "test", type= "submit" %></th>
-
-			<th><%= patient.membership_number_id %></th>
+			<% @patients.each do |patient| %>
+			<th><%= radio_button_tag :membership_number, patient.membership_number, onclick: "myFunction(this)" %></th>
+			<th><%= patient.membership_number %></th>
 			<th><%= patient.name %></th>
-			<th><%= patient.birthday %></th> <!-- Fix 表示の仕方 -->
-			<% end %>
+			<th><%= patient.birthday %></th>
 		</tr>
+		<% end %>
 	</table>
+	</div>
 </div>
 
-<script>
-// var elements = document.getElementsByName( "membership_number_id" ) ;
-// for ( var membership_number_id ="", i=elements.length; i--; ) {
-// 	if ( elements[i].checked ) {
-// 		var membership_number_id = elements[i].value ;
-// 		break ;
-// 	}
-// }
-// if ( membership_number_id === "" ) {
-// 	// 未選択状態
-// } else {
-// 	// aには選択状態の値が代入されている
-// 	console.log( test ) ;
-// }
-
-// $(function(){
-// 	$('#select_patient').on('click',function(){
-// 		$('#patient_form').submit();
-// 	});
-// });
-
-document.getElementById("results").style.display ="none";
-
-function showResults(){
-	const results = document.getElementById("results");
-
-	if(results.style.display=="block"){
-		results.style.display ="none";
-	}else{
-		results.style.display ="block";
-	}
-}
-
+ <script>
+ function myFunction(val) {
+  var node = "<input type='hidden' name="+val.name+" value="+val.value+">"
+  $('#'+val.id).after(node)
+ }
 </script>
-<!-- ここまで -->
 
 
-  <table>
-	<%= form_for @pickadate, url: admins_reservations_confirm_path(@pickadate), method: :get do |f| %>
-	<tr>
-		<td>診察予約日</td>
-		<td><%= f.text_field :date, placeholder: "こちらを押してください", id: "datepicker" %></td>
-	</tr>
-	<tr>
-		<td>診察予約時間</td>
-		<td><%= f.text_field :time, placeholder: "こちらを押してください", id: "timepicker" %></td>
-	</tr>
-	<tr>
-		<td>診察内容</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td><%= f.submit "予約内容確認へ進む", class:"btn btn-success" %></td>
-	</tr>
-	<% end %>
-  </table>
+
+<div class="row">
+	<div class="col-md-3"></div>
+	<div class="col-md-6 admin__resevation__pickadate__wrap">
+	  <%= form_for @pickadate, url: admins_reservations_confirm_path(@pickadate), method: :get do |f| %>
+	  <table class="admin__reservation__table reservation__table">
+		<tr>
+			<td>診察予約日</td>
+			<td><%= f.text_field :date, placeholder: "こちらを押してください", id: "datepicker" %></td>
+		</tr>
+		<tr>
+			<td>診察予約時間</td>
+			<td><%= f.text_field :time, placeholder: "こちらを押してください", id: "timepicker" %></td>
+		</tr>
+	  </table>
+	  <div class="admin__reservation__next__button">
+	  	<%= f.submit "予約内容確認へ進む", class: "next__button" %>
+		<% end %>
+	  </div>
+	</div>
+</div>
 </div>

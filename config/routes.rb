@@ -16,9 +16,10 @@ Rails.application.routes.draw do
       get 'reservations/all' => 'reservations#all'
       get 'reservations/today' => 'reservations#today'
       get 'reservations/confirm' => 'reservations#confirm'
-      get 'reservations/search' => 'reservations#search'
       get '/' => 'homes#top'
       get '/about' => 'homes#about'
+      get 'homes/patients' => 'homes#patients'
+      get 'homes/:id/patient' => 'homes#patient', as: "homes_patient"
   end
 
   devise_for :admins, controllers: {
