@@ -29,7 +29,7 @@ body {
 }
 
 header, footer {
-	background-image: url("header2.jpg");
+	background-image: image-url("header2.jpg");
 }
 
 a {
@@ -190,7 +190,7 @@ li .title:hover:before {
 .main__frame {
 	height: 500px;
 	width: 100%;
-	background-image: url("clinic-image.jpg");
+	background-image: image-url("clinic-image.jpg");
 	background-size: cover;
 	position: relative;
 }
@@ -263,30 +263,30 @@ li .title:hover:before {
 	box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
 }
 .img-about1 {
-	background-image: url("about1.jpg");
+	background-image: image-url("about1.jpg");
 }
 .img-about2 {
-	background-image: url("about2.jpg");
+	background-image: image-url("about2.jpg");
 }
 .img-about3 {
-	background-image: url("about3.jpg");
+	background-image: image-url("about3.jpg");
 }
 .img-exam1 {
-	background-image: url("about3.jpg");
+	background-image: image-url("about3.jpg");
 }
 .img-exam2 {
-	background-image: url("about3.jpg");
+	background-image: image-url("about3.jpg");
 }
 .img-exam3 {
-	background-image: url("about3.jpg");
+	background-image: image-url("about3.jpg");
 }
 .img-exam4 {
-	background-image: url("exam4.jpg");
+	background-image: image-url("exam4.jpg");
 	width: 300px;
 	height: 200px;
 }
 .img-exam5 {
-	background-image: url("exam5.jpg");
+	background-image: image-url("exam5.jpg");
 	background-repeat: no-repeat;
 	width: 300px;
 	height: 200px;
@@ -295,7 +295,7 @@ li .title:hover:before {
 .profile__image {
 	height: 420px;
 	width: 320px;
-	background-image: url("doctor.jpg");
+	background-image: image-url("doctor.jpg");
 	background-size: cover;
 	background-position: bottom center;
 	box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
@@ -461,7 +461,7 @@ li .title:hover:before {
 	background-color: #FCE8EA;
 }
 .patient__background {
-	background-image: url("patient-index-img.jpg");
+	background-image: image-url("patient-index-img.jpg");
 	background-color: rgba(255,255,255,0.2);
 	background-size: cover;
 	background-position: center;
@@ -510,7 +510,7 @@ li .title:hover:before {
 	}
 }
 .table__background__kininaru {
-	background-image: url("header2.jpg");
+	background-image: image-url("header2.jpg");
 	background-size: center;
 	background-position: center;
 	display: -webkit-flex;
@@ -562,7 +562,7 @@ li .title:hover:before {
 	margin-left: 30px;
 }
 .table__background__reservations {
-	background-image: url("header2.jpg");
+	background-image: image-url("header2.jpg");
 	background-size: center;
 	background-position: center;
 	font-size: 2.3rem;
@@ -616,7 +616,7 @@ li .title:hover:before {
 			text-align: center;
 		}
 		.table__background {
-			background-image: url("header2.jpg");
+			background-image: image-url("header2.jpg");
 		}
 }
 .icon__size {
@@ -628,7 +628,7 @@ li .title:hover:before {
 	font-size: 2.4rem;
 }
 .icon__patient__session {
-	background-image: url("header2.jpg");
+	background-image: image-url("header2.jpg");
 	border-radius: 25px;
 	padding: 5px 0;
 }
