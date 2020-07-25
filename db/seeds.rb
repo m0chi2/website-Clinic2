@@ -66,6 +66,14 @@ Post.create(id: 1,
 			created_at: "2020-07-24 03:34:30",
 			updated_at: "2020-07-24 03:34:30")
 
+Post.create(id: 2,
+			patient_id: 1,
+			bothering_start_id: 3,
+			bothering_genre_id: 4,
+			content: "スポーツを続けてもいいのか？",
+			created_at: "2020-07-24 12:34:30",
+			updated_at: "2020-07-24 12:34:30")
+
 Pickadate.create(id: 1,
 				 date: "2020年07月24日",
 				 time: "19:00",
