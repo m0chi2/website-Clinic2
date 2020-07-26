@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_07_18_252525) do
     t.string "name_kana", null: false
     t.date "birthday", null: false
     t.integer "sex", default: 0, null: false
-    t.integer "phonenumber", null: false
+    t.string "phonenumber", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_patients_on_email", unique: true
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2020_07_18_252525) do
     t.string "name_kana", null: false
     t.date "birthday", null: false
     t.integer "sex", default: 0, null: false
-    t.integer "phonenumber", null: false
+    t.string "phonenumber", null: false
     t.string "email"
     t.string "exam_content"
     t.string "question_medical_history"
