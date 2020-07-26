@@ -1,0 +1,112 @@
+<div class="container">
+<div class="row">
+	<% if patient_signed_in? %>
+		<h2 class="page__title text-center col">予約ページ</h2>
+	<% else %>
+		<h2 class="page__title text-center col">初診予約ページ</h2>
+	<% end %>
+
+	<div class="text-center col">（プログレスバーの予定）</div>
+</div>
+
+<div class="row">
+	<%= form_with model: @reservation, url: reservations_confirm_path(@reservation), local: true do |f|  %>
+	<div class="reservation__textbox form-group">
+		<table class="reservation__table">
+			<tr>
+				<td colspan="2"><h2>情報入力</h2></td>
+			</tr>
+			<tr>
+				<td class="reservation__item">診察日時</td>
+				<td><%= session[:pickadate]["date"] %>　<%= session[:pickadate]["time"] %></td>
+			</tr>
+		</table>
+	</div>
+
+		<% unless patient_signed_in? || admin_signed_in? %>
+		<table class="reservation__table">
+		<tr>
+			<td colspan="2"><h2>患者様情報</h2></td>
+		</tr>
+		<tr>
+			<td class="reservation__item">氏名</td>
+			<td><%= f.text_field :name, placeholder: "例）熊猫太郎", class: "form-control" %></td>
+		</tr>
+		<tr>
+			<td class="reservation__item">氏名（カナ）</td>
+			<td><%= f.text_field :name_kana, placeholder: "例）パンダタロウ", class: "form-control" %></td>
+		</tr>
+		<tr>
+			<td class="reservation__item">生年月日</td>
+			<td><%= raw sprintf(
+					f.date_select(
+						:birthday,
+						 use_month_numbers: true,
+						 start_year: 1930,
+						 end_year: (Time.now.year - 1 ),
+						 default: Date.new(1990, 1, 1),
+						 date_separator: '%s'),
+						'年 ', '月 ') + '日' %></td> <!-- FIX 生年月日もbootstrapにしたい -->
+		</tr>
+		<tr>
+			<td class="reservation__item">性別</td>
+			<td><%= f.radio_button :sex, 1, checked: true %>男性
+				<%= f.radio_button :sex, 2 %>女性</td>
+		</tr>
+		<tr>
+			<td colspan="2"><h2>ご連絡先</h2></td>
+		</tr>
+		<tr>
+			<td class="reservation__item">お電話番号</td>
+			<td><%= f.text_field :phonenumber, placeholder: "-（ハイフン）無しでご記入ください", class: "form-control" %></td>
+		</tr>
+		<tr>
+			<td class="reservation__item">メールアドレス</td>
+			<td><%= f.text_field :email, placeholder: "abc@panda.com", class: "form-control" %></td>
+		</tr>
+		<tr>
+			<td class="reservation__item">メールアドレス（確認用）</td>
+			<td><%= f.text_field :email, placeholder: "abc@panda.com", class: "form-control" %></td>
+		</tr>
+	</table>
+	<% end %>
+
+	<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-9">
+		<div class="reservation__question">
+			<h2>診察の参考になりますので、以下の質問にお答えください。</h2>
+			<h3>どのような症状がありますか？</h3>
+				<%= f.text_area :exam_content, class: "form-control form" %>
+			<h3>いつ頃から症状がありますか？</h3>
+				<div class="radio__button__box">
+				<div class="radio__button" >
+					<%= f.radio_button :bothering_start_id, 1, checked: true %>今日</div>
+				<div class="radio__button" >
+					<%= f.radio_button :bothering_start_id, 2 %>昨日</div>
+				<div class="radio__button" >
+					<%= f.radio_button :bothering_start_id, 3 %>２、３日前</div>
+				<div class="radio__button" >
+					<%= f.radio_button :bothering_start_id, 4 %>１週間前</div>
+					<%= f.radio_button :bothering_start_id, 5 %>それより前（１週間より前）
+				</div>
+			<h3>今までにかかった・または治療中の病気があればご記入ください。</h3>
+				<%= f.text_area :question_medical_history, class: "form-control form" %>
+			<h3>その他、事前にお伝えしたい内容がございましたらご記入ください。</h3>
+				<%= f.text_area :question_memo, class: "form-control form" %>
+			<h3 class="text-center">以下の利用規約をご確認の上、ご同意いただきましたら、<br>
+				「同意して次へ」をクリックしくしてお進みください</h3><br>
+				<div class="terms">
+				Ut enim ad minim veniam,quisnostrudexercitationullamco laboris nisi ut aliquip ex eacommodoconsequat.
+				Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+			<div class="buttons">
+				<%= f.submit "同意して次へ", class: "btn__next" %>
+			</div>
+		</div>
+		</div>
+	</div>
+	<% end %>
+</div>
+<div class="about__box"></div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container">
+<div class="row">
+	<h1 class="page__title text-center">診察予約ページ</h1>
+	<div class="text-center">（プログレスバーの予定）</div>
+	<div class="reservation__textbox text-center">
+		<p>インターネットから<span>診察のお申し込み</span>ができるサービスです。<br>
+		   ご希望日を選択してください。</p>
+	</div>
+</div>
+
+	<div class="row">
+	<div class="pickadate__box">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+		<table class="reservation__table">
+			<tr>
+			<%= form_for @pickadate, url: new_reservation_path(@pickadate) do |f| %>
+			<td class="reservation__item">予約希望日</td>
+			<td><%= f.text_field :date, placeholder: "こちらを押してください", id: "datepicker" %></td>
+			</tr>
+			<tr>
+			<td class="reservation__item">予約希望時間</td>
+			<td><%= f.text_field :time, placeholder: "こちらを押してください", id: "timepicker" %></td>
+			</tr>
+			<tr>
+			<th colspan="2"><div class="btn__next__wrapper"><%= f.submit "次へ進む", class: "btn__next" %></div></th>
+			<% end %>
+			</tr>
+		</table>
+	</div>
+	</div>
+	</div>
+</div>
+
+
+

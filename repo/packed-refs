@@ -1,0 +1,11 @@
+# pack-refs with: peeled fully-peeled 
+91d7e33c32a9622ac8c0889462cb723796d32323 refs/heads/admin
+2bcbdc07ae6a93d2f4c8afda14f1f4a069fd93fa refs/heads/inquiry
+998fdbb1c7294829c589c0072c80fd2a1300bb24 refs/heads/layout
+022f5e24923d891a72b5637f1c69b7a7289e1071 refs/heads/layout2
+f46e5231206eaca3973fe80e6ea2514e51f7ba0a refs/heads/master
+d4b1770c13950aeb5fc865773ebff61be639d41c refs/heads/patient
+9218f078d97c0a328c5b30deed98421b9aee555a refs/heads/post
+fcf3cc1c182eaa47469f034aef1dd02b7a0e524c refs/heads/test
+530387519a0708ae8e4d5f8769d3bca8de1f1663 refs/heads/visitor
+9fe026d880dc6094ae756152d162332b2e28acd7 refs/pull/1/head

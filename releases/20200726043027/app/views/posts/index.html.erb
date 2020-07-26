@@ -1,0 +1,38 @@
+<div class="container">
+<div class="row">
+<h1 class="page__title text-center">気になる記録</h1>
+<div class="col-md-4"></div>
+<%= link_to  new_post_path, class: "btn__kininaru col-md-4" do %>
+	<p>気になる症状を<span class= "text__kininaru">記録</span>する</p>
+<% end %>
+</div>
+<br>
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="post__index__wrap col-md-8">
+	<% @posts.each do |post| %>
+	<table class="table table__kininaru">
+		<tr class="table__background__kininaru">
+			<td>
+				<div class="Bothering__wrap">
+					<span class= "BotheringStartId__<%= post.bothering_start_id.to_s %>" >
+					<i class="far fa-calendar-alt"></i>
+					<span>いつ：</span>
+					<%= BotheringStart.find(post.bothering_start_id).name %></span><br>
+					<span class="icon__BotheringGenre BotheringGenreId__<%= post.bothering_genre_id %>" >
+					<%= BotheringGenre.find(post.bothering_genre_id).name %></span>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td><%= post.content %></td>
+		</tr>
+		<tr>
+			<td><span class="pull-right">記録日：<%= post.created_at.to_s(:datetime_jp) %></span></td>
+		</tr>
+	</table>
+	<% end %>
+	<%= paginate @posts %>
+	</div>
+</div>
+</div>

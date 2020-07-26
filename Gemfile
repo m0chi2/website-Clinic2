@@ -74,5 +74,5 @@ gem 'ransack'
 
 gem 'dotenv-rails'
 group :production do
-  gem 'mysql2'
+  gem 'mysql2', '~> 0.4.4'
 end
