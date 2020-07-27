@@ -7,6 +7,7 @@
 
     $("#timepicker").pickatime({
     format: "HH:i"
+    interval: 30,
     min: [8,30],
     max: [18,00]
     });
