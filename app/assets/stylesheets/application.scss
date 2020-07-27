@@ -49,6 +49,10 @@ p {
 	line-height: 3.0rem;
 }
 
+th {
+  text-align: center !important;
+}
+
 .navbar {
 	border: 0;
 }
@@ -138,6 +142,14 @@ p {
 .content__area {
 	width: 480px;
 	height: 230px !important;
+}
+.inquiry__confirm__field {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	 -webkit-justify-content: center;
+ 	justify-content: center;
 }
 #main__navbar__wrap {
 	width: 100%;
@@ -321,6 +333,7 @@ li .title:hover:before {
 	background-color: #F5F5EE;
 	border-radius: 25px;
 	font-size: 2.8rem;
+	padding-bottom: 30px;
 	h1 {
 	color: #67c5ff;
 	font-weight: bold;
@@ -351,7 +364,6 @@ li .title:hover:before {
 	}
 	.sun {
 		color: #FF0000;
-		padding-left: 120px;
 	}
 }
 .access__icon {
@@ -448,6 +460,17 @@ li .title:hover:before {
 		font-weight: bold;
 	}
 }
+.reservation__wrap {
+    background-color: #F5F5EE;
+    border-radius: 25px;
+	width: 60%;
+	margin: 0 auto;
+	padding: 20px;
+	span {
+		text-decoration: none;
+		color: #FF0000;
+	}
+}
 .reservation__table,
 .patient__table,
 .admin__about__table {
@@ -469,7 +492,9 @@ li .title:hover:before {
 .reservation__title {
 	margin-top: 70px;
 }
-.reservation__item, .patient__item {
+.reservation__item,
+.patient__item,
+.visitor__item {
 	background-color: rgb(242, 242, 242);
 }
 .reservation__question {
