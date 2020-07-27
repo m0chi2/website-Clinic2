@@ -3,7 +3,7 @@
     $("#datepicker").pickadate({
     format: "yyyy年mm月dd日",
        min: +1,
-       max: +90
+       max: +90,
        disable: [1,5]
     });
 
