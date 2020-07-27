@@ -7,7 +7,7 @@
   </div>
 
 <div class="row">
-  <div class="col-md-3"></div>
+  <div class="col-md-2"></div>
   <div class="col-md-8">
   <% if @inquiry.errors.any? %>
     <div class="alert alert-danger" role="alert">
@@ -33,11 +33,9 @@
       <th>お問い合わせ内容</th>
       <td><%= f.text_area :message, class: "content__area form-control" %></td>
     </tr>
-    <tr>
-      <th colspan= 2>
-          <%= f.submit "確認", class: "btn__next" %></th>
-    </tr>
   </table>
+  <div class="btn__next__wrapper">
+  <%= f.submit "確認", class: "btn__next" %></div>
 <% end %>
 </div>
 </div>

@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_patient!
   def index
     @posts = Post.where(patient_id: current_patient.id).page(params[:page]).reverse_order
   end

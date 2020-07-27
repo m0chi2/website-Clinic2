@@ -112,7 +112,14 @@ p {
 }
 .text__top__inquiry {
 	font-size: 1.6rem;
+	a {
+		font-size: 2.3rem;
+	}
+	a:hover {
+		color: #3db2da;
+	}
 }
+
 .btn__top__inquiry {
 	background-color: #B6D7D2;
 	color: #333;
@@ -310,11 +317,77 @@ li .title:hover:before {
 	font-weight: bold;
 	}
 }
-.access__text h3 {
+.access__wrap {
+	background-color: #F5F5EE;
+	border-radius: 25px;
+	font-size: 2.8rem;
+	h1 {
 	color: #67c5ff;
 	font-weight: bold;
 	margin-bottom: 20px;
+	}
+	p {
+	margin-bottom: 0;
+	}
+	.access__header {
+	text-align: center;
+	font-weight: bold;
+	font-size: 3.0rem;
+	background-image: image-url("header2.jpg");
+	border-radius: 25px;
+	padding: 25px 0;
+	}
 }
+.access__text {
+	padding: 20px;
+	line-height: 1.6;
+
+}
+.access___opening__reception {
+	line-height: 1.6;
+	margin-top:15px;
+	.sat {
+		color: #3db2da;
+	}
+	.sun {
+		color: #FF0000;
+		padding-left: 120px;
+	}
+}
+.access__icon {
+	font-size: 3.0rem;
+	margin-right: 10px;
+}
+.btn__access__phonenumber {
+	background-color: #fff;
+	border-radius: 25px;
+	padding: 5px 30px;;
+	margin-top: 15px;
+	font-weight: bold;
+	font-size: 3.4rem;
+	span {
+		color: #3db2da;
+		}
+}
+.access__box {
+	display: flex;
+	width: 100%;
+	justify-content: space-between
+}
+.btn__access {
+	text-align: center;
+	font-weight: bold;
+	font-size: 2.4rem;
+	background-image: image-url("header2.jpg");
+	border-radius: 25px;
+	padding: 15px 30px;
+	span {
+		background-color: #fff;
+		border-radius: 25px;
+		padding: 0 15px;
+	}
+}
+
 .pickadate__box {
 	width: 70%;
 	height: 260px;
@@ -584,7 +657,15 @@ li .title:hover:before {
 .main__admin__nav .leftside__li {
 	border-left: solid 2px #000;
 }
-
+.admin__background {
+	background-image: image-url("admin-index-img.jpg");
+	background-size: cover;
+	background-position: center;
+	border-radius: 25px;
+	height: 300px;
+	width: 340px;
+    margin-top: 30px;
+}
 .search__form__wrap {
 	margin-bottom: 50px;
 }
@@ -679,6 +760,31 @@ li .title:hover:before {
 	.admin__mainnav__text {
 	  font-size: 2.0rem;
 	}
+}
+
+.admin__top__wrap {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 height: 350px;
+	 width: 80%;
+	 background-color: #F5F5EE;
+	 border-radius: 25px;
+	 padding: 0 0 30px;
+	 margin: 30px auto;
+}
+.text__admin__top {
+	text-align: center;
+}
+.btn__admin__link {
+	background-color: #f49ca4;
+	border-radius: 25px;
+	padding: 5px;
+	font-weight: bold;
+	font-size: 2.4rem;
+}
+.btn__admin__link:hover {
+	background-color: #fed6e3;
 }
 .menu-trigger .menu__text {
 	background-color: #000;
