@@ -1,6 +1,6 @@
 class Admins::HomesController < ApplicationController
 	before_action :authenticate_admin!
-	def top
+	def top 
 	end
 
 	def about
@@ -16,6 +16,8 @@ class Admins::HomesController < ApplicationController
 
 		@posts = Post.where(patient_id: @patient.id)
 		@posts = @posts.page(params[:page]).reverse_order
+
+		@age = (Date.today.strftime("%Y%m%d").to_i - @patient.birthday.strftime("%Y%m%d").to_i) / 10000
 
 	end
 

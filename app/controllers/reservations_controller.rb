@@ -5,6 +5,10 @@ class ReservationsController < ApplicationController
   end
 
   def new
+    if Pickadate.find_by(date: params[:pickadate][:date], time: params[:pickadate][:time])
+        flash[:notice] = "予約が埋まっています。別の日時を指定してください。"
+        redirect_to reservations_path
+    end
     @reservation = Reservation.new
     session[:pickadate] = Pickadate.new(pickadate_params)
   end
@@ -14,11 +18,11 @@ class ReservationsController < ApplicationController
     #session[:reservation] = Reservation.new(reservation_params)
     #birthdayのみstrong parameterで取得できていないので一時対処
   end
-
   def create
     @pickadate = Pickadate.new(session[:pickadate])
     @pickadate.save
     @reservation = Reservation.new(session[:reservation])
+    @reservation.membership_number = "B000000" # 非会員予約の場合、診察券番号は「B000000」とする
     @reservation.pickadate_id = @pickadate.id
 
     if current_patient
@@ -29,14 +33,14 @@ class ReservationsController < ApplicationController
         @reservation.sex = current_patient.sex
         @reservation.email = current_patient.email
         @reservation.phonenumber = current_patient.phonenumber
-        @reservation.save
-
-    elsif current_patient == nil
-        @reservation.membership_number = "B000000" # 非会員予約の場合、診察券番号は「B000000」とする
-        @reservation.save
     end
 
-    redirect_to reservations_thanks_path
+    if @reservation.save
+        redirect_to reservations_thanks_path
+    else
+        flash[:notice] = "エラーが起きました。入力内容を正しくご記入ください。"
+        render :index
+    end
   end
 
   def thanks
