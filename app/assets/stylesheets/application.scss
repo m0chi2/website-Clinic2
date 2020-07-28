@@ -310,9 +310,13 @@ li .title:hover:before {
 }
 .img-exam2 {
 	background-image: image-url("exam2.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .img-exam3 {
 	background-image: image-url("exam3.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .img-exam4 {
 	background-image: image-url("exam4.jpg");
