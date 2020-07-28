@@ -19,7 +19,7 @@ BotheringGenre.create(name: "改善した")
 BotheringGenre.create(name: "次回聞きたい")
 BotheringGenre.create(name: "伝えておきたい")
 
-Admin.create(email: "test@example.com",
+Admin.create(email: "admin@test.com",
 			 password: "abc000000",
 			 login_id: "adminuser",
 			 name: "熊猫たんたん",
@@ -27,7 +27,7 @@ Admin.create(email: "test@example.com",
 			 created_at: "2020-07-19 05:24:37",
 			 updated_at: "2020-07-19 05:24:37")
 
-Patient.create(email: "email@test.com",
+Patient.create(email: "patient@test.com",
 			   password: "abc000000",
 			   membership_number: "B000001",
 			   name: "犬山わんた",
@@ -37,7 +37,7 @@ Patient.create(email: "email@test.com",
 			   phonenumber: "00000000",
 			   created_at: "2020-07-19 05:24:37",
 			   updated_at: "2020-07-19 05:24:37")
-Patient.create(email: "email2@test.com",
+Patient.create(email: "patient2@test.com",
 			   password: "abc000000",
 			   membership_number: "B000002",
 			   name: "猫村みーこ",
@@ -47,7 +47,7 @@ Patient.create(email: "email2@test.com",
 			   phonenumber: "00000000",
 			   created_at: "2020-07-19 05:24:37",
 			   updated_at: "2020-07-19 05:24:37")
-Patient.create(email: "email3@test.com",
+Patient.create(email: "patient3@test.com",
 			   password: "abc000000",
 			   membership_number: "B000003",
 			   name: "海野かもめ",
