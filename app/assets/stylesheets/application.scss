@@ -151,6 +151,13 @@ th {
 	 -webkit-justify-content: center;
  	justify-content: center;
 }
+.inquiry__thanks__wrap {
+	line-height: 4.0rem;
+	font-size: 2.4rem;
+	span {
+	color: #FF0000;
+	}
+}
 #main__navbar__wrap {
 	width: 100%;
 	height: 120px;
@@ -216,17 +223,22 @@ li .title:hover:before {
 	background-size: cover;
 	position: relative;
 }
-.main__attention__box {
+.main__attention__wrap {
 	background-color: rgba(255,255,255,0.3);
-	border-radius: 10%;
-	height: 40%;
+	border-radius: 25px;
+	height: 50%;
 	margin: 20px;
+	padding-top: 1%;
 }
 
 .phonenumber {
 	background-color: #A28C63;
 	color: #ffffff;
-	width: 200px;
+	font-size: 2.8rem;
+	width: 80%;
+	border-radius: 25px;
+	padding: 5px 10px;
+	margin: 10px;
 }
 .openinghours-table {
 	border-collapse: collapse;
@@ -268,8 +280,8 @@ li .title:hover:before {
 	padding-bottom: 5%;
 	border-bottom: 1px solid rgba(0,0,0,0.2);
 }
-.about__button {
-	margin: 20px;
+.btn__about {
+	margin: 20px 50px 0;
 	padding: 5px;
 }
 .sample__images{

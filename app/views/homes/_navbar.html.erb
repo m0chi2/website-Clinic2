@@ -65,9 +65,9 @@
 			<span class="title">予約一覧</span>
 		<% end %>
 	</li>
-	<li><%= link_to new_admins_reservation_path do %>
+	<li><%= link_to admins_path do %>
 			<i class="icon__size fas fa-plus-circle"></i><br>
-			<span class="title">予約の新規作成</span>
+			<span class="title">Comming Soon</span>
 		<% end %>
 	</li>
 	</ul>
@@ -116,7 +116,7 @@
 	        <li><%= link_to "会員一覧", admins_homes_patients_path %></li>
 	        <li><%= link_to "本日の予約一覧", admins_reservations_today_path %></li>
 	        <li><%= link_to "予約一覧", admins_reservations_all_path %></li>
-	        <li><%= link_to "予約の新規作成", new_admins_reservation_path %></li>
+	        <li><%= link_to "Comming Soon", new_admins_reservation_path %></li>
 	        <li><%= link_to "もとに戻る", admins_path %></li>
 	    </ul>
 	<% elsif patient_signed_in? %>
