@@ -1,0 +1,15 @@
+.Btn {
+	&--access {
+		text-align: center;
+		font-weight: bold;
+		font-size: 2.4rem;
+		background-image: image-url("header2.jpg");
+		border-radius: 25px;
+		padding: 15px 50px;
+		span {
+			background-color: #fff;
+			border-radius: 25px;
+			padding: 0 15px;
+		}
+	}
+}

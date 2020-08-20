@@ -1,6 +1,6 @@
 <div class="container">
 <div class="row">
-	<h1 class="page__title text-center">診察予約ページ</h1>
+	<h1 class="title-logo text-center">診察予約ページ</h1>
 	<div class="reservation__textbox text-center">
 		<p>インターネットから<span>診察のお申し込み</span>ができるサービスです。<br>
 		   ご希望日を選択してください。</p>
@@ -29,7 +29,7 @@
 			<td><%= f.text_field :time, placeholder: "こちらを押してください", id: "timepicker" %></td>
 			</tr>
 			<tr><br>
-			<th colspan="2"><div class="btn__next__wrapper"><%= f.submit "次へ進む", class: "btn__next" %></div></th>
+			<th colspan="2"><div class="btn--next__wrapper"><%= f.submit "次へ進む", class: "btn--next" %></div></th>
 			<% end %>
 			</tr>
 		</table>

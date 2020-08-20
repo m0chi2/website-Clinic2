@@ -1,0 +1,36 @@
+.Table {
+	&--openinghours {
+			border-collapse: collapse;
+			background-color: rgba(255,255,255,0.8);
+			width: 100%;
+			table-layout: fixed;
+			font-size: 2.0rem;
+
+			th {
+				border-top: 1px solid #A28C63;
+				font-weight: normal;
+				font-size: 2.4rem;
+			    background-color: #C7BAA2;
+			    padding: 5px 8px;
+			}
+			th, td {
+				text-align: center;
+				border-bottom: 1px solid #A28C63;
+			}
+			span {
+				font-size: 2.0rem;
+			}
+			.small {
+				font-size: 1.8rem;
+			}
+			.sat {
+				color: #3db2da;
+			}
+			.sun {
+				color: #e66a6a;
+			}
+	}
+	&__examFlow {
+		margin-bottom: 60px;
+	}
+}

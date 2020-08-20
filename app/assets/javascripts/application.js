@@ -23,5 +23,6 @@
 //= require legacy
 //= require lang-ja
 //= require pickadate
+//= require ScrollTrigger.min
 //= require_tree .
 

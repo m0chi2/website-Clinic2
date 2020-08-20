@@ -10,7 +10,6 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/<%= ENV['FONTAWESOME_KIT'] %>.js" crossorigin="anonymous"></script>
-
   </head>
 
 <div class="navbar__top__border"></div>
@@ -52,9 +51,79 @@
   </body>
 
   <footer>
-    <div class="text-center footer__text">
-      ©︎ Panda Orthopedics Clinic
+      <div class="row footer-top">
+        <div class="col-md-3 footer-top-box">
+          <nav>
+            <ul>
+              <h2><b>医院のご案内</b></h2>
+                <li>− <%= link_to "ごあいさつ", about_path %></li>
+                <li>− <%= link_to "当院の特徴", about_path %></li>
+                <li>− <%= link_to "医院のご案内", about_path %></li>
+              <h2><b>診察のご案内</b></h2>
+                <li>− 診察内容</li>
+                <li>− 当院の施設・機器</li>
+                <li>− ご診察の流れ</li>
+           </ul>
+        </nav>
+      </div>
+    <div class="col-md-3 footer-top-box">
+          <h2><b><%= link_to "交通案内", access_path %></b></h2>
+            <li>− 電車でお越しの方</li>
+            <li>− 車でお越しの方</li>
+            <h2><b><%= link_to "会員ページ", new_patient_session_path %></b></h2>
+            <li>− 会員ページについて</li>
+            <li>− ログインページ</li>
+    </div>
+    <div class="col-md-3 footer-logo-box">
+      <%= link_to image_tag("toplogo-white.png", class: "footer-logo"), "/" %>
+      <h3><b>XXXX - XX - XXXX</b></h3>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col text-center">
+      <b>©︎ Panda Orthopedics Clinic</b>
+    </div>
     </div>
   </footer>
 
+<script src="assets/ScrollTrigger.min.js"></script>
+<!-- <script>
+((document, window) => {
+const trigger = new ScrollTrigger.default({trigger:{
+            once: true, // same functionality as the `once` flag in v0.x
+            offset: {
+                element: {
+                    y: 1.0
+                }
+            },
+        }}
+     )}
+);
+</script> -->
+<script>
+var scrollTrigger = new ScrollTrigger.default({
+  once: true,
+  offset: {
+      element: {
+          y: 1.0
+      }
+  },
+});
+scrollTrigger.add('[data-scroll]', {
+    toggle: {
+        class: {
+            in: 'visible',
+            out: 'invisible'
+        }
+    }
+});
+scrollTrigger.add('[data-scroll=fadeIn]', {
+    toggle: {
+        class: {
+            in: 'visible',
+            out: 'invisible'
+        }
+    }
+});
+</script>
 </html>

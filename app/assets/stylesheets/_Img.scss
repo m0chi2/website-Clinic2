@@ -1,0 +1,60 @@
+.Img {
+	&__bg {
+		&--top1 {
+			background-image: image-url("clinic-image.jpg");
+			height: 450px;
+		}
+		 &--top2 {
+ 			background-image: image-url("exam3.jpg");
+  		}
+  		&--top3 {
+  			background-image: image-url("top-bottom-img.jpg");
+  		}
+	}
+	&__about {
+		&--1 {
+			background-image: image-url("about1.jpg");
+		}
+		&--2 {
+			background-image: image-url("about2.jpg");
+		}
+		&--3 {
+			background-image: image-url("about3.jpg");
+		}
+	}
+	&__exam {
+		&--1 {
+			background-image: image-url("exam1.jpg");
+			background-position: right;
+		}
+		&--2 {
+			background-image: image-url("exam2.jpg");
+		}
+		&--3 {
+			background-image: image-url("exam3.jpg");
+		}
+		&--4 {
+			background-image: image-url("exam4.jpg");
+		}
+		&--5 {
+			background-image: image-url("exam5.jpg");
+		}
+	}
+	&__form {
+		&--circle {
+				width: 200px;
+				height: 200px;
+				margin: 3% 3%;
+				border-radius: 50%;
+				background-size: cover;
+		}
+	}
+	&--doctorProfile {
+			height: 470px;
+			width: 320px;
+			background-image: image-url("doctor.jpg");
+			background-size: cover;
+			background-position: bottom center;
+			box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+	}
+}

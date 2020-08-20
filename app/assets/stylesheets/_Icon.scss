@@ -1,0 +1,25 @@
+.Icon {
+	&__size {
+		&--Large {
+		font-size: 3.0rem;
+		}
+	}
+	&__subtitle {
+		background-color: rgba(182,215,210,0.5);
+		border: solid 3px #B6D7D2;
+		border-radius: 15px;
+		padding: 5px 10px;
+		font-size: 2.0rem;
+		margin: 5px;
+	}
+	&--topPhonenumber {
+		background-color: #A28C63;
+		color: #ffffff;
+		font-size: 2.8rem;
+		width: 80%;
+		border-radius: 25px;
+		padding: 5px 10px;
+		margin: 10px;
+		font-size: 3.0rem;
+	}
+}

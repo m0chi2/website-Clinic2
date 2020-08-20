@@ -1,6 +1,6 @@
 <div class="container">
 <div class="row">
-	<h1 class="page__title text-center">新規予約作成</h1>
+	<h1 class="title-logo text-center">新規予約作成</h1>
 	<div class="col-md-2"></div>
 	<div class="col-md-8 text-center">
 		<%= search_form_for(@q, url: new_admins_reservation_path, enforce_utf8: false) do |f| %>
@@ -53,8 +53,8 @@
 			<td><%= f.text_field :time, placeholder: "こちらを押してください", id: "timepicker" %></td>
 		</tr>
 	  </table>
-	  <div class="admin__reservation__btn__next">
-	  	<%= f.submit "予約内容確認へ進む", class: "btn__next" %>
+	  <div class="admin__reservation__btn--next">
+	  	<%= f.submit "予約内容確認へ進む", class: "btn--next" %>
 		<% end %>
 	  </div>
 	</div>

@@ -1,51 +1,58 @@
+<div class="container-fluid wrap__container">
 <div class="row">
-	<h1 class="page__title text-center col">ごあいさつ</h1>
-	 <div class="about__box">
-		<div class="col-md-2"></div>
-		<div class="profile__image col-md-4"></div>
-		<div class="profile__text col-md-5">
-			<p>
-				<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2><br>
-				Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.
-
-			</p>
-		</div>
-	  </div>
-</div>
-
-<div class="row">
-	<h1 class="page__title text-center col">当院の特徴</h1>
-	<div class="about__box">
-		<div class="col-md-1"></div>
-		<div class="col-md-10">
-			<div class="about__text">
-			 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-			 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-				aliquip ex ea commodo consequat.
-				Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<h1 class="col title-logo text-center title-fadein">ごあいさつ</h1>
+	<div class="col-md-2"></div>
+	<div class="col-md-3 Img--doctorProfile about-detail"></div>
+	<div class="Box__text--profile col-md-5 about-detail">
+		<h2>地域の皆さまに愛される<br>　　クリニックを目指して－</h2><br>
+			<div class="wrap--name">
+				<span class="name">院長 熊猫 太郎</span>
+				<span class="medical-department">  整形外科・リハビリテーション科</span><br>
 			</div>
-			<div class="sample__images">
-				<div class="sample__image__box img-about1"></div>
-				<div class="sample__image__box img-about2"></div>
-				<div class="sample__image__box img-about3"></div>
-			</div>
-		</div>
+			<span class="message">
+				<div class="message-top">この度は、当ページをご覧くださり、<br>誠にありがとうございます。</div>
+				くまくま大学医学部卒業後、白浜総合病院並びにその関連病院にて整形外科医として勤務し、令和2年7月、地元である笹の葉にぱんだ整形外科を開院いたしました。患者さんお一人お一人のお考えや希望を伺いながら、最適な治療をご提案してまいります。
+			</span>
 	</div>
 </div>
 
 <div class="row">
-	<h1 class="page__title text-center col">医院のご案内</h1>
-	<div class="about__box">
-		<div class="col-md-1"></div>
-		<div class="text__about col-md-4">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			<%= link_to "交通案内はこちら", access_path, class: "btn__about btn__next" %>
+	<h1 class="title-logo text-center col" data-scroll>当院の特徴</h1>
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<div data-scroll>
+				 <p>ぱんだ整形外科クリニックでは、一般的な整形外科治療とリハビリテーションによる運動療法を行なっております。</p>
+				 <nav class="Box__bg--beige">
+				 	<ul>
+				 		<li>膝、腰、股関節等の痛みの診断および治療が得意としております</li>
+				 		<li>運動器リハビリテーションを提供しています</li>
+				 		<li>超音波を使った診断・治療をいたします</li>
+				 		<li>MRIは地域の病院と医療連携し、４つの病院で撮影が可能です</li>
+				 		<li>手術の適応や保存的加療についての相談をおこなっています</li>
+				 	</ul>
+				 </nav>
+			</div>
+			<div class="wrap__imgs wrap__imgs--evenly">
+				<div class="Box__img--list1 Img__about--1" data-scroll></div>
+				<div class="Box__img--list1 Img__about--2" data-scroll></div>
+				<div class="Box__img--list1 Img__about--3" data-scroll></div>
+			</div>
 		</div>
-		<div class="col-md-6">
-			<table class="openinghours-table">
+</div>
+
+<div class="row">
+	<h1 class="col title-logo text-center" data-scroll>医院のご案内</h1>
+		<div class="col-md-2"></div>
+		<div class="col-md-4 Box__text--normal" data-scroll>
+			午前は<b><big>8時30分</big></b>、午後は<b><big>1時</big></b>から<br>
+			受付開始です。土曜日も診療しております。<br>
+			ご予約の方はご予約時間に余裕を持ってお越しくださいますようお願い申し上げます。
+			<%= link_to "交通案内はこちら", access_path, class: "btn__about btn--next" %>
+		</div>
+		<div class="col-md-4" data-scroll>
+			<table class="Table--openinghours">
 			<tr>
-				<th>受付時間</th>
+				<th class="small">受付時間</th>
 				<th class="sun">日</th>
 				<th>月</th>
 				<th>火</th>
@@ -55,7 +62,7 @@
 				<th class="sat">土</th>
 			</tr>
 			<tr>
-				<td>8:00〜12:00</td>
+				<td>8:30〜12:00</td>
 				<td>−</td>
 				<td>●</td>
 				<td>●</td>
@@ -65,7 +72,7 @@
 				<td>●</td>
 			</tr>
 			<tr>
-				<td>13:00~17:00</td>
+				<td>13:00〜17:00</td>
 				<td>−</td>
 				<td>●</td>
 				<td>●</td>
@@ -76,5 +83,5 @@
 			</tr>
 		</table>
 	</div>
- </div>
+</div>
 </div>

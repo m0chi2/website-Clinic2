@@ -1,7 +1,7 @@
 <div class="content">
   <div class="row">
     <%= form_for @inquiry, :url => inquiry_confirm_path, method: :get do |f| %>
-      <div class="page__title text-center page-header">
+      <div class="title-logo text-center page-header">
         <h1>お問い合わせ</h1>
       </div>
   </div>
@@ -34,8 +34,8 @@
       <td><%= f.text_area :message, class: "content__area form-control" %></td>
     </tr>
   </table>
-  <div class="btn__next__wrapper">
-  <%= f.submit "確認", class: "btn__next" %></div>
+  <div class="btn--next__wrapper">
+  <%= f.submit "確認", class: "btn--next" %></div>
 <% end %>
 </div>
 </div>

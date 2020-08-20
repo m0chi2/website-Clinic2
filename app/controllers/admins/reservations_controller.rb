@@ -41,6 +41,13 @@ class Admins::ReservationsController < ApplicationController
  	@reservations = Reservation.joins(:pickadate).where(pickadates: {date: Time.current.to_s(:date_jp)})
  end
 
+ def testpage
+ 	numbers = [0,1,2,3,4,5,6]
+ 	t1 = Time.new
+ 	@numbers_map = numbers.map {|i| i + t1.day.to_i}
+ 	@times_map = 20.times.map {|i| Time.parse("8:00") + 30.minutes*i}
+ end
+
  private
  def search_for(model, content)
  	if model == 'membership_number'

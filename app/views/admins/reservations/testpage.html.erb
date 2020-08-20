@@ -1,0 +1,32 @@
+<table>
+	<thread>
+		<tr>
+			<th></th>
+			<th colspan="17" class="monthCell text-center"></th>
+		</tr>
+		<tr class="dayCelllContainer">
+		<th></th>
+		<% @numbers_map.each do |n| %>
+			<th class="dayCell">
+				<%= n %>日<br>
+				<%= %w(日 月 火 水 木 金 土)[n.wday] %>
+			</th>
+		<% end %>
+		</tr>
+	</thread>
+	<tbody>
+		<tr>
+			<th>
+				<table class="timeTable">
+					<tbody>
+							<% @times_map.each do |t| %>
+							<tr>
+								<th class="timeCell"><%= t.strftime("%H:%M") %></th>
+							</tr>
+							<% end %>
+					</tbody>
+				</table>
+			</th>
+		</tr>
+	</tbody>
+</table>

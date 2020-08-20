@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get 'reservations/all' => 'reservations#all'
       get 'reservations/today' => 'reservations#today'
       get 'reservations/confirm' => 'reservations#confirm'
+      get 'reservations/testpage' => 'reservations#testpage'
       get '/' => 'homes#top'
       get '/about' => 'homes#about'
       get 'homes/patients' => 'homes#patients'

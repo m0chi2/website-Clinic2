@@ -1,0 +1,102 @@
+.Box {
+	&__img {
+		&--list1 {
+			width: 30%;
+			height: 180px;
+			background-size: cover;
+			box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+		}
+		&--list2 {
+			width: 40%;
+			height: 200px;
+			background-size: cover;
+			box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+		}
+	}
+	&__text {
+		&--topMessages {
+			margin-top: 35px;
+		}
+		&--eachMessage {
+			background-color: rgba(255,255,255,0.7);
+			padding: 5px;
+			font-size: 2.7rem;
+			line-height: 70px;
+		}
+		&--profile {
+			margin-left: 3%;
+			h2 {
+				color: #67c5ff;
+				font-weight: bold;
+				line-height: 4.0rem;
+			}
+			.name {
+				font-weight: bold;
+				font-size: 2.4rem;
+			}
+			.medical-department {
+				font-size: 1.6rem;
+			}
+			.message {
+				line-height: 3.4rem;
+			}
+			.message-top {
+				margin-bottom: 20px;
+			}
+		}
+		&--normal {
+			padding: 18px 40px;
+			line-height: 1.6;
+			.sat {
+				color: #3db2da;
+			}
+			.sun {
+				color: #FF0000;
+			}
+		}
+	}
+	&__bg {
+		&--white {
+			background-color: rgba(255,255,255,0.3);
+			border-radius: 25px;
+			width: 52%;
+			height: 300px;
+			padding: 1%;
+			opacity: 0;
+			animation: fadeInRight 2s;
+			animation-fill-mode: forwards;
+		}
+		&--beige {
+			width: 90%;
+			line-height: 3.5rem;
+			margin: 25px auto;
+			padding: 25px 50px;
+			background-color: #F5F5EE;;
+			border-radius: 15px;
+		}
+	}
+	&__access {
+		&--information {
+			background-color: #F5F5EE;
+			border-radius: 25px;
+			font-size: 2.8rem;
+			padding-bottom: 30px;
+			h1 {
+				color: #67c5ff;
+				font-weight: bold;
+				margin-bottom: 20px;
+			}
+			p {
+				margin-bottom: 0;
+			}
+		}
+		&--header {
+				text-align: center;
+				font-weight: bold;
+				font-size: 3.0rem;
+				background-image: image-url("header2.jpg");
+				border-radius: 25px;
+				padding: 25px 0;
+		}
+	}
+}

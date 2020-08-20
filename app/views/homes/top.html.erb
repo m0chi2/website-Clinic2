@@ -1,44 +1,190 @@
-<div class="content">
-<div class="row">
-	<div class="main__frame">
-	<div class="main__attention__wrap col-md-5">
-		<div class="phonenumber text-center">
-			<span><i class="icon__size fas fa-door-closed"></i>  定休日：木・日・祝日</span>
+<div class="container-fluid">
+<div class="row ParallaxBg Img__bg--top1">
+	<div class="col-md-5 Box__text Box__text-topMessages">
+		<span class="Box__text--eachMessage title-fadein"> 地域に根差した「かかりつけ医」として</span><br>
+		<span class="Box__text--eachMessage title-fadein">みなさまの健康をサポートします</span>
+	</div>
+	<div class="col-md-6 Box__bg--white pull-right">
+		<div class="Icon--topPhonenumber text-center">
+			<span><i class="Icon__size--Large fas fa-door-closed"></i>  定休日：木・日・祝日</span>
 		</div>
-		<table class="openinghours-table">
-			<tr>
-				<th>受付時間</th>
-				<th class="sun">日</th>
-				<th>月</th>
-				<th>火</th>
-				<th>水</th>
-				<th>木</th>
-				<th>金</th>
-				<th class="sat">土</th>
-			</tr>
-			<tr>
-				<td>8:00〜12:00</td>
-				<td>−</td>
-				<td>●</td>
-				<td>●</td>
-				<td>●</td>
-				<td>−</td>
-				<td>●</td>
-				<td>●</td>
-			</tr>
-			<tr>
-				<td>13:00~17:00</td>
-				<td>−</td>
-				<td>●</td>
-				<td>●</td>
-				<td>●</td>
-				<td>−</td>
-				<td>●</td>
-				<td>●</td>
-			</tr>
-		</table>
+			<table class="Table--openinghours">
+				<tr>
+					<th><span>受付<br>時間</span></th>
+					<th class="sun">日</th>
+					<th>月</th>
+					<th>火</th>
+					<th>水</th>
+					<th>木</th>
+					<th>金</th>
+					<th class="sat">土</th>
+				</tr>
+				<tr>
+					<td>8:30〜12:00</td>
+					<td>−</td>
+					<td>●</td>
+					<td>●</td>
+					<td>●</td>
+					<td>−</td>
+					<td>●</td>
+					<td>●</td>
+				</tr>
+				<tr>
+					<td>13:00~<br>17:00</td>
+					<td>−</td>
+					<td>●</td>
+					<td>●</td>
+					<td>●</td>
+					<td>−</td>
+					<td>●</td>
+					<td>●</td>
+				</tr>
+			</table>
+		</div>
+</div>
+
+<div class="row ParallaxBg ParallaxBg__scrollbox">
+	<h1 class="col title-logo text-center" data-scroll>当院の特徴</h1>
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			<div data-scroll>
+				 <p>ぱんだ整形外科クリニックでは、一般的な整形外科治療とリハビリテーションによる運動療法を行なっております。</p>
+				 <nav class="Box__bg--beige">
+				 	<ul>
+				 		<li>膝、腰、股関節等の痛みの診断および治療が得意としております</li>
+				 		<li>運動器リハビリテーションを提供しています</li>
+				 		<li>超音波を使った診断・治療をいたします</li>
+				 		<li>MRIは地域の病院と医療連携し、４つの病院で撮影が可能です</li>
+				 		<li>手術の適応や保存的加療についての相談をおこなっています</li>
+				 	</ul>
+				 </nav>
+			</div>
+			<div class="wrap__imgs wrap__imgs--evenly">
+				<div class="Box__img--list1 Img__about--1 invisible visible" data-scroll></div>
+				<div class="Box__img--list1 Img__about--2 invisible visible" data-scroll></div>
+				<div class="Box__img--list1 Img__about--3 invisible visible" data-scroll></div>
+			</div>
+			<div class="text-center">
+				<%= link_to "もっと詳しく", about_path, class: "btn--next" %>
+			</div>
+		</div>
+</div>
+
+<div class="row ParallaxBg Img__bg--top2">
+	<div class="col wrap__title--topExam text-center" data-scroll>
+		<h1>初めてご来院の方</h1>
+	</div>
+
+	<div class="wrap__main--topExam">
+		<div class="row">
+			<h1 class="col title-logo text-center" data-scroll>診察内容</h1>
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<div class="wrap__imgs wrap__imgs--normal">
+					<div class="Img__form--circle Img__exam--1"></div>
+					<div class="Img__form--circle Img__exam--2"></div>
+					<div class="Img__form--circle Img__exam--3"></div>
+				</div>
+			</div>
+
+			<div data-scroll>
+				<h1 class="title-logo text-center col">ご診察の流れ</h1>
+			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-10 wrap__main--topExamFlow">
+				<div class="wrap__icons--title text-center" data-scroll>
+					ご用意していただくもの
+				</div>
+					<div data-scroll>
+						<b>健康保険証を忘れずお持ちください</b><br>
+
+						<b>お持ちの方は以下のもの</b>
+						<nav>
+							<ul>
+								<li>介護保険証</li>
+								<li>お薬手帳</li>
+								<li>紹介状</li>
+							</ul>
+						</nav>
+					</div>
+				<div class="wrap__icons--title text-center" data-scroll>
+					ご来院
+				</div>
+				<table class="Table__examFlow" data-scroll>
+					<tr>
+						<th>
+							<div class="wrap__icons--subtitles">
+								<span class="Icon__subtitle">紹介状を<br>お持ちの方</span>
+								<span class="Icon__subtitle">当院を直接<br>受診される方</span>
+								<span class="Icon__subtitle">当院の診察券を<br>お持ちの患者さま</span>
+							</div>
+						</th>
+						<th><p>クリニックの初診受付に<br>お越しください。</p></th>
+					</tr>
+					<tr>
+						<th><span class="Icon__subtitle">再診の患者さま</span></th>
+						<th><p>再来受付機で<br>受付をしてください。</p></th>
+					</tr>
+				</table>
+				<div class="wrap__icons--title text-center" data-scroll>
+					受診後の流れ
+				</div>
+				<nav data-scroll>
+					<ul>
+						<li>受付にお立ち寄りください。</li>
+						<li>自動精算機または会計窓口にて会計をしてください。</li>
+						<li>処方箋をお渡しします。</li>
+					</ul>
+				</nav>
+				<div class="text-center">
+					<%= link_to "もっと詳しく", about_path, class: "btn--next" %>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
+
+<div class="row ParallaxBg ParallaxBg__scrollbox">
+	<h1 class="col title-logo text-center" data-scroll>交通案内</h1>
+	<div class="wrap__main--topAccess">
+		<div class="col-md-6" data-scroll>
+		<div class="Box__access--information access-fade">
+			<p class="Box__access--header">ぱんだ整形外科クリニック</p>
+			<div class="Box__text--normal">
+				〒 542 - 0076<br>
+			   	　大阪府 大阪市中央区<br>
+			   　 難波４丁目  ４−４<br>
+			   <div class="wrap__icons--phonenumber">
+			   	  <i class="fab fa-viber"></i>  <span>0000 - 00 - 0000</span>
+			   </div>
+				   診察受付時間<br>
+				   午前： 8:00 ~ 12:00<br>
+				   午後： 13:00 ~ 17:00<br>
+				   休診日： <span class="sat">木曜・</span>
+				   <span class="sun">日曜・祝日</span><br>
+			   </div>
+		</div>
+		</div>
+
+			<div class="col-md-6 access-fade" data-scroll>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.5815068459037!2d135.49771331489043!3d34.6652703926233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e76ccff1ae5b%3A0x885a33bc01ef449b!2z6Zuj5rOi5b6h5aCC562L44K744Oz44K_44O844OT44Or!5e0!3m2!1sja!2sjp!4v1595422626265!5m2!1sja!2sjp" width="100%" height="450" frameborder="0"></iframe>
+				<div class="wrap__icons--evenly">
+				   <div class="Btn--access"><i class="fas fa-bus-alt">
+					    </i>最寄りのバス停<br><span> 笹の葉白浜前</span>
+					</div>
+				   <div class="Btn--access">
+				   		<i class="as fa-subway"></i> 最寄りの駅<br><span>笹の葉駅</span>
+				   </div>
+				</div>
+		    </div>
+		</div>
+	<div class="col text-center">
+		<%= link_to "もっと詳しく", about_path, class: "btn--next" %>
 	</div>
 </div>
+
+<div class="ParallaxBg Img__bg--top3">
+	<div class="row"></div>
+</div>
+
 </div>

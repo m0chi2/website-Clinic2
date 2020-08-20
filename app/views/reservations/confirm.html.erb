@@ -1,6 +1,6 @@
 <div class="container">
 <div class="row">
-	<h2 class="page__title text-center col">初診予約ページ</h2>
+	<h2 class="title-logo text-center col">初診予約ページ</h2>
 </div>
 
 <div class="row">
@@ -109,7 +109,7 @@
 		<%= session[:reservation]["question_medical_history"] %>
 	<h3>その他、事前にお伝えしたい内容がございましたらご記入ください。</h3>
 		<%= session[:reservation]["question_memo"] %><br>
-	<%= link_to "予約を確定する", reservations_path, method: :post, class: "btn__next" %>
+	<%= link_to "予約を確定する", reservations_path, method: :post, class: "btn--next" %>
 	</div>
 </div>
 </div>
