@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.14.1"
 
-server '54.168.225.211', user: 'ec2-user', roles: %w{app web db}, primary:true
+server '54.168.53.227', user: 'ec2-user', roles: %w{app web db}, primary:true
 set :application, "website-Clinic2"
 set :repo_url, "git@github.com:m0chi2/website-Clinic2.git"
 set :deploy_to, "/home/ec2-user/website-Clinic2"
