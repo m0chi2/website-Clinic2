@@ -58,16 +58,14 @@ Patient.create(email: "patient3@test.com",
 			   created_at: "2020-07-19 09:24:37",
 			   updated_at: "2020-07-19 09:24:37")
 
-Post.create(id: 1,
-			patient_id: 1,
+Post.create(patient_id: 1,
 			bothering_start_id: 2,
 			bothering_genre_id: 1,
 			content: "足の付け根に痛みが出るようになった",
 			created_at: "2020-07-24 03:34:30",
 			updated_at: "2020-07-24 03:34:30")
 
-Post.create(id: 2,
-			patient_id: 1,
+Post.create(patient_id: 1,
 			bothering_start_id: 3,
 			bothering_genre_id: 4,
 			content: "スポーツを続けてもいいのか？",

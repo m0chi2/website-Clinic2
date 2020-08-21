@@ -1,31 +1,33 @@
 <% if patient_signed_in? %>
-<nav id="main__patient__navbar__wrap">
-	<ul class="main__nav main__patient__nav">
-	<li class="leftside__li">
+<nav class="Nav__wrap Nav__wrap--patient">
+	<ul class="Nav">
+	<li class="Nav__borderBoth--patient">
 		<%= link_to "#", class: "menu-trigger" do %>
 	        <span></span>
-	        <span>大きな文字で<br>
-	            　メニューを見る
-	        </span>
+	        <span>大きな文字で<br>メニューを見る</span>
 	        <span></span>
 		<% end %>
 	</li>
-	<li><%= link_to posts_path do %>
+	<li class="Nav__borderRight--patient">
+		<%= link_to posts_path do %>
 			<i class="Icon__size--Large fas fa-pen-fancy"></i><br>
 			<span class="title">気になる記録を残す</span>
 		<% end %>
 	</li>
-	<li><%= link_to patients_homes_reservation_path do %>
+	<li class="Nav__borderRight--patient">
+		<%= link_to patients_homes_reservation_path do %>
 			<i class="Icon__size--Large far fa-calendar-check"></i><br>
 			<span class="title">予約を確認する</span>
 		<% end %>
 	</li>
-	<li><%= link_to reservations_path do %>
+	<li class="Nav__borderRight--patient">
+		<%= link_to reservations_path do %>
 			<i class="Icon__size--Large far fa-smile-wink"></i><br>
 			<span class="title">新規予約作成</span>
 		<% end %>
 	</li>
-	<li><%= link_to destroy_patient_session_path, method: :delete do %>
+	<li class="Nav__borderRight--patient">
+		<%= link_to destroy_patient_session_path, method: :delete do %>
 			<i class="Icon__size--Large fas fa-sign-out-alt"></i><br>
 			<span class="title">退出する</span>
 		<% end %>
@@ -34,38 +36,40 @@
 </nav>
 
 <% elsif admin_signed_in? && !patient_signed_in? %>
-<nav id="main__admin__navbar__wrap">
-	<ul class="main__nav main__admin__nav">
-	<li class="leftside__li">
+<nav class="Nav__wrap Nav__wrap--admin">
+	<ul class="Nav">
+	<li class="Nav__borderBoth--admin narrow-width">
 	    <%= link_to "#", class: "menu-trigger" do %>
 	        <span></span>
-	        <span class="admin__mainnav__text">大きな文字で<br>
-	            　メニューを見る
-	        </span>
+	        <span class="Nav__text--admin">大きな文字で<br>メニューを見る</span>
 	        <span></span>
 	    <% end %>
 	</li>
-	<li><%= link_to admins_about_path do %>
+	<li class="Nav__borderRight--admin narrow-width">
+		<%= link_to admins_about_path do %>
 			<i class="Icon__size--Large fas fa-user-md"></i><br>
 			<span class="title">管理者情報</span>
 		<% end %>
 	</li>
-	<li><%= link_to admins_homes_patients_path do %>
+	<li class="Nav__borderRight--admin narrow-width">
+		<%= link_to admins_homes_patients_path do %>
 			<i class="Icon__size--Large fas fa-users"></i><br>
 			<span class="title">会員一覧</span>
 		<% end %>
 	</li>
-	<li><%= link_to admins_reservations_today_path do %>
+	<li class="Nav__borderRight--admin narrow-width">
+		<%= link_to admins_reservations_today_path do %>
 			<i class="Icon__size--Large fas fa-calendar-day"></i><br>
 			<span class="title">本日の予約一覧</span>
 		<% end %>
 	</li>
-	<li><%= link_to admins_reservations_all_path do %>
+	<li class="Nav__borderRight--admin narrow-width">
+		<%= link_to admins_reservations_all_path do %>
 			<i class="Icon__size--Large far fa-address-book"></i><br>
 			<span class="title">予約一覧</span>
 		<% end %>
 	</li>
-	<li><%= link_to admins_path do %>
+	<li class="Nav__borderRight--admin narrow-width"><%= link_to admins_path do %>
 			<i class="Icon__size--Large fas fa-plus-circle"></i><br>
 			<span class="title">Comming Soon</span>
 		<% end %>
@@ -74,36 +78,38 @@
 </nav>
 
 <% else %>
-<nav id="main__navbar__wrap">
-	<ul class="main__nav">
-		<li class="leftside__li" id="hm-icon">
+<nav class="Nav__wrap Nav__wrap--visitor">
+	<ul class="Nav">
+		<li class="Nav__borderBoth--visitor" id="hm-icon">
 		    <%= link_to "#", class: "menu-trigger" do %>
 		        <span></span>
-		        <span>大きな文字で<br>
-		            　メニューを見る
-		        </span>
+		        <span>大きな文字で<br>メニューを見る</span>
 		        <span></span>
 		    <% end %>
 		</li>
-		<li><%= link_to about_path do %>
-				<i class="Icon__size--Large fas fa-clinic-medical"></i><br>
-				<span class="title">医院のご案内</span><br>
+		<li class="Nav__borderRight--visitor">
+			<%= link_to about_path do %>
+					<i class="Icon__size--Large fas fa-clinic-medical"></i><br>
+					<span class="title">医院のご案内</span><br>
 			<% end %>
 		</li>
-		<li><%= link_to "/exams" do %>
-			<i class="Icon__size--Large fas fa-stethoscope"></i><br>
-			<span class="title">診察のご案内</span>
-		<% end %>
+		<li class="Nav__borderRight--visitor">
+			<%= link_to "/exams" do %>
+				<i class="Icon__size--Large fas fa-stethoscope"></i><br>
+				<span class="title">診察のご案内</span>
+			<% end %>
 		</li>
-		<li><%= link_to "/access" do %>
-			<i class="Icon__size--Large fas fa-bus-alt"></i><br>
-			<span class="title">交通案内</span>
-		<% end %>
+		<li class="Nav__borderRight--visitor">
+			<%= link_to "/access" do %>
+				<i class="Icon__size--Large fas fa-bus-alt"></i><br>
+				<span class="title">交通案内</span>
+			<% end %>
 		</li>
-		<li><%= link_to new_patient_session_path do %>
-			<i class="Icon__size--Large far fa-id-card"></i><br>
-			<span class="title">会員ページ</span>
-		<% end %>
+		<li class="Nav__borderRight--visitor">
+			<%= link_to new_patient_session_path do %>
+				<i class="Icon__size--Large far fa-id-card"></i><br>
+				<span class="title">会員ページ</span>
+			<% end %>
 		</li>
 	</ul>
 </nav>
