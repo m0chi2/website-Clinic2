@@ -1,27 +1,26 @@
-<div class="row">
-  <div class="text-center">
-    <h1 class="title-logo title-fadein">会員ページ</h1>
-    <p>当院を受診いただいた方に、会員ページをご用意しています。</p><br>
-  </div>
-  <div class="col-md-2"></div>
-  <div class="col-md-4">
-    <div class="session__wrap">
-    <h2 class="text-center icon__patient__session">会員ページでできること</h2><br>
-      <ul class="text__patient__session">
-        <li>次回診察予約の確認</li>
-        <li>気になった症状の記録を残す</li>
-      </ul>
+<div class="container-fluid wrap__container">
+<div class="row text-center">
+    <h1 class="col title-logo title-fadein">会員ページ</h1>
+    <p class="fadeInUp">当院を受診いただいた方に、会員ページをご用意しています。</p><br>
+    <div class="col-md-2"></div>
+    <div class="col-md-4 fadeInUp">
+      <div class="Box__information">
+      <h2 class="Box__information--header Box__information--session-header">会員ページでできること</h2><br>
+        <ul class="Box__text--innerLeft text-left">
+          <li>次回診察予約の確認</li>
+          <li>気になった症状の記録を残す</li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group col-md-4">
-    <div class="session__wrap">
-    <h2 class="text-center icon__patient__session">ログイン</h2>
-    <div class="session__form">
+  <div class="col-md-4 form-group fadeInUp">
+    <div class="Box__information">
+    <h2 class="Box__information--header Box__information--session-header text-center">ログイン</h2>
+    <div class="Box__form--session">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :メールアドレス %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "panda@example.com", class: "form-control" %>
       </div>
 
       <div class="field">
@@ -32,7 +31,7 @@
       <% if devise_mapping.rememberable? %>
         <div class="field">
           <%= f.check_box :remember_me %>
-          <%= f.label :ログイン情報を保持する %>
+          <%= f.label :ログイン情報を保持する, class: "session-attention" %>
         </div>
       <% end %>
 
@@ -41,5 +40,5 @@
   </div>
   </div>
 </div>
-<div class="about__box"></div>
+</div>
 </div>

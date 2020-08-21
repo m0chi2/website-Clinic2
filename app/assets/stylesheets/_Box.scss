@@ -54,6 +54,10 @@
 				color: #FF0000;
 			}
 		}
+		&--innerLeft {
+			padding-left: 20%;
+			font-size: 2.4rem;
+		}
 		&--smaller {
 			width: 80%;
 			margin: auto;
@@ -79,12 +83,13 @@
 			border-radius: 15px;
 		}
 	}
-	&__access {
-		&--information {
-			background-color: #F5F5EE;
-			border-radius: 25px;
+	&__information {
+		background-color: #F5F5EE;
+		border-radius: 25px;
+		padding-bottom: 30px;
+		font-size: 2.8rem;
+		&--access {
 			font-size: 2.8rem;
-			padding-bottom: 30px;
 			h1 {
 				color: #67c5ff;
 				font-weight: bold;
@@ -101,6 +106,20 @@
 				background-image: image-url("header2.jpg");
 				border-radius: 25px;
 				padding: 25px 0;
+		}
+		&--session-header {
+				padding: 10px 0;
+		}
+	}
+	&__form {
+		&--session {
+			padding: 25px;
+			.field {
+				margin: 18px 0;
+			}
+			.session-attention {
+				font-size: 2.0rem;
+			}
 		}
 	}
 }

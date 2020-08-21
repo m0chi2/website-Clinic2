@@ -1,4 +1,21 @@
 .Btn {
+	&__scrollDown {
+		margin-top: 30px;
+		padding-top: 30px;
+		span {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: 24px;
+			height: 24px;
+			margin-left: -12px;
+			border-left: 1px solid #fff;
+			border-bottom: 1px solid #fff;
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+			box-sizing: border-box;
+		}
+	}
 	&--access {
 		text-align: center;
 		font-weight: bold;

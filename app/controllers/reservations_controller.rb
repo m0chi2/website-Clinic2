@@ -6,7 +6,7 @@ class ReservationsController < ApplicationController
 
   def new
     if Pickadate.find_by(date: params[:pickadate][:date], time: params[:pickadate][:time])
-        flash[:notice] = "予約が埋まっています。別の日時を指定してください。"
+        flash.now[:alert] = "予約が埋まっています。別の日時を指定してください。"
         redirect_to reservations_path
     end
     @reservation = Reservation.new
@@ -38,7 +38,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
         redirect_to reservations_thanks_path
     else
-        flash[:notice] = "エラーが起きました。入力内容を正しくご記入ください。"
+        flash.now[:alert] = "エラーが起きました。入力内容を正しくご記入ください。"
         render :index
     end
   end
