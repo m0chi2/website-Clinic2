@@ -35,7 +35,7 @@ body {
 }
 
 header, footer {
-	background-image: image-url("header2.jpg");
+	background-image: image-url("header-bg.jpg");
 }
 footer {
 	color: #fff;
@@ -555,7 +555,7 @@ li .title:hover:before {
 	}
 }
 .table__background__kininaru {
-	background-image: image-url("header2.jpg");
+	background-image: image-url("header-bg.jpg");
 	background-size: center;
 	background-position: center;
 	display: -webkit-flex;
@@ -607,7 +607,7 @@ li .title:hover:before {
 	margin-left: 30px;
 }
 .table__background__reservations {
-	background-image: image-url("header2.jpg");
+	background-image: image-url("header-bg.jpg");
 	background-size: center;
 	background-position: center;
 	font-size: 2.3rem;
@@ -656,7 +656,7 @@ li .title:hover:before {
 			text-align: center;
 		}
 		.table__background {
-			background-image: image-url("header2.jpg");
+			background-image: image-url("header-bg.jpg");
 		}
 }
 

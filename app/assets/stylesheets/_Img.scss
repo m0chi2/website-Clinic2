@@ -1,14 +1,14 @@
 .Img {
 	&__bg {
 		&--top1 {
-			background-image: image-url("clinic-image.jpg");
+			background-image: image-url("visitor-bg1.png");
 			height: 450px;
 		}
 		 &--top2 {
  			background-image: image-url("exam3.jpg");
   		}
   		&--top3 {
-  			background-image: image-url("top-bottom-img.jpg");
+  			background-image: image-url("visitor-bg3.jpg");
   			height: 500px;
   		}
 	}
