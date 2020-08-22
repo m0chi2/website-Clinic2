@@ -76,6 +76,13 @@
 			height: 200px;
 			overflow: scroll;
 		}
+		&--attention {
+			line-height: 4.0rem;
+			font-size: 2.4rem;
+			span {
+				color: #FF0000;
+			}
+		}
 	}
 	&__bg {
 		&--white {
@@ -107,7 +114,7 @@
 		background-color: #F5F5EE;
 		border-radius: 25px;
 		padding-bottom: 30px;
-		font-size: 2.8rem;
+		font-size: 2.6rem;
 		&--access {
 			font-size: 2.8rem;
 			h1 {
@@ -118,6 +125,9 @@
 			p {
 				margin-bottom: 0;
 			}
+		}
+		&--session {
+			width: 600px;
 		}
 		&--header {
 				text-align: center;
@@ -132,10 +142,14 @@
 		}
 	}
 	&__form {
+		&--reservationSearch {
+			padding-bottom: 40px;
+		}
 		&--session {
-			padding: 25px;
+			text-align: center;
 			.field {
 				margin: 18px 0;
+				padding: 10px 60px;
 			}
 			.session-attention {
 				font-size: 2.0rem;

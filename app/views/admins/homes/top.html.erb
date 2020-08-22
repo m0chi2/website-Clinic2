@@ -1,13 +1,15 @@
 <div class="container">
-<div class="row admin__top__wrap">
-	<div class="text__admin__top col-md-6">
-		<% if @reservation %>
-		<h2>本日の予約は<%= @reservation.count %>件です</h2>
-			<%= link_to "確認する", admins_reservations_today_path ,class: "btn__admin__link" %>
-		<% else %>
-			<h2>本日の予約はありません</h2>
-		<% end %>
+<div class="row">
+	<div class="wrap__main--adminTop Box__bg--beige">
+		<div class="col-md-6 text-center">
+			<% if @reservation %>
+			<h2>本日の予約は<%= @reservation.count %>件です</h2>
+				<%= link_to "確認する", admins_reservations_today_path ,class: "btn__admin__link" %>
+			<% else %>
+				<h2>本日の予約はありません</h2>
+			<% end %>
+		</div>
+		<div class="col-md-4 Img__adminTop Img__form--square"></div>
 	</div>
-	<div class="admin__background col-md-4"></div>
 </div>
 </div>

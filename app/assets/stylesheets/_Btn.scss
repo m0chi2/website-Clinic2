@@ -45,6 +45,14 @@
 	    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
 	    border-bottom: none;
 	}
+	&__detail {
+		background: #FCE8EA;
+		border-radius: 25px;
+		padding: 4px;
+	}
+	&__detail:hover {
+		background: #f49ca4;
+	}
 	&--access {
 		text-align: center;
 		font-weight: bold;

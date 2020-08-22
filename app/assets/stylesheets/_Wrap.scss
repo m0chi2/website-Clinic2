@@ -130,5 +130,15 @@
 				padding: 15px 35px !important;
 			}
 		}
+		&--adminTop {
+			 display: -webkit-flex;
+			 display: flex;
+			 justify-content: center;
+			 align-items: center;
+			 -webkit-align-items: center;
+			 height: 350px;
+			 width: 80%;
+			 padding: 25px 0;
+		}
 	}
 }

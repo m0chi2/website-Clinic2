@@ -1,23 +1,22 @@
-<div class="container">
-<div class="row">
-	<h1 class="title-logo text-center col">管理者情報</h1>
-		<div class="col-md-3"></div>
-		<div class="col-md-5 admin__patient__wrap">
-			<table class="admin__about__table">
-				<tr>
-					<td class="patient__item">管理者ID</td>
-					<td>XXXXXX</td>
-				</tr>
-				<tr>
-					<td class="patient__item">管理者氏名</td>
-					<td><%= current_admin.name %></td>
-				</tr>
-				<tr>
-					<td class="patient__item">管理者氏名（カナ）</td>
-					<td><%= current_admin.name_kana %></td>
-				</tr>
-			</table>
-		</div>
-<div class="about__box"></div>
+<div class="container wrap__container">
+<div class="row text-center">
+	<h1 class="col title-logo">管理者情報</h1>
+	<div class="col-md-3"></div>
+	<div class="col-md-5">
+		<table class="Table__placement--admin">
+			<tr>
+				<td class="Form__label-bg">管理者ID</td>
+				<td>XXXXXX</td>
+			</tr>
+			<tr>
+				<td class="Form__label-bg">管理者氏名</td>
+				<td><%= current_admin.name %></td>
+			</tr>
+			<tr>
+				<td class="Form__label-bg">管理者氏名（カナ）</td>
+				<td><%= current_admin.name_kana %></td>
+			</tr>
+		</table>
+	</div>
 </div>
 </div>

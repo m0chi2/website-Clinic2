@@ -1,5 +1,5 @@
 class InquiryMailer < ApplicationMailer
-	default from: "hoge@example.com"
+	default from: "hoge@gmail.com"
 
 	def received_email(inquiry)
 		@inquiry = inquiry

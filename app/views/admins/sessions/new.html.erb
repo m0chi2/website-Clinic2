@@ -1,37 +1,36 @@
-<div class="container">
+<div class="container wrap__container">
 <div class="row">
-  <h1 class="title-logo text-center">ログイン</h1>
-  <div class="col-md-4"></div>
- <div class="col-md-4">
-  <div class="session__wrap">
-      <h2 class="text-center icon__patient__session">管理者ログイン</h2><br>
-      <div class= "session__form">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
-          <%= f.label :email, "メールアドレス" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
+  <h1 class="col title-logo text-center">ログイン</h1>
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+      <div class="Box__information Box__information--session">
+          <h2 class="Box__information--header text-center">管理者ログイン</h2><br>
+          <div class= "Box__form--session">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field">
+              <%= f.label :email, "メールアドレス" %><br />
+              <%= f.email_field :email, autocomplete: "email" %>
+            </div>
 
-        <div class="field">
-          <%= f.label :password, "パスワード" %><br />
-          <%= f.password_field :password, autocomplete: "current-password" %>
-        </div>
+            <div class="field">
+              <%= f.label :password, "パスワード" %><br />
+              <%= f.password_field :password, autocomplete: "current-password" %>
+            </div>
 
-        <% if devise_mapping.rememberable? %>
-          <div class="field">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me, "ログイン情報を保持する" %>
-          </div>
-        <% end %>
+            <% if devise_mapping.rememberable? %>
+              <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me, "ログイン情報を保持する" %>
+              </div>
+            <% end %>
 
-        <div class="actions">
-          <%= f.submit "ログイン" %>
+            <div class="actions text-center">
+              <%= f.submit "ログイン" %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
-    </div>
-  </div>
+      </div>
 </div>
 </div>
-<div class="about__box"></div>
 </div>
 
