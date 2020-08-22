@@ -82,7 +82,6 @@ a {
 	text-decoration: none;
 	color: #333;
 }
-
 a:hover,
 a:visited,
 a:active,
@@ -97,34 +96,6 @@ p {
 
 th {
   text-align: center !important;
-}
-.btn {
-	&--next {
-		display: inline-block;
-	  	padding: 10px 23px;
-	  	margin: 20px auto;
-	  	color: #FFF;
-	  	font-size: 3rem;
-	  	text-decoration: none;
-	  	border: none;
-	  	border-radius: 25px;
-	  	background-image: linear-gradient(#fed6e3 0%, #ffaaaa 100%);
-	  	transition: .4s;
-	  	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
-	  	border-bottom: solid 3px #bd6565;
-	  	overflow: hidden;
-		outline: none;
-	}
-	&--next:hover {
-		background-image: linear-gradient(45deg, #FFC107 0%, #fed6e3 0%, #ffbcbc 100%);
-		text-decoration: none;
-	}
-	&--next:active {
-	    -webkit-transform: translateY(2px);
-	    transform: translateY(2px);
-	    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-	    border-bottom: none;
-	}
 }
 
 .title-logo {
@@ -231,17 +202,6 @@ th {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 .navbar {
 	border: 0;
 }
@@ -323,10 +283,7 @@ th {
 	display: flex;
 	border: 20px solid #fff;
 }
-.content__area {
-	width: 480px;
-	height: 230px !important;
-}
+
 .inquiry__confirm__field {
 	display: -webkit-flex;
 	display: flex;
@@ -391,7 +348,7 @@ li .title:hover:before {
 }
 
 
-.btn--next__wrapper {
+.Btn__submit__wrapper {
 	text-align: center;
 }
 
@@ -517,103 +474,11 @@ li .title:hover:before {
 #logout__topbar__mark:hover {
 	background-color: #FCE8EA;
 }
-.patient__background {
-	background-image: image-url("patient-index-img.jpg");
-	background-color: rgba(255,255,255,0.2);
-	background-size: cover;
-	background-position: center;
-	height: 500px;
-	width: 100%
-}
-
-.btn__kininaru {
-	display: inline-block;
-  	padding: 15px 23px 10px 23px;
-  	margin: 20px;
-  	color: #fff;
-  	background-color: #f49ca4;
-  	font-size: 2.8rem;
-  	font-weight: bold;
-  	text-decoration: none;
-  	border: none;
-  	border-radius: 25px;
-  	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
-  	border-bottom: solid 3px #bd6565;
-  	text-align: center;
-
-}
-.btn__kininaru:hover {
-	color: #494949;
-	span{
-		color: #00A1FF;
-	}
-}
-.table__kininaru {
-	margin-bottom: 60px;
-	font-size: 2.4rem;
-	td {
-	  height: 14%;
-	}
-}
-.table__background__kininaru {
-	background-image: image-url("header-bg.jpg");
-	background-size: center;
-	background-position: center;
-	display: -webkit-flex;
-}
 .Bothering__wrap {
 	display: flex;
-	flex-direction: row;
 	padding-top: 2%;
 	margin-left: 10px;
 }
-.BotheringStartId__1 {
-
-}
-.icon__BotheringGenre {
-	background: rgba(255,255,255,0.3);
-	border-radius: 25px;
-	padding: 0 10px;
-	margin-left: 15px;
-}
-.BotheringGenreId__1 {
-	color: #e67e22;
-	border: solid 2px #e67e22;
-}
-.BotheringGenreId__2 {
-	color: #2ecc71;
-	border: solid 2px #2ecc71;
-}
-.BotheringGenreId__3 {
-	color: #3498db;
-	border: solid 2px #3498db;
-}
-.BotheringGenreId__4 {
-	color: #9b59b6;
-	border: solid 2px #9b59b6;
-}
-.BotheringGenreId__5 {
-	color: #34495e;
-	border: solid 2px #34495e;
-}
-.form__label__kininaru {
-	font-size: 2.3rem;
-	color: #333;
-	margin-right: 60px;
-}
-.btn__kininaru__position {
-	margin-left: 80px;
-}
-.table__kininaru__position{
-	margin-left: 30px;
-}
-.table__background__reservations {
-	background-image: image-url("header-bg.jpg");
-	background-size: center;
-	background-position: center;
-	font-size: 2.3rem;
-}
-
 .admin__background {
 	background-image: image-url("admin-index-img.jpg");
 	background-size: cover;
@@ -635,7 +500,7 @@ li .title:hover:before {
 	display: flex;
   	justify-content: center;
 }
-.admin__reservation__btn--next {
+.admin__reservation__Btn__submit {
 	text-align: center;
 }
 

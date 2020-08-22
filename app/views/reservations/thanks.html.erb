@@ -8,11 +8,11 @@
 			気をつけてお越しくださいませ。</p>
 
 	<% if patient_signed_in? %>
-		<%= link_to patients_homes_path, class: "btn--next" do %>
+		<%= link_to patients_homes_path, class: "Btn__submit" do %>
 			<h2>最初のページへ戻る</h2>
 		<% end %>
 	<% else %>
-		<%= link_to "/", class: "btn--next" do %>
+		<%= link_to "/", class: "Btn__submit" do %>
 			<h2>最初のページへ戻る</h2>
 		<% end %>
 	<% end %>

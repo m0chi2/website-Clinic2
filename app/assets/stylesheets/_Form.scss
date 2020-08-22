@@ -1,0 +1,17 @@
+.Form {
+	&__label-style {
+		font-size: 2.3rem;
+		color: #333;
+		margin-right: 60px;
+		height: 14%;
+	}
+	&__size {
+		&--area {
+			width: 100%;
+			height: 230px !important;
+		}
+	}
+	&__position {
+		margin-bottom: 60px;
+	}
+}

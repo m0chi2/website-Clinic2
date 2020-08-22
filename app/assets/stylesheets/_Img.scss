@@ -11,6 +11,14 @@
   			background-image: image-url("visitor-bg2.jpg");
   			height: 500px;
   		}
+  		&--patient-top {
+  				background-image: image-url("patient-bg1.jpg");
+  				height: 500px;
+				width: 100%;
+				background-color: rgba(255,255,255,0.2);
+				background-size: cover;
+				background-position: center;
+  		}
 	}
 	&__about {
 		&--1 {
@@ -51,9 +59,9 @@
 		}
 	}
 	&--doctorProfile {
+			background-image: image-url("doctor.jpg");
 			height: 470px;
 			width: 320px;
-			background-image: image-url("doctor.jpg");
 			background-size: cover;
 			background-position: bottom center;
 			box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
