@@ -108,5 +108,12 @@
 			 -webkit-justify-content: center;
 		 	justify-content: center;
 		}
+		&--reservationQ{
+			margin: 100px auto;
+			text-align: center;
+			h3 {
+				margin-top: 50px;
+			}
+		}
 	}
 }

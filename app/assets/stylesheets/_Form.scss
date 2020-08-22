@@ -5,10 +5,16 @@
 		margin-right: 60px;
 		height: 14%;
 	}
+	&__label-bg {
+		background-color: rgb(242, 242, 242);
+	}
 	&__size {
 		&--area {
 			width: 100%;
 			height: 230px !important;
+		}
+		&--narrow-area {
+			width: 80%;
 		}
 	}
 	&__position {

@@ -47,5 +47,16 @@
 			padding-top: 2%;
 			margin-left: 10px;
 		}
+		&--reservation {
+			display: -webkit-flex;
+			display: flex;
+			-webkit-align-items: center;
+			align-items: center;
+			-webkit-justify-content: center;
+		 	justify-content: center;
+		 	td {
+		 		 border: 10px solid #fff;
+		 	}
+		}
 	}
 }
