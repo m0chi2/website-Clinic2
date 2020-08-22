@@ -163,11 +163,11 @@
 		 	}
 		}
 	}
-	&__radioBtns {
+	&__Btns {
 		-webkit-display: flex;
 		display: flex;
 		-webkit-justify-content: center;
-	 	justify-content: center;
+	 	justify-content: space-between;
 	 	&--placement {
 	 		float: left;
 			padding-right: 15px;

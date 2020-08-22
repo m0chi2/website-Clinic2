@@ -226,7 +226,6 @@ th {
   font-weight: bold;
   text-align: center;
   padding: 8px 10px 5px 10px;
-  text-shadow: 3px 1px 3px #404040;
   text-decoration: none;
   color: #FCE8EA;
   background-image: linear-gradient(45deg, #FFC107 0%, #fed6e3 0%, #f49ca4 100%);
@@ -273,14 +272,6 @@ th {
 	font-size: 2.2rem;
 	font-weight: bold;
 	border-radius: 25px;
-}
-.inquiry__form__field {
-	width: 480px;
-}
-.inquiry__table th {
-	display: -webkit-flex;
-	display: flex;
-	border: 20px solid #fff;
 }
 
 .inquiry__confirm__field {
@@ -376,9 +367,6 @@ li .title:hover:before {
 		margin-top: 70px;
 	}
 }
-.reservation__title {
-	margin-top: 70px;
-}
 .patient__item,
 .visitor__item {
 	background-color: rgb(242, 242, 242);
@@ -386,13 +374,6 @@ li .title:hover:before {
 .patient__table td,
 .admin__about__table td {
   border: 10px solid #fff;
-}
-.terms {
-	  width: 450px;
-	  height: 200px;
-	  overflow: scroll;
-	  background-color: #F5F5EE;
-	  margin: auto;
 }
 
 .thanks__text {

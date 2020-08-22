@@ -1,9 +1,9 @@
 <div class="container wrap__container">
-<div class="row">
+<div class="row text-center">
 	<% if patient_signed_in? || admin_signed_in? %>
-		<h2 class="col title-logo text-center">予約ページ</h2>
+		<h2 class="col title-logo">予約ページ</h2>
 	<% else %>
-		<h2 class="col title-logo text-center">初診予約ページ</h2>
+		<h2 class="col title-logo">初診予約ページ</h2>
 	<% end %>
 </div>
 
@@ -44,7 +44,7 @@
 						 end_year: (Time.now.year - 1 ),
 						 default: Date.new(1990, 1, 1),
 						 date_separator: '%s'),
-						'年 ', '月 ') + '日' %></td> <!-- FIX 生年月日もbootstrapにしたい -->
+						'年 ', '月 ') + '日' %></td>
 		</tr>
 		<tr>
 			<td class="Form__label-bg">性別</td>
@@ -76,16 +76,12 @@
 			<h3>どのような症状がありますか？</h3>
 				<%= f.text_area :exam_content, class: "form-control Form__size--narrow-area" %>
 			<h3>いつ頃から症状がありますか？</h3>
-				<div class="Box__radioBtns">
-				<div class="Box__radioBtns" >
-					<%= f.radio_button :bothering_start_id, 1, checked: true %>今日</div>
-				<div class="Box__radioBtns" >
-					<%= f.radio_button :bothering_start_id, 2 %>昨日</div>
-				<div class="Box__radioBtns" >
-					<%= f.radio_button :bothering_start_id, 3 %>２、３日前</div>
-				<div class="Box__radioBtns" >
-					<%= f.radio_button :bothering_start_id, 4 %>１週間前</div>
-					<%= f.radio_button :bothering_start_id, 5 %>それより前（１週間より前）
+				<div class="Box__Btns">
+					<div><%= f.radio_button :bothering_start_id, 1, checked: true %>今日</div>
+					<div><%= f.radio_button :bothering_start_id, 2 %>昨日</div>
+					<div><%= f.radio_button :bothering_start_id, 3 %>２、３日前</div>
+					<div><%= f.radio_button :bothering_start_id, 4 %>１週間前</div>
+					<div><%= f.radio_button :bothering_start_id, 5 %>それより前（１週間より前）</div>
 				</div>
 			<h3>今までにかかった・または治療中の病気があればご記入ください。</h3>
 				<%= f.text_area :question_medical_history, class: "form-control Form__size--narrow-area" %>
