@@ -38,14 +38,61 @@
 			border: solid 2px #34495e;
 		}
 	}
-	&--topPhonenumber {
-		background-color: #A28C63;
-		color: #ffffff;
-		font-size: 2.8rem;
-		width: 80%;
-		border-radius: 25px;
-		padding: 5px 10px;
-		margin: 10px;
-		font-size: 3.0rem;
+	&__styleRadius {
+		&--brown {
+			background-color: #A28C63;
+			color: #fff;
+			border-radius: 25px;
+		}
+		&--green {
+			background-color: #B6D7D2;
+			border-radius: 25px;
+		}
+		&--white {
+			background-color: #fff;
+			border-radius: 25px;
+		}
+		&--pink {
+			background-color: #f49ca4;
+			color: #494949;
+			font-weight: bold;
+			border-radius: 25px;
+		}
+		&--pink:hover {
+			background-color: #FCE8EA;
+		}
+		&--black {
+			background-color: #404040;
+			color: #fff;
+			font-weight: bold;
+			border-radius: 25px;
+		}
+		&--openingHour {
+			width: 80%;
+			padding: 5px 10px;
+			margin: 10px;
+			font-size: 3.0rem;
+		}
+		&--navPhonenumber {
+			width: 50%;
+			padding: 0 10px;
+			margin: 25px 0 30px;
+			font-size: 2.3rem;
+		}
+		&--accessPhonenumber {
+			padding: 5px 30px;;
+			margin: 15px;
+			font-weight: bold;
+			font-size: 3.4rem;
+			width: 80%;
+			span {
+				color: #3db2da;
+			}
+		}
+		&--loginStatus {
+			display: inline-block;
+		    padding: 7px 20px;
+		    margin: 45px 0 0 35px;
+		}
 	}
 }

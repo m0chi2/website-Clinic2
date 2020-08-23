@@ -12,32 +12,32 @@
     <script src="https://kit.fontawesome.com/<%= ENV['FONTAWESOME_KIT'] %>.js" crossorigin="anonymous"></script>
   </head>
 
-<div class="navbar__top__border"></div>
   <header>
+    <div class="Nav__borderTop"></div>
     <div class="container">
-      <div class="row navbar">
+      <div class="row">
       <% if patient_signed_in? %>
-          <%= link_to image_tag("toplogo-white.png", class: "toplogo pull-left"), patients_homes_path %>
-          <h3 id= "patient__topbar__mark", class="topbar__mark">会員ページ</h3>
+          <%= link_to image_tag("toplogo-white.png", class: "Img--topLogo pull-left"), patients_homes_path %>
+          <h3 class= "Icon__styleRadius--pink Icon__styleRadius--loginStatus", class="topbar__mark">会員ページ</h3>
       <% elsif admin_signed_in? %>
-          <%= link_to image_tag("toplogo-white.png", class: "toplogo pull-left"), admins_path %>
-          <h3 id= "admin__topbar__mark", class="topbar__mark">管理者ページ</h3>
-            <%= link_to destroy_patient_session_path, method: :delete, id: "logout__topbar__mark", class: "topbar__mark" do %>
+          <%= link_to image_tag("toplogo-white.png", class: "Img--topLogo pull-left"), admins_path %>
+          <h3 class="Icon__styleRadius--black Icon__styleRadius--loginStatus">管理者ページ</h3>
+            <%= link_to destroy_patient_session_path, method: :delete, class: "Icon__styleRadius--pink Icon__styleRadius--loginStatus" do %>
               <i class="fas fa-sign-out-alt"></i>ログアウトする
             <% end %>
       <% else %>
-          <%= link_to image_tag("toplogo-white.png", class: "toplogo pull-left"), "/" %>
-          <div class=" btn__topbar__wrap">
-                <%= link_to reservations_path, class: "btn__topbar__radius__l topbox reservation__mark" do %>
-                    <span>予約する</span>
+          <%= link_to image_tag("toplogo-white.png", class: "Img--topLogo pull-left"), "/" %>
+          <div class="Box__Btns Box__Btns--placementRight">
+                <%= link_to reservations_path, class: "topbox Btn__topBar Btn__topBar--style Btn__topBar--styleLeft" do %>
+                    <span>簡単web予約をする</span>
                 <% end %>
 
-              <div class="topbox btn__topbar__radius__r">
-                  <span class="text__top__inquiry">お気軽にお問い合いわせください<br>
+              <div class="topbox Btn__topBar Btn__topBar--styleRight">
+                  <span>お気軽にお問い合いわせください<br>
                   <%= link_to "お問い合わせフォーム", inquiry_path %></span><br>
-                  <p  class="btn__top__inquiry">
-                  <span class="glyphicon glyphicon-earphone" aria-hidden="true" ></span>
-                  電話： XXXX - XX - XXXX</p>
+                  <span class="Icon__styleRadius--green Icon__styleRadius--navPhonenumber">
+                    <span class="glyphicon glyphicon-earphone" aria-hidden="true" ></span>
+                    電話： XXXX - XX - XXXX</span>
               </div>
         </div>
       <% end %>
@@ -66,15 +66,15 @@
            </ul>
         </nav>
       </div>
-    <div class="col-md-3 footer-top-box">
+    <div class="col-md-3 Box__information--footerUpper">
           <h2><b><%= link_to "交通案内", access_path %></b></h2>
           <h2><b>会員ページ</b></h2>
             <li>− 会員ページについて</li>
             <li>− <%= link_to "ログインページ", new_patient_session_path %></li>
           <h2><b><%= link_to "お問い合わせ", inquiry_path %></b></h2>
     </div>
-    <div class="col-md-3 footer-logo-box">
-      <%= image_tag "toplogo-white.png", class: "footer-logo" %>
+    <div class="col-md-3 Box__information--footerLower">
+      <%= image_tag "toplogo-white.png", class: "Img--footerLogo" %>
       <h3><b>XXXX - XX - XXXX</b></h3>
     </div>
     </div>

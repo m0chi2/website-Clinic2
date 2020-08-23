@@ -37,6 +37,26 @@ body {
 header, footer {
 	background-image: image-url("header-bg.jpg");
 }
+li .title {
+	position: relative;
+	font-weight: bold;
+	padding: 0.25em 0;
+}
+li .title:before {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 4px;
+	top:100%;
+	left: 0;
+	border-radius: 3px;
+	background:#67c5ff;
+	transition: .2s;
+}
+li .title:hover:before {
+	top: -webkit-calc(100% - 3px);
+	top: calc(100% - 3px);
+}
 footer {
 	color: #fff;
 	font-size: 2.0rem;
@@ -45,39 +65,23 @@ footer {
 		display: flex;
 		-webkit-align-items: center;
 		align-items: center;
-		 -webkit-justify-content: center;
+		-webkit-justify-content: center;
 	 	justify-content: center;
 	 	padding: 2% 0;
 	 	a {
-	 	color: #fff;
-	 	text-decoration: none;
-	 	padding: 0 5px;
+		 	color: #fff;
+		 	text-decoration: none;
+		 	padding: 0 5px;
 	 	}
 	 	a:hover {
-	 	background-color: #404040;
-	 	border-radius: 25px;
+		 	background-color: #404040;
+		 	border-radius: 25px;
 	 	}
 	}
 	li {
 		list-style: none;
 	}
 }
-.footer-top-box {
-	height: 280px;
-	padding: 0 5%;
-	border-right: 1px solid #fff;
-}
-.footer-logo-box {
-	height: 280px;
-	padding: 5% 1%;
-	text-align: center;
-	h3 {
-		background-color: #404040;
-		border-radius: 25px;
-		margin: 10px 20px;
-	}
-	}
-
 a {
 	text-decoration: none;
 	color: #333;
@@ -87,7 +91,7 @@ a:visited,
 a:active,
 a:link {
 	text-decoration:none;
-	color: #333;
+	color: #373737;
 }
 
 p {
@@ -95,7 +99,7 @@ p {
 }
 
 th {
-  text-align: center !important;
+  	text-align: center !important;
 }
 
 .title-logo {
@@ -115,7 +119,7 @@ th {
 }
 
 
-// アニメーション
+
 @keyframes fadeInRight {
   0% {
     opacity: 0;
@@ -200,144 +204,39 @@ th {
     filter: blur(0);
   }
 }
-
-.navbar {
-	border: 0;
+.fadeInUp, .access, .text--access {
+	opacity: 0;
+  	animation: fadeIn 0.8s;
+  	animation-fill-mode: forwards;
 }
-.navbar__top__border {
-	border-top: solid 10px #f49ca4;
-}
-.toplogo {
-	margin-top: 15px;
-}
-.btn__topbar__wrap {
-	display: flex;
-	justify-content: flex-end;
-	.reservation__mark {
-		text-align: center;
-		font-size: 2.7rem;
-		padding: 28px 30px 0 30px;
-	}
-}
-
-.btn__topbar__radius__l {
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  text-align: center;
-  padding: 8px 10px 5px 10px;
-  text-decoration: none;
-  color: #FCE8EA;
-  background-image: linear-gradient(45deg, #FFC107 0%, #fed6e3 0%, #f49ca4 100%);
-  border-bottom: solid 4px #bd6565;
-  border-radius: 0 0 15px 15px;
-  transition: .4s;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+ 50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+ 100% {
+	opacity:1;
+	transform: translateY(-20px);
+  }
 }
 
-.btn__topbar__radius__l:hover {
-  background-image: linear-gradient(#fed6e3 0%, #ffaaaa 100%);
-  text-shadow: 3px 1px 3px #fff;
-  color: #404040;
+.fadeInUp:nth-of-type(2) {
+	animation-delay: 0.5s;
+	-webkit-animation-delay: 0.5s;
+}
+.fadeInUp:nth-of-type(3) {
+	animation-delay: 1.0s;
+	-webkit-animation-delay: 1.0s;
+}
+.title-fadein:nth-of-type(2) {
+	animation-delay: 0.5s;
+	-webkit-animation-delay: 0.5s;
 }
 
-.btn__topbar__radius__r {
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  text-align: center;
-  padding: 8px 10px 5px 10px;
-  text-decoration: none;
-  color: #404040;
-  background-image: linear-gradient(45deg, #FFC107 0%, #fed6e3 0%, #f49ca4 100%);
-  border-bottom: solid 4px #f49ca4;
-  border-radius: 0 0 15px 15px;
-  transition: .4s;
-}
-.btn__topbar__radius__r:hover {
-  background-image: linear-gradient(#fed6e3 0%, #ffaaaa 100%);
-}
-.text__top__inquiry {
-	font-size: 1.6rem;
-	a {
-		font-size: 2.3rem;
-	}
-	a:hover {
-		color: #3db2da;
-	}
-}
-
-.btn__top__inquiry {
-	background-color: #B6D7D2;
-	color: #333;
-	font-size: 2.2rem;
-	font-weight: bold;
-	border-radius: 25px;
-}
-li .title {
-  position: relative;
-  font-weight: bold;
-  padding: 0.25em 0;
-}
-li .title:before {
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: 4px;
-  top:100%;
-  left: 0;
-  border-radius: 3px;
-  background:#67c5ff;
-  transition: .2s;
-}
-
-li .title:hover:before {
-	top: -webkit-calc(100% - 3px);
-	top: calc(100% - 3px);
-}
-.main__nav li:hover {
-	height: 100%;
-	background-color: rgba(255,255,255,0.7);
-}
-.btn__about {
-	margin: 20px 50px 0;
-	padding: 5px;
-}
-.back__button {
-	display: inline-block;
-  	padding: 10px 23px;
-  	margin: 20px;
-  	color: #333;
-  	font-size: 3rem;
-  	text-decoration: none;
-  	border: none;
-  	border-radius: 25px;
-  	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
-  	border-bottom: solid 3px #bd6565;
-}
-.topbar__mark {
-	font-weight: bold;
-	display: inline-block;
-    padding: 7px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    margin-top: 50px;
-    margin-left: 20px;
-}
-#patient__topbar__mark {
-	background-color: #f49ca4;
-	color: #494949;
-}
-#admin__topbar__mark {
-	background-color: #404040;
-	color: #fff;
-	font-weight: bold;
-}
-#logout__topbar__mark {
-	background-color: #f49ca4;
-}
-#logout__topbar__mark:hover {
-	background-color: #FCE8EA;
-}
 
 #hm-icon{
   top: 20px;
@@ -368,16 +267,6 @@ li .title:hover:before {
 	.admin__mainnav__text {
 	  font-size: 2.0rem;
 	}
-}
-.btn__admin__link {
-	background-color: #f49ca4;
-	border-radius: 25px;
-	padding: 5px;
-	font-weight: bold;
-	font-size: 2.4rem;
-}
-.btn__admin__link:hover {
-	background-color: #fed6e3;
 }
 .menu-trigger .menu__text {
 	background-color: #000;
@@ -438,49 +327,4 @@ li .title:hover:before {
   background-color: #404040;
   border-radius: 50px;
   padding: 10px;
-}
-
-
-.text__notice {
-	color: #FF0000;
-	font-size: 3.0rem;
-	text-align: center;
-	margin-top: 30px;
-}
-
-.footer-logo {
-	width: 100%;
-}
-.fadeInUp, .access, .text--access {
-	opacity: 0;
-  	animation: fadeIn 0.8s;
-  	animation-fill-mode: forwards;
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
- 50% {
-    opacity: 1;
-    transform: translateY(0);
-  }
- 100% {
-	opacity:1;
-	transform: translateY(-20px);
-  }
-}
-
-.fadeInUp:nth-of-type(2) {
-	animation-delay: 0.5s;
-	-webkit-animation-delay: 0.5s;
-}
-.access,
-.fadeInUp:nth-of-type(3) {
-	animation-delay: 1.0s;
-	-webkit-animation-delay: 1.0s;
-}
-.title-fadein:nth-of-type(2) {
-	animation-delay: 0.5s;
-	-webkit-animation-delay: 0.5s;
 }

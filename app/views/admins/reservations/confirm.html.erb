@@ -1,8 +1,6 @@
+<div class="container wrap__container">
 <div class="row">
-	<%= render "homes/navbar" %>
-</div>
-<div class="row">
-<div class="col-1"></div>
+<div class="col-2"></div>
 <div class="col-8">
 	<h1 class="title-logo text-center">予約の新規作成</h1>
 	<table>
@@ -28,9 +26,10 @@
 					<td><%= session[:time] %></td>
 				</tr>
 				<tr>
-					<td><%= f.submit "予約確定", class:"btn btn-success" %></td>
+					<td><%= f.submit "予約確定", class:"Btn__submit text-center" %></td>
 				</tr>
 			<% end %>
 	</table>
+</div>
 </div>
 </div>

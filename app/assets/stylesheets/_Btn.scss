@@ -53,6 +53,45 @@
 	&__detail:hover {
 		background: #f49ca4;
 	}
+	&__topBar {
+			display: inline-block;
+			font-weight: bold;
+			text-align: center;
+			text-decoration: none;
+			position: relative;
+			height: 100px;
+			border-radius: 0 0 15px 15px;
+			transition: .4s;
+		&--styleLeft {
+			padding: 0px 10px;
+			line-height: 100px;
+			color: #FCE8EA;
+			background-image: linear-gradient(45deg, #FFC107 0%, #fed6e3 0%, #f49ca4 100%);
+			border-bottom: solid 4px #bd6565;
+			font-size: 2.3rem;
+		}
+		&--styleLeft:hover {
+			background-image: linear-gradient(#fed6e3 0%, #ffaaaa 100%);
+			text-shadow: 3px 1px 3px #fff;
+			color: #404040;
+		}
+		&--styleRight {
+			padding: 3px 10px;
+			color: #404040;
+			background-image: linear-gradient(45deg, #FFC107 0%, #fed6e3 0%, #f49ca4 100%);
+			border-bottom: solid 4px #f49ca4;
+			font-size: 1.6rem;
+			a {
+				font-size: 2.3rem;
+			}
+			a:hover {
+				color: #3db2da;
+			}
+		}
+		&--styleRight:hover {
+			background-image: linear-gradient(#fed6e3 0%, #ffaaaa 100%);
+		}
+	}
 	&--access {
 		text-align: center;
 		font-weight: bold;
