@@ -1,20 +1,19 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.14.1"
 
-server '54.168.53.227', user: 'ec2-user', roles: %w{app web db}, primary:true
+server '54.168.53.227', user: 'ec2-user', roles: %w(app web db), primary: true
 set :application, "website-Clinic2"
 set :repo_url, "git@github.com:m0chi2/website-Clinic2.git"
 set :deploy_to, "/home/ec2-user/website-Clinic2"
 set :rbenv_ruby, '2.5.7'
-set :linked_files, %w{config/master.key .env}
+set :linked_files, %w(config/master.key .env)
 set :user, 'ec2-user'
 set :ssh_options, {
   forward_agent: true,
   user: fetch(:user),
-  keys: %w(~/.ssh/practice-aws.pem)
+  keys: %w(~/.ssh/practice-aws.pem),
 }
 append :linked_dirs, "log", "public/system", "tmp"
-
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

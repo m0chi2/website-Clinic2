@@ -25,5 +25,4 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
     get reservations_thanks_url
     assert_response :success
   end
-
 end

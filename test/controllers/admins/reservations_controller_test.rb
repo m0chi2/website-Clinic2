@@ -5,5 +5,4 @@ class Admins::ReservationsControllerTest < ActionDispatch::IntegrationTest
     get admins_reservations_all_url
     assert_response :success
   end
-
 end

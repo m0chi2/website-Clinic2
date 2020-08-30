@@ -5,12 +5,11 @@ class Reservation < ApplicationRecord
   belongs_to :bothering_start
 
   def reservation_date
-  	  @pickadate = Pickadate.find_by(id: self.pickadate_id)
-	  return @pickadate.date + @pickadate.time
+    @pickadate = Pickadate.find_by(id: pickadate_id)
+    @pickadate.date + @pickadate.time
   end
 
   def preferred_datentime
- 	  return Pickadate.find_by(id: self.pickadate_id).date
+    Pickadate.find_by(id: pickadate_id).date
   end
-
 end

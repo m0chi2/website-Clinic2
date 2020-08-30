@@ -31,3 +31,5 @@
 /config/master.key
 /.env
 /current
+/.rubocop.yml
+/.rubocop_airbnb.yml

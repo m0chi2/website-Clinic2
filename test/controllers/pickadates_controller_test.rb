@@ -10,5 +10,4 @@ class PickadatesControllerTest < ActionDispatch::IntegrationTest
     get pickadates_create_url
     assert_response :success
   end
-
 end

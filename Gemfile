@@ -52,6 +52,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
+  gem 'rubocop-airbnb'
 end
 
 group :test do
@@ -60,6 +61,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'rspec-rails'
+  gem "factory_bot_rails"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -68,6 +71,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem "bootstrap-sass", ">= 3.4.1"
 gem 'kaminari'
+gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'pry-byebug'
