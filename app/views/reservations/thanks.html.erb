@@ -11,7 +11,7 @@
 	<% if patient_signed_in? %>
 		<%= link_to "最初のページへ戻る", patients_homes_path, class: "Btn__submit" %>
 	<% else %>
-		<%= link_to "最初のページへ戻る", "/", class: "Btn__submit" %>
+		<%= link_to "最初のページへ戻る", root_path, class: "Btn__submit" %>
 	<% end %>
 	</div>
 </div>

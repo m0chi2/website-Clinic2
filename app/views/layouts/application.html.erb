@@ -23,11 +23,11 @@
       <% elsif admin_signed_in? %>
           <%= link_to image_tag("toplogo-white.png", class: "Img--topLogo pull-left"), admins_path %>
           <h3 class="Icon__styleRadius--black Icon__styleRadius--loginStatus">管理者ページ</h3>
-            <%= link_to destroy_patient_session_path, method: :delete, class: "Icon__styleRadius--pink Icon__styleRadius--loginStatus" do %>
+            <%= link_to destroy_admin_session_path, method: :delete, class: "Icon__styleRadius--pink Icon__styleRadius--loginStatus" do %>
               <i class="fas fa-sign-out-alt"></i>ログアウトする
             <% end %>
       <% else %>
-          <%= link_to image_tag("toplogo-white.png", class: "Img--topLogo pull-left"), "/" %>
+          <%= link_to image_tag("toplogo-white.png", class: "Img--topLogo pull-left"), root_path %>
           <div class="Box__Btns Box__Btns--placementRight">
                 <%= link_to reservations_path, class: "Btn__topBar Btn__topBar--style Btn__topBar--styleLeft" do %>
                     <span>簡単web予約をする</span>

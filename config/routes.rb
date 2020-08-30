@@ -38,7 +38,7 @@ Rails.application.routes.draw do
   resources :posts
   resource :pickadates, only: [:new, :create]
 
-  get '/' => 'homes#top'
+  root to: 'homes#top'
   get '/about' => 'homes#about'
   get '/exams' => 'homes#exams'
   get '/access' => 'homes#access'
