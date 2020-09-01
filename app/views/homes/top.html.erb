@@ -72,7 +72,7 @@
 				<div class="Box__img--list1 Img__about--3 invisible visible" data-scroll></div>
 			</div>
 			<div class="text-center">
-				<%= link_to "もっと詳しく", about_path, class: "Btn__submit" %>
+				<%= link_to "もっと詳しく", about_path, class: "Btn__submit", id: "moreBtn1" %>
 			</div>
 		</div>
 </div>
@@ -144,8 +144,8 @@
 						<li>処方箋をお渡しします。</li>
 					</ul>
 				</nav>
-				<div class="text-center">
-					<%= link_to "もっと詳しく", about_path, class: "Btn__submit" %>
+				<div id="moreBtn2" class="text-center">
+					<%= link_to "もっと詳しく", exams_path, class: "Btn__submit", id: "moreBtn2" %>
 				</div>
 			</div>
 		</div>
@@ -186,8 +186,8 @@
 				</div>
 		    </div>
 		</div>
-	<div class="col text-center">
-		<%= link_to "もっと詳しく", about_path, class: "Btn__submit" %>
+	<div id="moreBtn3" class="col text-center">
+		<%= link_to "もっと詳しく", access_path, class: "Btn__submit", id: "moreBtn3" %>
 	</div>
 </div>
 

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "posts", type: :request do
+RSpec.describe "投稿のテスト", type: :request do
   describe '気になる投稿のテスト' do
     context "新規投稿ページが正しく表示される" do
       let!(:patient) { create(:patient) }
@@ -32,10 +32,12 @@ RSpec.describe "posts", type: :request do
         it '記録ボタンが表示される' do
           expect(page).to have_button '記録する'
         end
+      end
+      describe '動作の確認' do
         it '投稿に成功する' do
           select 'テスト日時', from: '日時'
           select 'テストジャンル', from: '分類'
-          fill_in 'post[content]', with: "test"
+          fill_in 'post[content]', with: 'test'
           click_button '記録する'
         end
         # it '投稿に失敗する' do
