@@ -2,7 +2,23 @@ require 'rails_helper'
 
 RSpec.describe "管理者のテスト", type: :request do
 describe '管理者認証のテスト' do
+  describe '管理者新規登録' do
+    let(:admin) { create(:admin) }
+    before do
+      visit new_admin_registration_path
+    end
+    context '管理者画面に遷移' do
+      it '新規登録に成功する' do
+        fill_in 'admin[email]', with: 'test@example.com'
+        fill_in 'admin[password]', with: 'password'
+        fill_in 'admin[password_confirmation]', with: 'password'
+        click_button 'Sign up'
 
+        has_content? 'エラー'
+        expect(page).to have_content '本日の予約は'
+      end
+    end
+  end
   describe '管理者ログイン' do
     let(:admin) { create(:admin) }
     before do
