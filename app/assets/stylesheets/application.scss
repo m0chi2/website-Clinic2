@@ -32,6 +32,9 @@ body {
 	font-family: 'Libre Baskerville', serif;
 	font-family: 'M PLUS Rounded 1c', sans-serif;
 	font-size: 20px;
+  @media screen and (max-width:768px) {
+      font-size: 1.6rem;
+    }
 }
 
 header, footer {
@@ -52,10 +55,18 @@ li .title:before {
 	border-radius: 3px;
 	background:#67c5ff;
 	transition: .2s;
+
+  @media screen and (max-width:1024px) {
+    display: none;
+  }
 }
 li .title:hover:before {
 	top: -webkit-calc(100% - 3px);
 	top: calc(100% - 3px);
+
+  @media screen and (max-width:1024px) {
+    display: none;
+  }
 }
 footer {
 	color: #fff;
@@ -68,6 +79,9 @@ footer {
 		-webkit-justify-content: center;
 	 	justify-content: center;
 	 	padding: 2% 0;
+    @media screen and (max-width:768px) {
+      display: none;
+    }
 	 	a {
 		 	color: #fff;
 		 	text-decoration: none;
@@ -107,6 +121,16 @@ th {
 	padding-bottom: 30px;
 	width: 70%;
 	border-bottom: 1px solid rgba(0,0,0,0.2);
+  @media screen and (max-width:768px) {
+    margin: 25px auto;
+    padding-bottom: 20px;
+    font-size: 3.0rem;
+  }
+}
+.exam-title-logo {
+  @media screen and (max-width:768px) {
+    font-size: 3.0rem;
+  }
 }
 
 #back {
@@ -237,67 +261,20 @@ th {
 	-webkit-animation-delay: 0.5s;
 }
 
+.menu-trigger {
+  font-size: 2.4rem;
+  font-weight: bold;
+  @media screen and (max-width:425px) {
+    font-size: 1.8rem;
+  }
+}
 
-#hm-icon{
-  top: 20px;
-  z-index: 10;
-}
-.menu-trigger,
-.menu-trigger span {
-  display: inline-block;
-  transition: all .4s;
-  box-sizing: border-box;
-}
-.menu-trigger {
-  position: relative;
-  width: 100%;
-  height: 80px;
-}
-.menu-trigger {
-	span {
-	  position: absolute;
-	  left: 5%;
-	  width: 80%;
-	  height: 4px;
-	  background-color: transparent;
-	  border-radius: 4px;
-	  font-weight: bold;
+.admin__mainnav__text {
 	  font-size: 2.0rem;
-	}
-	.admin__mainnav__text {
-	  font-size: 2.0rem;
-	}
 }
 .menu-trigger .menu__text {
 	background-color: #000;
 	font-weight: bold;
-}
-.menu-trigger span:nth-of-type(1) {
-  top: 0;
-}
-.menu-trigger span:nth-of-type(2) {
-  top: 8px;
-  background-color: transparent;
-  text-align: center;
-}
-.menu-trigger span:nth-of-type(3) {
-  bottom: 0;
-}
-.menu-trigger.active span:nth-of-type(1) {
-  -webkit-transform: translateY(20px) rotate(-45deg);
-  transform: translateY(55px) rotate(-45deg);
-  background-color: #fff;
-  width: 50px;
-
-}
-.menu-trigger.active span:nth-of-type(2) {
-  opacity: 0;
-}
-.menu-trigger.active span:nth-of-type(3) {
-  -webkit-transform: translateY(-20px) rotate(45deg);
-  transform: translateY(-20px) rotate(45deg);
-  background-color: #fff;
-  width: 50px;
 }
 
 #sp-menu {

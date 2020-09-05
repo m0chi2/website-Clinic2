@@ -3,9 +3,7 @@
 	<ul class="Nav">
 	<li class="Nav__borderBoth--patient">
 		<%= link_to "#", class: "menu-trigger" do %>
-	        <span></span>
-	        <span>大きな文字で<br>メニューを見る</span>
-	        <span></span>
+			<div><span>大きな文字で</span><br>メニューを見る</div>
 		<% end %>
 	</li>
 	<li class="Nav__borderRight--patient">
@@ -39,10 +37,8 @@
 <nav class="Nav__wrap Nav__wrap--admin">
 	<ul class="Nav">
 	<li class="Nav__borderBoth--admin narrow-width">
-	    <%= link_to "#", class: "menu-trigger" do %>
-	        <span></span>
-	        <span class="Nav__text--admin">大きな文字で<br>メニューを見る</span>
-	        <span></span>
+	    <%= link_to "#", class: "menu-trigger Nav__text--admin" do %>
+	        <div><span>大きな文字で</span><br>メニューを見る</div>
 	    <% end %>
 	</li>
 	<li class="Nav__borderRight--admin narrow-width">
@@ -80,11 +76,10 @@
 <% else %>
 <nav class="Nav__wrap Nav__wrap--visitor">
 	<ul class="Nav">
-		<li class="Nav__borderBoth--visitor" id="hm-icon">
+		<li class="Nav__borderBoth--visitor">
 		    <%= link_to "#", class: "menu-trigger" do %>
-		        <span></span>
-		        <span>大きな文字で<br>メニューを見る</span>
-		        <span></span>
+		        <div class="Nav--mbHide">大きな文字で<br>メニューを見る</div>
+		        <div class="Nav--mbOpen">MENU<br>を見る</div>
 		    <% end %>
 		</li>
 		<li class="Nav__borderRight--visitor">

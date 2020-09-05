@@ -16,12 +16,26 @@
 	&__text {
 		&--topMessages {
 			margin-top: 35px;
+			@media screen and (max-width:768px) {
+				padding-left: 0!important;
+				padding-right: 0!important;
+				text-align: center;
+				margin-top: 105px;
+			}
 		}
 		&--eachMessage {
 			background-color: rgba(255,255,255,0.7);
 			padding: 5px;
 			font-size: 2.7rem;
-			line-height: 70px;
+			line-height: 250%;
+
+			@media screen and (max-width:1024px) {
+				font-size: 2.4rem;
+			}
+			@media screen and (max-width:768px) {
+				font-size: 1.8rem;
+				line-height: 280%;
+			}
 		}
 		&--profile {
 			margin-left: 3%;
@@ -62,6 +76,10 @@
 			.sun {
 				color: #FF0000;
 			}
+			@media screen and (max-width:768px) {
+		 		padding: 15px 10px;
+		 		text-align: center;
+		 	}
 		}
 		&--innerLeft {
 			padding-left: 20%;
@@ -111,6 +129,11 @@
 			span {
 				color: red;
 			}
+			@media screen and (max-width:768px) {
+				width: 100%;
+		 		line-height: 2.5rem;
+		 		padding: 15px 10px 15px 33px;
+		 	}
 		}
 		&--narrow {
 			width: 60%;
@@ -121,6 +144,10 @@
 		border-radius: 25px;
 		padding-bottom: 30px;
 		font-size: 2.6rem;
+		@media screen and (max-width:768px) {
+	 		font-size: 1.8rem;
+	 		padding-bottom: 10px;
+	 	}
 		&--access {
 			font-size: 2.8rem;
 			h1 {
@@ -142,6 +169,9 @@
 			background-image: image-url("header-bg.jpg");
 			border-radius: 25px;
 			padding: 25px 0;
+			@media screen and (max-width:768px) {
+	 			display: none;
+	 		}
 		}
 		&--session-header {
 			padding: 10px 0;
@@ -210,5 +240,16 @@
 	 	&--placementRight {
 	 		justify-content: flex-end;
 	 	}
+	}
+	&__Map {
+	 	@media screen and (max-width:768px) {
+			margin-top: 20px;
+		}
+	}
+	&--mbHide {
+		width: 100%;
+		@media screen and (max-width:768px) {
+			display: none;
+		}
 	}
 }

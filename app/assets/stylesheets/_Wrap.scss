@@ -4,8 +4,12 @@
 		margin-top: 40px;
 	}
 	&__imgs {
-		display: -webkit-flex;
 		display: flex;
+		-webkit-display: flex;
+		@media screen and (max-width:768px) {
+			flex-wrap: wrap;
+			-webkit-flex-wrap: wrap;
+		}
 		&--normal {
 			-webkit-align-items: center;
 			align-items: center;
@@ -30,6 +34,10 @@
 			padding: 5px 10px;
 			font-size: 2.6rem;
 			margin: 25px 0 30px;
+			@media screen and (max-width:768px) {
+				width: 90%;
+				font-size: 2.0rem;
+			}
 		}
 		&--subtitles {
 			display: -webkit-flex;
@@ -53,7 +61,10 @@
 		&--evenly {
 			display: flex;
 			width: 100%;
-			justify-content: space-between
+			justify-content: space-between;
+			@media screen and (max-width:768px) {
+	 			display: block;
+			}
 		}
 	}
 	&__title {
@@ -63,6 +74,9 @@
 			margin: 10% auto 0;
 			padding: 2px;
 			border-radius: 25px;
+			@media screen and (max-width:768px) {
+		 		width: 90%;
+		 	}
 		}
 	}
 	&--name {
@@ -107,6 +121,9 @@
 			align-items: center;
 			 -webkit-justify-content: center;
 		 	justify-content: center;
+		 	@media screen and (max-width:768px) {
+		 		flex-direction: column;
+		 	}
 		}
 		&--reservationQ{
 			margin: 100px auto;

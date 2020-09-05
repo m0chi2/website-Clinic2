@@ -4,6 +4,9 @@
   	background-size: cover;
   	background-repeat: no-repeat;
   	padding: 2% 5% 5%;
+  	@media screen and (max-width:768px) {
+  		padding: 2% 3%;
+  	}
 
   	%__scrollbox {
   		background-color: #fff;
