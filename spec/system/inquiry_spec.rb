@@ -5,7 +5,6 @@ RSpec.describe "お問い合わせのテスト", type: :request do
 		before do
 			visit inquiry_path
 		end
-	end
 	describe '表示の確認' do
 		it 'お問い合わせと表示される' do
 			expect(page).to have_content 'お問い合わせ'
@@ -27,7 +26,7 @@ RSpec.describe "お問い合わせのテスト", type: :request do
 			fill_in 'inquiry[email]', with: 'test@example.com'
 			fill_in 'inquiry[message]', with: 'テストテストテスト'
 			click_button '確認'
-			expect(page).to eq(inquiry_confirm_path)
+			expect(page).to have_button '送信'
 		end
 	end
 	describe '動作の確認' do
@@ -42,5 +41,6 @@ RSpec.describe "お問い合わせのテスト", type: :request do
 			click_button '確認'
 			expect(page).to have_content '入力内容にエラーがあります'
 		end
+	end
 	end
 end

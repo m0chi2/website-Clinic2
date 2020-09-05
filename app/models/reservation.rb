@@ -1,7 +1,5 @@
 class Reservation < ApplicationRecord
   belongs_to :pickadate, dependent: :destroy
-  belongs_to :membership_number, optional: true
-  belongs_to :exam_content, optional: true
   belongs_to :bothering_start
 
   validates :name, presence: true

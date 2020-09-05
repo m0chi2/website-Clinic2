@@ -69,28 +69,29 @@ describe '会員認証のテスト' do
       end
     end
   end
-end
 
-describe '会員のテスト' do
-  let(:patient) { create(:patient) }
-  before do
-    visit new_patient_session_path
-    fill_in 'patient[email]', with: patient.email
-    fill_in 'patient[password]', with: patient.password
-    click_button '会員ページへ進む'
-  end
-
-  describe '予約確認画面のテスト' do
+  describe '会員の予約テスト' do
+    let(:patient) { create(:patient) }
     before do
-      visit patients_homes_reservation_path
+      visit new_patient_session_path
+      fill_in 'patient[email]', with: patient.email
+      fill_in 'patient[password]', with: patient.password
+      click_button '会員ページへ進む'
     end
-    context '表示の確認' do
-      it '予約一覧と表示される' do
-        expect(page).to have_content('予約一覧')
+
+    describe '予約確認画面のテスト' do
+      before do
+        visit patients_homes_reservation_path
       end
-      # it '予約一覧に症状の内容が表示される' do
-      #   expect(page).to have_content(reservation.content)
-      # end
+      context '表示の確認' do
+        it '予約一覧と表示される' do
+          expect(page).to have_content('予約一覧')
+        end
+        # it '予約一覧に症状の内容が表示される' do
+        #   expect(page).to have_content(reservation.content)
+        # end
+      end
     end
   end
+end
 end
