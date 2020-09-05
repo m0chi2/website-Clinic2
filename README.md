@@ -1,6 +1,7 @@
 # 予約機能付きクリニックホームページ
   <img src="https://img.shields.io/badge/demo-online-blue">
-## サイト概要
+
+### サイト概要
   - クリニックの紹介、診察の予約ができるクリニックのホームページです。
   - クリニック受診者は利用申請することで会員ページを利用することができます。
   <img width="600" alt="pandaclinic-img-pc" src="https://user-images.githubusercontent.com/63715810/92299601-9c9ab300-ef8e-11ea-999b-b682d9ea3835.png">
