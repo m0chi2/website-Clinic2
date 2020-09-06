@@ -132,6 +132,18 @@ th {
     font-size: 3.0rem;
   }
 }
+.container-fluid {
+  @media screen and (max-width:768px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.row {
+  @media screen and (max-width:768px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 
 #back {
   position: fixed;
@@ -228,7 +240,7 @@ th {
     filter: blur(0);
   }
 }
-.fadeInUp, .access, .text--access {
+.fadeInUp, .access {
 	opacity: 0;
   	animation: fadeIn 0.8s;
   	animation-fill-mode: forwards;

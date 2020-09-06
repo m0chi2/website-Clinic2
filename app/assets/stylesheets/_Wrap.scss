@@ -122,6 +122,11 @@
 		 	@media screen and (max-width:768px) {
 		 		flex-direction: column;
 		 	}
+		 	.maxwide {
+		 		@media screen and (max-width:768px) {
+		 			width: 100%;
+		 		}
+		 	}
 		}
 		&--reservationQ{
 			margin: 100px auto;
