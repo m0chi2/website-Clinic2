@@ -64,6 +64,32 @@
 			background-image: image-url("exam5.jpg");
 		}
 	}
+	&__examFlow {
+		&--1 {
+			background-image: image-url("examFlow1.png");
+			background-size: cover;
+		}
+		&--2 {
+			background-image: image-url("examFlow2.png");
+			background-size: cover;
+		}
+		&--3 {
+			background-image: image-url("examFlow3.png");
+			background-size: cover;
+		}
+		&--4 {
+			background-image: image-url("examFlow4.png");
+			background-size: cover;
+		}
+		&--5 {
+			background-image: image-url("examFlow5.png");
+			background-size: cover;
+		}
+		&--6 {
+			background-image: image-url("examFlow6.png");
+			background-size: cover;
+		}
+	}
 	&__adminTop {
 			background-image: image-url("admin-index-img.jpg");
 			height: 300px;

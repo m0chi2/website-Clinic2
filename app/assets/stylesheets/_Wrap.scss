@@ -34,6 +34,7 @@
 			padding: 5px 10px;
 			font-size: 2.6rem;
 			margin: 25px 0 30px;
+			text-align: center;
 			@media screen and (max-width:768px) {
 				width: 90%;
 				font-size: 2.0rem;
@@ -103,10 +104,7 @@
 			 -webkit-justify-content: center;
 		 	justify-content: center;
 			 	th{
-			 		height: 120px;
-			 		background-color: #fff;
-			 		border-top: solid 3px #B6D7D2;
-			 		border-bottom: solid 3px #B6D7D2;
+			 		padding: 10px 0;
 			 	}
 			 	th p {
 			 		padding: 0 15px;
@@ -156,6 +154,26 @@
 			 height: 350px;
 			 width: 80%;
 			 padding: 25px 0;
+		}
+	}
+	&__sub {
+		&--topExamFlow {
+			margin-bottom: 12%;
+			font-size: 2.4rem;
+			.belongings{
+				margin: 5% 1%;
+				font-size: 2.4rem;
+				padding: 5px;
+			}
+			@media screen and (max-width:768px) {
+				width: 80%;
+				h1 {
+					font-size: 2.0rem;
+				}
+				h2 {
+					font-size: 1.4rem;
+				}
+			}
 		}
 	}
 }

@@ -100,54 +100,71 @@
 			</div>
 			<div class="col-md-1"></div>
 			<div class="col-md-10 wrap__main--topExamFlow">
-				<div class="wrap__icons--title text-center" data-scroll>
+				<div class="wrap__icons--title" data-scroll>
 					ご用意していただくもの
 				</div>
-					<div class="text-center" data-scroll>
+					<div class="wrap__sub--topExamFlow text-center" data-scroll>
 						<b>健康保険証を忘れずお持ちください</b><br>
 
 						<b>お持ちの方は以下のもの</b>
 						<nav>
 							<ul>
-								<li>介護保険証</li>
-								<li>お薬手帳</li>
-								<li>紹介状</li>
+								<li class="belongings Icon__styleRadius--pink">介護保険証</li>
+								<li class="belongings Icon__styleRadius--pink">お薬手帳</li>
+								<li class="belongings Icon__styleRadius--pink">紹介状</li>
 							</ul>
 						</nav>
 					</div>
-				<div class="wrap__icons--title text-center" data-scroll>
-					ご来院
+			<div class="wrap__icons--title" data-scroll>
+				ご来院
+			</div>
+			<div class="wrap__sub--topExamFlow text-center" data-scroll>
+				<div class="wrap__icons--subtitles">
+					<div class="Icon__styleSquare--lightgreen Icon__subtitle Icon__subtitle--1">
+						紹介状を<br>お持ちの方<br>
+						<div class="Img__examFlow--1 Icon__size--smallImg1"></div>
+					</div>
+					<div class="Icon__styleSquare--lightgreen Icon__subtitle Icon__subtitle--1">
+						当院を直接<br>受診される方<br>
+						<div class="Img__examFlow--2 Icon__size--smallImg2"></div>
+					</div>
+					<div class="Icon__styleSquare--lightgreen Icon__subtitle Icon__subtitle--1">
+						当院の診察券をお持ちの方<br>
+						<div class="Img__examFlow--3 Icon__size--smallImg2"></div>
+					</div>
 				</div>
-				<table class="Table__examFlow" data-scroll>
-					<tr>
-						<th>
-							<div class="wrap__icons--subtitles">
-								<span class="Icon__subtitle">紹介状を<br>お持ちの方</span>
-								<span class="Icon__subtitle">当院を直接<br>受診される方</span>
-								<span class="Icon__subtitle">当院の診察券を<br>お持ちの患者さま</span>
-							</div>
-						</th>
-						<th><p>クリニックの初診受付に<br>お越しください。</p></th>
-					</tr>
-					<tr>
-						<th><span class="Icon__subtitle">再診の患者さま</span></th>
-						<th><p>再来受付機で<br>受付をしてください。</p></th>
-					</tr>
-				</table>
-				<div class="wrap__icons--title text-center" data-scroll>
-					受診後の流れ
+					<p class="text-center">▼</p>
+					<h1>クリニックの初診受付にお越しください。</h1>
 				</div>
-				<nav data-scroll>
-					<ul>
-						<li>受付にお立ち寄りください。</li>
-						<li>自動精算機または会計窓口にて会計をしてください。</li>
-						<li>処方箋をお渡しします。</li>
-					</ul>
-				</nav>
+
+				<div class="wrap__sub--topExamFlow text-center">
+					<div class="Icon__styleRadius--lightgreen Icon__subtitle Icon__subtitle--2">再診の患者さま</div>
+					<p>▼</p>
+					<h1>再来受付機で受付をしてください。</h1>
+				</div>
+
+			<div class="wrap__icons--title" data-scroll>受診後の流れ</div>
+			<div class="wrap__sub--topExamFlow text-center">
+				<div class="Icon__styleSquare--lightgreen Icon__subtitle--3">
+					<h2>受付にお立ち寄りください</h2>
+					<div class="Img__examFlow--4 Icon__size--largeImg1"></div>
+				</div>
+				<div class="Icon__styleSquare--lightgreen Icon__subtitle--3">
+					<h2 class="text">自動精算機または会計窓口にて</h2>
+					<h2>会計をしてください</h2>
+					<div class="Img__examFlow--5 Icon__size--largeImg1"></div>
+				</div>
+				<div class="Icon__styleSquare--lightgreen Icon__subtitle--3">
+					<h2>処方箋をお渡しします</h2>
+					<div class="Img__examFlow--6 Icon__size--largeImg2"></div>
+				</div>
+				</div>
 				<div id="moreBtn2" class="text-center">
 					<%= link_to "もっと詳しく", exams_path, class: "Btn__submit", id: "moreBtn2" %>
 				</div>
 			</div>
+
+		</div>
 		</div>
 	</div>
 </div>
