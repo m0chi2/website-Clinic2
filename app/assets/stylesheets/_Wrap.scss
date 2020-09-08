@@ -32,12 +32,12 @@
 			background-color: #B6D7D2;
 			border-radius: 15px;
 			padding: 5px 10px;
-			font-size: 2.6rem;
+			font-size: 4.0rem;
 			margin: 25px 0 30px;
 			text-align: center;
 			@media screen and (max-width:768px) {
 				width: 90%;
-				font-size: 2.0rem;
+				font-size: 1.9rem;
 			}
 		}
 		&--subtitles {
@@ -164,7 +164,6 @@
 	&__sub {
 		&--topExamFlow {
 			margin-bottom: 12%;
-			font-size: 2.4rem;
 			.belongings{
 				margin: 5% 1%;
 				font-size: 2.4rem;
@@ -172,7 +171,7 @@
 			}
 			@media screen and (max-width:768px) {
 				width: 80%;
-				h1 {
+				.examMessage-1 {
 					font-size: 2.0rem;
 				}
 				h2 {

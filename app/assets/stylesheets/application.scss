@@ -31,9 +31,11 @@
 body {
 	font-family: 'Libre Baskerville', serif;
 	font-family: 'M PLUS Rounded 1c', sans-serif;
-	font-size: 20px;
+	font-size: 2.5rem;
+  line-height: 4.4rem;
   @media screen and (max-width:768px) {
       font-size: 1.6rem;
+      line-height: 2.5rem;
     }
 }
 
@@ -108,12 +110,12 @@ a:link {
 	color: #373737;
 }
 
-p {
-	line-height: 3.0rem;
-}
-
 th {
   	text-align: center !important;
+}
+.no-gutters {
+  margin:0;
+  padding:0;
 }
 
 .title-logo {
