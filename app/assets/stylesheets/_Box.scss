@@ -89,6 +89,10 @@
 				text-decoration-color: #67c5ff;
 				font-weight: bold;
 			}
+			@media screen and (max-width: 768px) {
+				width: 80%;
+				margin: auto;
+			}
 		}
 		&--normal {
 			padding: 18px 40px;
@@ -133,12 +137,6 @@
 				color: #FF0000;
 			}
 		}
-		&--alert {
-			color: #FF0000;
-			font-size: 3.0rem;
-			text-align: center;
-			margin-top: 30px;
-		}
 	}
 	&__bg {
 		&--white {
@@ -168,6 +166,10 @@
 		}
 		&--narrow {
 			width: 60%;
+			@media screen and (max-width:768px) {
+				width: 90%;
+				padding: 15px 10px;
+			}
 		}
 	}
 	&__information {
@@ -241,7 +243,7 @@
 		&--pickadate {
 			width: 70%;
 			height: 260px;
-			margin: 5% auto 0;
+			margin: 10% auto 0;
 			padding-bottom: 15%;
 			display: -webkit-flex;
 			display: flex;
@@ -252,11 +254,17 @@
 		 	.upper {
 		 		padding-bottom: 25px;
 		 		letter-spacing: 0.5rem;
+		 		@media screen and (max-width: 768px) {
+		 			text-align: center;
+		 		}
 		 	}
 		 	.lower {
 		 		span {
 		 			margin-right: 9px;
 		 		}
+		 		@media screen and (max-width: 768px) {
+			 		text-align: center;
+			 	}
 		 	}
 		}
 	}

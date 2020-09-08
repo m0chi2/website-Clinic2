@@ -1,9 +1,9 @@
 <div class="container wrap__container">
 <div class="row text-center">
 	<% if patient_signed_in? || admin_signed_in? %>
-		<h2 class="col title-logo">予約ページ</h2>
+		<h1 class="col title-logo">予約ページ</h1>
 	<% else %>
-		<h2 class="col title-logo">初診予約ページ</h2>
+		<h1 class="col title-logo">初診予約ページ</h1>
 	<% end %>
 </div>
 
@@ -22,60 +22,65 @@
 	</div>
 
 	<% unless patient_signed_in? || admin_signed_in? %>
-	<table class="Table__placement--reservation">
-		<tr>
-			<td colspan="2"><h2>患者様情報</h2></td>
-		</tr>
-		<tr>
-			<td class="Form__label-bg"><%= f.label :name, "氏名" %></td>
-			<td><%= f.text_field :name, placeholder: "例）山田ぱんだ", class: "form-control" %></td>
-		</tr>
-		<tr>
-			<td class="Form__label-bg"><%= f.label :name_kana, "氏名（カナ）" %></td>
-			<td><%= f.text_field :name_kana, placeholder: "例）ヤマダパンダ", class: "form-control" %></td>
-		</tr>
-		<tr>
-			<td class="Form__label-bg"><%= f.label :birthday, "生年月日" %></td>
-			<td><%= raw sprintf(
-					f.date_select(
-						:birthday,
-						 use_month_numbers: true,
-						 start_year: 1930,
-						 end_year: (Time.now.year - 1 ),
-						 default: Date.new(1990, 1, 1),
-						 date_separator: '%s'),
-						'年 ', '月 ') + '日' %></td>
-		</tr>
-		<tr>
-			<td class="Form__label-bg"><%= f.label :sex, "性別" %></td>
-			<td><%= f.radio_button :sex, 1, checked: true %>男性
-				<%= f.radio_button :sex, 2 %>女性</td>
-		</tr>
-		<tr>
-			<td colspan="2"><h2>ご連絡先</h2></td>
-		</tr>
-		<tr>
-			<td class="Form__label-bg"><%= f.label :name, "お電話番号" %></td>
-			<td><%= f.text_field :phonenumber, placeholder: "-（ハイフン）無しでご記入ください", class: "form-control" %></td>
-		</tr>
-		<tr>
-			<td class="Form__label-bg"><%= f.label :email, "メールアドレス" %></td>
-			<td><%= f.text_field :email, placeholder: "abc@panda.com", class: "form-control" %></td>
-		</tr>
-		<tr>
-			<td class="Form__label-bg"><%= f.label :email_confirm, "メールアドレス（確認用)" %></td>
-			<td><%= f.text_field :email, placeholder: "abc@panda.com", class: "form-control" %></td>
-		</tr>
-	</table>
+	<div class="form-group">
+		<table class="Table__placement--reservation text-center">
+			<tr>
+				<td colspan="2"><h2>患者様情報</h2></td>
+			</tr>
+			<tr>
+				<td class="Form__label-bg"><%= f.label :name, "氏名" %></td>
+				<td><%= f.text_field :name, placeholder: "例）山田ぱんだ", class: "form-control Form__mbWidth" %></td>
+			</tr>
+			<tr>
+				<td class="Form__label-bg"><%= f.label :name_kana, "氏名（カナ）" %></td>
+				<td><%= f.text_field :name_kana, placeholder: "例）ヤマダパンダ", class: "form-control Form__mbWidth" %></td>
+			</tr>
+			<tr>
+				<td class="Form__label-bg"><%= f.label :birthday, "生年月日" %></td>
+				<td>
+					<div class="Form__Width--mbBirthday">
+						<%= f.date_select(
+							:birthday,
+							 {use_month_numbers: true,
+							 start_year: 1930,
+							 end_year: (Time.now.year - 1 ),
+							 default: Date.new(1990, 1, 1),
+							 date_separator: '/ '},
+							 {class: "Form__Width--birthday form-control"}) %>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="Form__label-bg"><%= f.label :sex, "性別" %></td>
+				<td><%= f.radio_button :sex, 1, checked: true %>男性
+					<%= f.radio_button :sex, 2 %>女性</td>
+			</tr>
+			<tr>
+				<td colspan="2"><h2>ご連絡先</h2></td>
+			</tr>
+			<tr>
+				<td class="Form__label-bg"><%= f.label :name, "お電話番号" %></td>
+				<td><%= f.text_field :phonenumber, placeholder: "-（ハイフン）無しでご記入ください", class: "form-control Form__mbWidth" %></td>
+			</tr>
+			<tr>
+				<td class="Form__label-bg"><%= f.label :email, "メールアドレス" %></td>
+				<td><%= f.text_field :email, placeholder: "abc@panda.com", class: "form-control Form__mbWidth" %></td>
+			</tr>
+			<tr>
+				<td class="Form__label-bg"><%= f.label :email_confirm, "メールアドレス（確認用)" %></td>
+				<td><%= f.text_field :email, placeholder: "abc@panda.com", class: "form-control Form__mbWidth" %></td>
+			</tr>
+		</table>
+	</div>
 	<% end %>
 
 	<div class="col-md-2"></div>
 	<div class="col-md-8">
 		<div class="wrap__main--reservationQ">
-			<h2>診察の参考になりますので、<br>以下の質問にお答えください。</h2>
-			<h3><%= f.label :exam_content, "どのような症状がありますか？" %></h3>
+			<h2 class="question-1">診察の参考になりますので、<br>以下の質問にお答えください。</h2>
+			<h3 class="question-2"><%= f.label :exam_content, "どのような症状がありますか？" %></h3>
 				<%= f.text_area :exam_content, class: "form-control Form__size--narrow-area" %>
-			<h3><%= f.label :bothering_start_id, "いつ頃から症状がありますか？" %></h3>
+			<h3 class="question-2"><%= f.label :bothering_start_id, "いつ頃から症状がありますか？" %></h3>
 				<div class="Box__Btns">
 					<div><%= f.radio_button :bothering_start_id, 1, checked: true %>今日</div>
 					<div><%= f.radio_button :bothering_start_id, 2 %>昨日</div>
@@ -83,11 +88,11 @@
 					<div><%= f.radio_button :bothering_start_id, 4 %>１週間前</div>
 					<div><%= f.radio_button :bothering_start_id, 5 %>それより前（１週間より前）</div>
 				</div>
-			<h3><%= f.label :question_medical_history, "今までにかかった・または治療中の病気があればご記入ください。" %></h3>
+			<h3 class="question-2"><%= f.label :question_medical_history, "今までにかかった・または治療中の病気があればご記入ください。" %></h3>
 				<%= f.text_area :question_medical_history, class: "form-control Form__size--narrow-area" %>
-			<h3><%= f.label :question_memo, "その他、事前にお伝えしたい内容がございましたらご記入ください。" %></h3>
+			<h3 class="question-2"><%= f.label :question_memo, "その他、事前にお伝えしたい内容がございましたらご記入ください。" %></h3>
 				<%= f.text_area :question_memo, class: "form-control Form__size--narrow-area" %>
-			<h3 class="text-center">以下の利用規約をご確認の上、ご同意いただきましたら、<br>
+			<h3 class="question-2 text-center">以下の利用規約をご確認の上、ご同意いただきましたら、<br>
 				「同意して次へ」をクリックしくしてお進みください</h3><br>
 				<div class="Box__bg--beige Box__text--scroll">
 					ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。ここには注意事項が記入されます。

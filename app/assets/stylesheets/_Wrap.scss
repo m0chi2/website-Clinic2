@@ -131,8 +131,16 @@
 		&--reservationQ{
 			margin: 100px auto;
 			text-align: center;
-			h3 {
+			.question-1 {
+				@media screen and (max-width:768px) {
+					font-size: 2.2rem;
+				}
+			}
+			.question-2 {
 				margin-top: 50px;
+				@media screen and (max-width:768px) {
+					font-size: 1.6rem;
+				}
 			}
 		}
 		&--inquiry {

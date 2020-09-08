@@ -6,15 +6,15 @@
 		<div class="Form__position form-group">
 		<%= form_for(@post, url: posts_path) do |f| %>
 			<div>
-				<%= f.label :bothering_start_id, "日時", class: "Form__label-style" %>
+				<%= f.label :bothering_start_id, "日時", class: "Form__labelStyle" %>
 				<%= f.select :bothering_start_id, options_from_collection_for_select(BotheringStart.all, :id, :name), prompt: "選択してください", class: "form-control" %>
 			</div>
 			<div>
-				<%= f.label :bothering_genre_id, "分類", class: "Form__label-style" %>
+				<%= f.label :bothering_genre_id, "分類", class: "Form__labelStyle" %>
 				<%= f.select :bothering_genre_id, options_from_collection_for_select(BotheringGenre.all, :id, :name), prompt: "選択してください", class: "form-control" %>
 			</div>
 			<div>
-				<%= f.label :content, "詳細内容", class: "Form__label-style" %>
+				<%= f.label :content, "詳細内容", class: "Form__labelStyle" %>
 			</div>
 			<div>
 				<%= f.text_area :content, class: "Form__size--area", placeholder: "ここに詳細を書いてください。" %>

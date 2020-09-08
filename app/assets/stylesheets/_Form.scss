@@ -1,12 +1,13 @@
 .Form {
-	&__label-style {
+	&__labelStyle {
 		font-size: 2.3rem;
 		color: #333;
 		margin-right: 60px;
 		height: 14%;
-	}
+		}
 	&__label-bg {
 		background-color: rgb(242, 242, 242);
+		text-align: center;
 	}
 	&__size {
 		&--area {
@@ -19,5 +20,16 @@
 	}
 	&__position {
 		margin-bottom: 60px;
+	}
+	&__Width {
+		&--birthday {
+			display: inline-block !important;
+			width: auto !important;
+		}
+		&--mbBirthday {
+			@media screen and (max-width:768px) {
+				width: 90%;
+			}
+		}
 	}
 }

@@ -301,7 +301,10 @@ th {
   min-height: 100%;
   display: none;
   z-index: 9;
-  padding: 50px;
+  padding: 8% 0;
+  @media screen and (max-width: 768px) {
+    padding: 15% 0;
+  }
 }
 #sp-menu li {
   text-align: center;
@@ -313,6 +316,11 @@ th {
   text-decoration: none;
   font-weight: bold;
   font-size: 6.0rem;
+  line-height: 7.5rem;
+  @media screen and (max-width: 768px) {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+  }
 }
 #sp-menu a:hover {
   background-color: #404040;
