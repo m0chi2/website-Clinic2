@@ -8,13 +8,13 @@
 			<tr class="Table__bg Table__bg--reservation">
 				<th>予約予定日</th>
 				<th>症状の内容</th>
-				<th>申込日</th>
+				<th class="Box--mbHide">申込日</th>
 			</tr>
 			<% @reservations.each do |reservation| %>
 			<tr>
 				<td><%= reservation.reservation_date %></td>
 				<td><%= reservation.exam_content %></td>
-				<td><%= reservation.created_at.strftime('%Y年%m月%d日') %></td>
+				<td class="Box--mbHide"><%= reservation.created_at.strftime('%Y年%m月%d日') %></td>
 			</tr>
 			<% end %>
 		</table>

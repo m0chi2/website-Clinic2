@@ -29,16 +29,16 @@
 			</tr>
 			<tr>
 				<td class="Form__label-bg"><%= f.label :name, "氏名" %></td>
-				<td><%= f.text_field :name, placeholder: "例）山田ぱんだ", class: "form-control Form__mbWidth" %></td>
+				<td><%= f.text_field :name, placeholder: "例）山田ぱんだ", class: "form-control Form__mbwidth" %></td>
 			</tr>
 			<tr>
 				<td class="Form__label-bg"><%= f.label :name_kana, "氏名（カナ）" %></td>
-				<td><%= f.text_field :name_kana, placeholder: "例）ヤマダパンダ", class: "form-control Form__mbWidth" %></td>
+				<td><%= f.text_field :name_kana, placeholder: "例）ヤマダパンダ", class: "form-control Form__mbwidth" %></td>
 			</tr>
 			<tr>
 				<td class="Form__label-bg"><%= f.label :birthday, "生年月日" %></td>
 				<td>
-					<div class="Form__Width--mbBirthday">
+					<div class="Form__width--mbBirthday">
 						<%= f.date_select(
 							:birthday,
 							 {use_month_numbers: true,
@@ -46,7 +46,7 @@
 							 end_year: (Time.now.year - 1 ),
 							 default: Date.new(1990, 1, 1),
 							 date_separator: '/ '},
-							 {class: "Form__Width--birthday form-control"}) %>
+							 {class: "Form__width--birthday form-control"}) %>
 					</div>
 				</td>
 			</tr>
@@ -60,15 +60,15 @@
 			</tr>
 			<tr>
 				<td class="Form__label-bg"><%= f.label :name, "お電話番号" %></td>
-				<td><%= f.text_field :phonenumber, placeholder: "-（ハイフン）無しでご記入ください", class: "form-control Form__mbWidth" %></td>
+				<td><%= f.text_field :phonenumber, placeholder: "-（ハイフン）無しでご記入ください", class: "form-control Form__mbwidth" %></td>
 			</tr>
 			<tr>
 				<td class="Form__label-bg"><%= f.label :email, "メールアドレス" %></td>
-				<td><%= f.text_field :email, placeholder: "abc@panda.com", class: "form-control Form__mbWidth" %></td>
+				<td><%= f.text_field :email, placeholder: "abc@panda.com", class: "form-control Form__mbwidth" %></td>
 			</tr>
 			<tr>
 				<td class="Form__label-bg"><%= f.label :email_confirm, "メールアドレス（確認用)" %></td>
-				<td><%= f.text_field :email, placeholder: "abc@panda.com", class: "form-control Form__mbWidth" %></td>
+				<td><%= f.text_field :email, placeholder: "abc@panda.com", class: "form-control Form__mbwidth" %></td>
 			</tr>
 		</table>
 	</div>

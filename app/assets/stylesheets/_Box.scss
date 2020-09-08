@@ -120,6 +120,9 @@
 		&--innerLeft {
 			padding-left: 20%;
 			font-size: 2.4rem;
+			@media screen and (max-width:768px) {
+				font-size: 1.8rem;
+			}
 		}
 		&--smaller {
 			width: 80%;
@@ -235,9 +238,16 @@
 			.field {
 				margin: 18px 0;
 				padding: 10px 60px;
+				@media screen and (max-width:768px){
+					margin: auto;
+				}
 			}
 			.session-attention {
 				font-size: 2.0rem;
+				@media screen and (max-width:768px){
+					margin: auto;
+					font-size: 1.8rem;
+				}
 			}
 		}
 		&--pickadate {
@@ -284,6 +294,13 @@
 	&__Map {
 	 	@media screen and (max-width:768px) {
 			margin-top: 20px;
+		}
+	}
+	&--mbWidth {
+		@media screen and (max-width: 768px) {
+			width: 88% !important;
+			margin: auto;
+			padding-top: 6%;
 		}
 	}
 	&--mbHide {

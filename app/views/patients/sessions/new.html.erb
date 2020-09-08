@@ -1,10 +1,12 @@
 <div class="container-fluid wrap__container">
 <div class="row text-center">
-    <h1 class="col title-logo title-fadein">会員ページ</h1>
-    <p class="fadeInUp">当院を受診いただいた方に、会員ページをご用意しています。</p><br>
+  <div class="col title-fadein">
+    <h1 class="title-logo">会員ページ</h1>
+    <div class="col Box--mbWidth fadeInUp">当院を受診いただいた方に、会員ページをご用意しています。</div>
+  </div>
     <div class="col-md-2"></div>
-    <div class="col-md-4 fadeInUp">
-      <div class="Box__information">
+    <div class="col-md-4">
+      <div class="Box__information fadeInUp">
       <h2 class="Box__information--header Box__information--session-header">会員ページでできること</h2><br>
         <ul class="Box__text--innerLeft text-left">
           <li>次回診察予約の確認</li>
@@ -13,8 +15,8 @@
       </div>
     </div>
 
-  <div class="col-md-4 form-group fadeInUp">
-    <div class="Box__information">
+  <div class="col-md-4 Box--mbWidth form-group">
+    <div class="Box__information fadeInUp">
     <h2 class="Box__information--header Box__information--session-header text-center">ログイン</h2>
     <div class="Box__form--session">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -36,9 +38,9 @@
       <% end %>
 
         <%= f.submit "会員ページへ進む" %><br><br>
-    <% end %>
+      <% end %>
+    </div>
+    </div>
   </div>
-  </div>
-</div>
 </div>
 </div>

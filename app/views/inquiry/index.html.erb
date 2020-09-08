@@ -1,7 +1,7 @@
 <div class="content wrap__container">
 <div class="row">
     <h1 class="col title-logo text-center fadeInUp">お問い合わせ</h1>
-    <div class="col text-center Box__text--normal fadeInUp">
+    <div class="col text-center Box__text--normal Box--mbWidth fadeInUp">
          <p>当医院や、当サイトについてご意見や、お気づきの点などお気軽にお寄せください。<br>
            原則、いただいたメッセージへ個別に回答することはございません。あらかじめご了承願います。</p>
     </div>
@@ -10,15 +10,15 @@
         <%= form_for @inquiry, :url => inquiry_confirm_path, method: :get do |f| %>
         <table class="Table__placement form-group fadeInUp">
           <tr>
-            <th>名前<span class="text-danger">（必須）</span></th>
+            <th class="Form__width--mbInquiry">名前<span class="text-danger">（必須）</span></th>
             <td><%= f.text_field :name, class: "form-control " %></td>
           </tr>
           <tr>
-            <th>メールアドレス<span class="text-danger">（必須）</span></th>
+            <th class="Form__width--mbInquiry">メールアドレス<span class="text-danger">（必須）</span></th>
             <td><%= f.text_field :email, class: "form-control" %></td>
           </tr>
           <tr>
-            <th>お問い合わせ内容</th>
+            <th class="Form__width--mbInquiry">お問い合わせ内容</th>
             <td><%= f.text_area :message, class: "form-control" %></td>
           </tr>
         </table>

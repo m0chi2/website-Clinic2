@@ -3,19 +3,21 @@
 	<ul class="Nav">
 	<li class="Nav__borderBoth--patient">
 		<%= link_to "#", class: "menu-trigger" do %>
-			<div><span>大きな文字で</span><br>メニューを見る</div>
+			<div class="Nav--mbHide">大きな文字で<br>メニューを見る</div>
+	        <div class="Nav--mbOpen">MENU<br>を見る</div>
 		<% end %>
 	</li>
 	<li class="Nav__borderRight--patient">
 		<%= link_to posts_path do %>
 			<i class="Icon__size--Large fas fa-pen-fancy"></i><br>
-			<span class="title">気になる記録を残す</span>
+			<span class="title Box--mbHide">気になる記録を残す</span>
+			<span class="title Box--mbOpen">気になる記録</span>
 		<% end %>
 	</li>
 	<li class="Nav__borderRight--patient">
 		<%= link_to patients_homes_reservation_path do %>
 			<i class="Icon__size--Large far fa-calendar-check"></i><br>
-			<span class="title">予約を確認する</span>
+			<span class="title">予約の確認</span>
 		<% end %>
 	</li>
 	<li class="Nav__borderRight--patient">
@@ -38,7 +40,8 @@
 	<ul class="Nav">
 	<li class="Nav__borderBoth--admin narrow-width">
 	    <%= link_to "#", class: "menu-trigger Nav__text--admin" do %>
-	        <div><span>大きな文字で</span><br>メニューを見る</div>
+        	<div class="Nav--mbHide">大きな文字で<br>メニューを見る</div>
+	        <div class="Nav--mbOpen">MENU<br>を見る</div>
 	    <% end %>
 	</li>
 	<li class="Nav__borderRight--admin narrow-width">

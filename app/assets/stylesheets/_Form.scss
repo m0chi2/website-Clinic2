@@ -21,7 +21,7 @@
 	&__position {
 		margin-bottom: 60px;
 	}
-	&__Width {
+	&__width {
 		&--birthday {
 			display: inline-block !important;
 			width: auto !important;
@@ -29,6 +29,11 @@
 		&--mbBirthday {
 			@media screen and (max-width:768px) {
 				width: 90%;
+			}
+		}
+		&--mbInquiry {
+			@media screen and (max-width:768px){
+				width: 40%;
 			}
 		}
 	}
