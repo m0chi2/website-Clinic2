@@ -3,10 +3,10 @@
 	<div class="wrap__main--adminTop Box__bg--beige">
 		<div class="col-md-6 text-center">
 			<% if @reservation %>
-			<h2>本日の予約は<%= @reservation.count %>件です</h2>
+			<h2 class="Message">本日の予約は<%= @reservation.count %>件です</h2>
 				<%= link_to "確認する", admins_reservations_today_path ,class: "Btn__submit" %>
 			<% else %>
-				<h2>本日の予約はありません</h2>
+				<h2 class="Message">本日の予約はありません</h2>
 			<% end %>
 		</div>
 		<div class="col-md-4 Img__adminTop Img__form--square"></div>

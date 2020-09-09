@@ -1,21 +1,24 @@
 <div class="container wrap__container">
 <div class="row text-center">
 <h1 class="col title-logo">本日の予約一覧</h1>
-		<div class="col-md-2"></div>
-		<div class="col-md-8">
-			<table class="table Table__bg--admin">
+		<div class="col-md-1"></div>
+		<div class="col-md-10 no-gutters">
+			<table class="table Table__bg--admin Table__text--mb">
 				<tr class="Table__bg">
-					<th>確認ステータス</th>
-					<th>診察券番号</th>
+					<th>
+						<span>確認</span>
+					</th>
+					<th>予約時間</th>
+					<th class="Box--mbHide">診察券番号</th>
 					<th>名前</th>
-					<th>年齢</th>
+					<th class="Box--mbHide">年齢</th>
 					<th>生年月日</th>
-					<th colspan="2">予約内容</th>
 				</tr>
 				<tr>
 					<% @reservations.each do |reservation|  %>
 					<td>✔️</td>
-					<td><% if reservation.membership_number == 0 || nil %>
+					<td><%= reservation.pickadate.time %></td>
+					<td class="Box--mbHide"><% if reservation.membership_number == 0 || nil %>
 							<span>登録無し</span>
 						<% else %>
 							<%= reservation.membership_number %>
@@ -23,8 +26,14 @@
 					</td>
 					<td><%= reservation.name %></td>
 					<td><%= (Date.today.strftime("%Y%m%d").to_i - reservation.birthday.strftime("%Y%m%d").to_i) / 10000 %>歳</td>
-					<td><%= reservation.birthday.strftime("%Y/%m/%d") %></td>
-					<td colspan="2"><%= reservation.exam_content %></td>
+					<td>
+						<span class="Box--mbHide">
+							<%= reservation.birthday.strftime("%Y/%m/%d") %>
+						</span>
+						<span class="Box--mbOpen">
+							<%= reservation.birthday.strftime("%Y/%m/%d") %>(<%= (Date.today.strftime("%Y%m%d").to_i - reservation.birthday.strftime("%Y%m%d").to_i) / 10000 %>歳)
+						</span>
+					</td>
 				</tr>
 			<% end %>
 		</table>

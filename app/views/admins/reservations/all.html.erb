@@ -12,23 +12,27 @@
 </div>
 <div class="row text-center">
 		<div class="col">
-			<table class="table Tabl__bg-admin">
+			<table class="table Tabl__bg-admin Table__text--mb">
 				<tr class="Table__bg">
 					<th>予約日</th>
-					<th>患者氏氏名</th>
-					<th>患者氏名（カナ）</th>
-					<th>年齢</th>
+					<th>氏名</th>
+					<th class="Box--mbHide">年齢</th>
 					<th>生年月日</th>
-					<th>予約内容</th>
+					<th class="Box--mbHide">予約内容</th>
 				</tr>
 				<tr>
 					<% @reservations.each do |reservation|  %>
 					<td><%= reservation.pickadate.date + reservation.pickadate.time %></td>
 					<td><%= reservation.name %></td>
-					<td><%= reservation.name_kana %></td>
-					<td><%= (Date.today.strftime("%Y%m%d").to_i - reservation.birthday.strftime("%Y%m%d").to_i) / 10000 %>歳</td>
-					<td><%= l reservation.birthday, format: :medium %></td>
-					<td><%= reservation.exam_content %></td>
+					<td class="Box--mbHide"><%= (Date.today.strftime("%Y%m%d").to_i - reservation.birthday.strftime("%Y%m%d").to_i) / 10000 %>歳</td>
+					<td><span class="Box--mbHide">
+							<%= l reservation.birthday, format: :medium %>
+						</span>
+						<span class="Box--mbOpen">
+							<%= l reservation.birthday, format: :medium %>(<%= (Date.today.strftime("%Y%m%d").to_i - reservation.birthday.strftime("%Y%m%d").to_i) / 10000 %>歳)
+						</span>
+					</td>
+					<td class="Box--mbHide"><%= reservation.exam_content %></td>
 				</tr>
 			<% end %>
 		</table>

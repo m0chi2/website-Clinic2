@@ -89,4 +89,12 @@
 			border: 20px solid #fff;
 		}
 	}
+	&__text {
+		font-size: 2.0rem!important;
+		&--mb {
+			@media screen and (max-width:768px){
+			font-size: 1.4rem;
+			}
+		}
+	}
 }

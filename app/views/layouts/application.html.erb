@@ -24,9 +24,15 @@
       <% elsif admin_signed_in? %>
           <%= link_to image_tag("toplogo-white.png", class: "Img--topLogo pull-left"), admins_path %>
           <h3 class="Icon__styleRadius--black Icon__styleRadius--loginStatus">管理者ページ</h3>
-            <%= link_to destroy_admin_session_path, method: :delete, class: "Icon__styleRadius--pink Icon__styleRadius--loginStatus" do %>
-              <i class="fas fa-sign-out-alt"></i>ログアウトする
-            <% end %>
+            <%= link_to destroy_admin_session_path, method: :delete, class: " Box--mbHide" do %>
+              <h3  class= "Icon__styleRadius--pink Icon__styleRadius--loginStatus">
+                <i class="fas fa-sign-out-alt"></i>ログアウトする
+             </h3>
+          <% end %>
+          <%= link_to destroy_admin_session_path, method: :delete, class: " Box--mbOpen" do %>
+              <h3  class= "Icon__styleRadius--pink Icon__styleRadius--loginStatus logout">
+                <i class="fas fa-sign-out-alt"></i></h3>
+          <% end %>
       <% else %>
           <%= link_to image_tag("toplogo-white.png", class: "Img--topLogo pull-left"), root_path %>
           <div class="Box__Btns Box__Btns--placementRight">

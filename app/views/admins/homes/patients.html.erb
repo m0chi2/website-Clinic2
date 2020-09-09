@@ -1,22 +1,22 @@
 <div class="container wrap__container">
 	<div class="row text-center">
 		<h1 class="title-logo ">会員一覧</h1>
-		<div class="col-md-2"></div>
-		<div class="col-md-8">
-			<table class="table Table__bg--admin">
+		<div class="col-md-1"></div>
+		<div class="col-md-10 no-gutters">
+			<table class="table Table__bg--admin Table__text--mb">
 				<tr class="Table__bg">
-					<th>診察券番号</th>
+					<th class="Box--mbHide">診察券番号</th>
 					<th>氏名</th>
-					<th>氏名（カナ）</th>
+					<th class="Box--mbHide">氏名（カナ）</th>
 					<th>年齢</th>
 					<th>生年月日</th>
 					<th></th>
 				</tr>
 				<% @patients.each do |patient| %>
 				<tr>
-					<td><%= patient.membership_number %></td>
+					<td class="Box--mbHide"><%= patient.membership_number %></td>
 					<td><%= patient.name %></td>
-					<td><%= patient.name_kana %></td>
+					<td class="Box--mbHide"><%= patient.name_kana %></td>
 					<td><%= (Date.today.strftime("%Y%m%d").to_i - patient.birthday.strftime("%Y%m%d").to_i) / 10000 %>歳</td>
 					<td><%= patient.birthday %></td>
 					<td><%= link_to "詳細", admins_homes_patient_path(patient.id), class: "Btn__detail" %></td>

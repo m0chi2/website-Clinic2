@@ -95,8 +95,12 @@
 	}
 	&__adminTop {
 			background-image: image-url("admin-index-img.jpg");
-			height: 300px;
 			width: 340px;
+			height: 300px;
+			@media screen and(max-width:768px) {
+				width: 80%;
+				height: 250px;
+			}
 	}
 	&__form {
 		&--circle {
