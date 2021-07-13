@@ -8,7 +8,7 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '>= 4.3.8'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -69,7 +69,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'jquery-rails'
-gem "bootstrap-sass", ">= 3.4.1"
+gem 'bootstrap-sass', '>= 3.4.1'
 gem 'kaminari'
 gem 'rails-i18n'
 gem 'devise-i18n'
